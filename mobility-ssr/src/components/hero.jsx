@@ -172,11 +172,7 @@ export default function Hero() {
             </div>
             <div className="flex items-center gap-2">
               <span className="h-2 w-2 rounded-full bg-orange-500 animate-pulse" />
-              <span>Pro women safety complaint travel</span>
-            </div>
-            <div className="flex items-center gap-2">
-              <span className="h-2 w-2 rounded-full bg-blue-500 animate-pulse" />
-              <span>24x7 Customer Support</span>
+              <span>Uncompromising women-focused safety protocols backed by live tracking, SOS systems, and 24×7 oversight</span>
             </div>
             <div className="flex items-center gap-2">
               <span className="h-2 w-2 rounded-full bg-amber-500 animate-pulse" />

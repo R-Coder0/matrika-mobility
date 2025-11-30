@@ -278,7 +278,7 @@ export default function ContactPage() {
                     </div>
                     <div>
                       <h4 className="text-base sm:text-lg text-amber-600 font-medium mb-1">
-                        Gurgaon Hub
+                        Gurgaon
                       </h4>
                       <p className="text-sm sm:text-base text-gray-600 mb-1">
                         FF-7, Vyapar Kendra, Shushant Lok - I
@@ -296,13 +296,30 @@ export default function ContactPage() {
                     </div>
                     <div>
                       <h4 className="text-base sm:text-lg text-amber-600 font-medium mb-1">
-                        Noida Hub
+                        Noida
                       </h4>
                       <p className="text-sm sm:text-base text-gray-600 mb-1">
                         Sector 143, Opposite Metro Station
                       </p>
                       <p className="text-sm sm:text-base text-gray-600">
                         Noida 201303
+                      </p>
+                    </div>
+                  </div>
+{/* Hydrabad */}
+ <div className="flex items-start">
+                    <div className="bg-amber-500 p-2 sm:p-3 rounded-lg mr-3 sm:mr-4 shrink-0">
+                      <MapPin className="h-5 w-5 sm:h-6 sm:w-6 text-white" />
+                    </div>
+                    <div>
+                      <h4 className="text-base sm:text-lg text-amber-600 font-medium mb-1">
+                        Hyderabad
+                      </h4>
+                      <p className="text-sm sm:text-base text-gray-600 mb-1">
+                        Sri Ram Nagar X Road, Yousufguda
+                      </p>
+                      <p className="text-sm sm:text-base text-gray-600">
+                        Hyderabad - 500045
                       </p>
                     </div>
                   </div>
@@ -330,7 +347,7 @@ export default function ContactPage() {
                     </div>
                     <div>
                       <h4 className="text-base sm:text-lg text-amber-600 font-medium mb-1">
-                        Banglore Hub
+                        Banglore
                       </h4>
                       <p className="text-sm sm:text-base text-gray-600 mb-1">
                         10 kashinagara Amruthahalli, 

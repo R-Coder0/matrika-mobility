@@ -43,7 +43,7 @@ const Footer = () => {
         <div>
           <h3 className="text-lg font-bold text-white mb-4">Services</h3>
           <ul className="space-y-3 text-sm">
-            <li><Link to="/corporate-protocol" className="hover:text-amber-400">Corporate Protocol</Link></li>
+            <li><Link to="/corporate-protocol" className="hover:text-amber-400">Corporate</Link></li>
             <li><Link to="/our-fleet" className="hover:text-amber-400">Our Fleet</Link></li>
             <li><Link to="/services" className="hover:text-amber-400">Our Services</Link></li>
           </ul>
@@ -68,7 +68,7 @@ const Footer = () => {
       {/* Location Cards Section */}
       <div className="container mx-auto px-6 py-8">
         <h3 className="text-2xl font-bold text-white text-center mb-8">Our Locations</h3>
-        <div className="grid grid-cols-1 md:grid-cols-5 gap-6">
+        <div className="grid grid-cols-2 md:grid-cols-3 gap-6">
 
           {/* Head Office Card */}
           <div className="bg-linear-to-br from-gray-900 to-black border border-gray-700 rounded-lg p-6 hover:border-amber-400 transition-all duration-300">
@@ -90,7 +90,7 @@ const Footer = () => {
               <div className="bg-amber-400 p-2 rounded-full">
                 <FaMapMarkerAlt className="text-black text-lg" />
               </div>
-              <h4 className="text-xl font-bold text-white">Gurgaon Hub</h4>
+              <h4 className="text-xl font-bold text-white">Gurgaon</h4>
             </div>
             <p className="text-gray-300 leading-relaxed">
               FF-7, Vyapar Kendra<br />
@@ -105,7 +105,7 @@ const Footer = () => {
               <div className="bg-amber-400 p-2 rounded-full">
                 <FaMapMarkerAlt className="text-black text-lg" />
               </div>
-              <h4 className="text-xl font-bold text-white">Noida Hub</h4>
+              <h4 className="text-xl font-bold text-white">Noida</h4>
             </div>
             <p className="text-gray-300 leading-relaxed">
               Sector 143<br />
@@ -119,12 +119,26 @@ const Footer = () => {
               <div className="bg-amber-400 p-2 rounded-full">
                 <FaMapMarkerAlt className="text-black text-lg" />
               </div>
-              <h4 className="text-xl font-bold text-white">Banglore Hub</h4>
+              <h4 className="text-xl font-bold text-white">Banglore</h4>
             </div>
             <p className="text-gray-300 leading-relaxed">
-              10 kashinagara Amruthahalli <br />
-              1st main Near Prakruthi Meadows Apartment<br />
-              Byatarayanapura Bangalore
+              10 Kashinagara Amruthahalli <br/>
+	      1st Main Near Prakruthi Meadows Apartment<br/>
+              Byatarayanapura  Bangalore.
+            </p>
+          </div>
+          {/* Hyderabad */}
+	<div className="bg-linear-to-br from-gray-900 to-black border border-gray-700 rounded-lg p-6 hover:border-amber-400 transition-all duration-300">
+            <div className="flex items-center gap-3 mb-4">
+              <div className="bg-amber-400 p-2 rounded-full">
+                <FaMapMarkerAlt className="text-black text-lg" />
+              </div>
+              <h4 className="text-xl font-bold text-white"> Hyderabad</h4>
+            </div>
+            <p className="text-gray-300 leading-relaxed">
+              Sri Ram Nagar X Road <br/>
+              Yousufguda<br/>
+              Hyderabad - 500045
             </p>
           </div>
           {/* Mumbai */}
@@ -133,12 +147,12 @@ const Footer = () => {
               <div className="bg-amber-400 p-2 rounded-full">
                 <FaMapMarkerAlt className="text-black text-lg" />
               </div>
-              <h4 className="text-xl font-bold text-white">Mumbai Hub</h4>
+              <h4 className="text-xl font-bold text-white">Mumbai</h4>
             </div>
             <p className="text-gray-300 leading-relaxed">
               F-18 A Wing Express Zone Mall
               <br/>Opp Western Highway Malad East
-              <br/>  MUMBAI - 400097 INDIA
+              <br/>Mumbai - 400097 India
             </p>
           </div>
         </div>
