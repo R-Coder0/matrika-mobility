@@ -18,6 +18,7 @@ import OutstationTransferPage from './pages/OutStation';
 import ServicesPage from './pages/Service';
 import BlogPage from './pages/BlogPage';
 import BlogPostPage from './pages/BlogDetails';
+import WeddingCar from './pages/WeddingCar';
 
 
 export default function App() {
@@ -40,6 +41,7 @@ export default function App() {
           <Route path="/blog/:slug" element={<BlogPostPage />} />
           <Route path="/airport-transfer" element={<AirportTransferPage />} />
           <Route path="/out-station" element={<OutstationTransferPage />} />
+          <Route path="/wedding-car" element={<WeddingCar />} />
         </Routes>
         <Footer />
       </PopupProvider>
