@@ -253,28 +253,38 @@ export default function WeddingCar() {
                 </div>
             </section>
 
-            {/* ===== FAQ ===== */}
-            <section className="py-20">
-                <div className="max-w-7xl mx-auto px-6">
-                    <h2 className="text-3xl font-bold text-center">FAQs</h2>
+{/* ===== FAQ ===== */}
+<section className="py-20">
+  <div className="max-w-7xl mx-auto px-6">
+    <h2 className="text-3xl font-bold text-center">FAQs</h2>
 
-                    {[
-                        { q: "Kya car decoration included hoti hai?", a: "Haan, simple & premium dono decoration options milte hain." },
-                        { q: "Car kitne time pe pahunchti hai?", a: "Aapke diye time se 15–20 minutes pehle car ready hoti hai." },
-                        { q: "Kya hum decoration customize kar sakte hain?", a: "Bilkul, theme color, flowers, ribbons sab choose kar sakte ho." },
-                    ].map((faq, i) => (
-                        <div key={i} className="border-b py-4">
-                            <details className="cursor-pointer">
-                                <summary className="flex justify-between text-lg font-semibold">
-                                    {faq.q}
-                                    <ChevronDown />
-                                </summary>
-                                <p className="mt-2 text-gray-700">{faq.a}</p>
-                            </details>
-                        </div>
-                    ))}
-                </div>
-            </section>
+    {[
+      { 
+        q: "Is car decoration included?", 
+        a: "Yes, we provide both simple and premium decoration options." 
+      },
+      { 
+        q: "When does the car arrive?", 
+        a: "The car is ready 15–20 minutes before your scheduled pickup time." 
+      },
+      { 
+        q: "Can we customize the decoration?", 
+        a: "Absolutely! You can choose themes, colors, flowers, ribbons, and more." 
+      },
+    ].map((faq, i) => (
+      <div key={i} className="border-b py-4">
+        <details className="cursor-pointer">
+          <summary className="flex justify-between text-lg font-semibold">
+            {faq.q}
+            <ChevronDown />
+          </summary>
+          <p className="mt-2 text-gray-700">{faq.a}</p>
+        </details>
+      </div>
+    ))}
+  </div>
+</section>
+
 
             {/* ===== FINAL CTA ===== */}
             <section className="py-16 bg-[#FFD400] text-black text-center">

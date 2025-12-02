@@ -92,12 +92,27 @@ const Navbar = () => {
           </div>
 
           {/* Mobile Hamburger */}
-          <button
-            onClick={toggleMenu}
-            className="lg:hidden text-gray-800 hover:text-amber-500 transition"
-          >
-            {open ? <FaTimes className="text-2xl" /> : <FaBars className="text-2xl" />}
-          </button>
+                    {/* Mobile Call + Hamburger */}
+          <div className="flex items-center gap-3 lg:hidden">
+            {/* Call Button */}
+            <a
+              href="tel:++91 7011438890"
+              className="flex items-center gap-2 px-3 py-2 rounded-full bg-amber-500 text-white text-sm font-semibold shadow-sm hover:bg-amber-600 transition-all"
+            >
+              <FaPhoneAlt className="text-sm" />
+              <span>Call Now</span>
+            </a>
+
+            {/* Hamburger */}
+            <button
+              onClick={toggleMenu}
+              className="text-gray-800 hover:text-amber-500 transition"
+              aria-label="Toggle menu"
+            >
+              {open ? <FaTimes className="text-2xl" /> : <FaBars className="text-2xl" />}
+            </button>
+          </div>
+
         </div>
       </nav>
 

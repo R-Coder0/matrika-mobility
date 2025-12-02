@@ -14,9 +14,9 @@ export default function WeddingHero() {
 
       <div className="relative container mx-auto px-6 py-34">
         <div className="grid md:grid-cols-2 gap-8 items-center">
-          
-          {/* LEFT SIDE */}
-          <div className="text-white z-10 max-w-xl">
+
+          {/* LEFT SIDE (content) -> mobile mein niche */}
+          <div className="text-white z-10 max-w-xl order-2 md:order-1">
             <h1 className="text-4xl md:text-5xl font-extrabold leading-tight">
               Luxury Wedding Cars
             </h1>
@@ -37,8 +37,8 @@ export default function WeddingHero() {
             </ul>
           </div>
 
-          {/* RIGHT SIDE FORM */}
-          <div className="z-10 flex justify-end">
+          {/* RIGHT SIDE FORM -> mobile mein upar */}
+          <div className="z-10 flex justify-end order-1 md:order-2">
             <div className="w-full max-w-md bg-[#FFFAFA] rounded-2xl shadow-lg overflow-hidden border border-gray-100">
               
               {/* Yellow Top Border */}
