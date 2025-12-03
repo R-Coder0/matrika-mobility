@@ -12,14 +12,13 @@ export default function WeddingCar() {
             {/* ===== THIN CONTACT STRIP ===== */}
             <div className="w-full bg-[#FFD400] py-3">
                 <div className="container mx-auto px-6 flex justify-center gap-8">
-                    <p className="flex items-center gap-2"><Phone size={18} /> +91-98XXXXXX90</p>
-                    <p className="flex items-center gap-2"><Mail size={18} /> support@taxitribe.in</p>
-                    <p className="flex items-center gap-2"><MessageCircle size={18} /> WhatsApp</p>
+                    <p className="flex items-center gap-2"><Phone size={18} /> +91 7011438890</p>
+                    <p className="flex items-center gap-2"><Mail size={18} /> sales@taxitribe.in</p>
+                    <p className=" items-center gap-2 hidden md:flex"><MessageCircle size={18} /> WhatsApp</p>
                 </div>
             </div>
 
             {/* ===== ABOUT SECTION ===== */}
-            {/* ===== ENHANCED ABOUT SECTION ===== */}
             <section className="py-20">
                 <div className="max-w-7xl mx-auto px-6">
                     <div className="grid md:grid-cols-2 gap-10 items-center">
@@ -253,37 +252,37 @@ export default function WeddingCar() {
                 </div>
             </section>
 
-{/* ===== FAQ ===== */}
-<section className="py-20">
-  <div className="max-w-7xl mx-auto px-6">
-    <h2 className="text-3xl font-bold text-center">FAQs</h2>
+            {/* ===== FAQ ===== */}
+            <section className="py-20">
+                <div className="max-w-7xl mx-auto px-6">
+                    <h2 className="text-3xl font-bold text-center">FAQs</h2>
 
-    {[
-      { 
-        q: "Is car decoration included?", 
-        a: "Yes, we provide both simple and premium decoration options." 
-      },
-      { 
-        q: "When does the car arrive?", 
-        a: "The car is ready 15–20 minutes before your scheduled pickup time." 
-      },
-      { 
-        q: "Can we customize the decoration?", 
-        a: "Absolutely! You can choose themes, colors, flowers, ribbons, and more." 
-      },
-    ].map((faq, i) => (
-      <div key={i} className="border-b py-4">
-        <details className="cursor-pointer">
-          <summary className="flex justify-between text-lg font-semibold">
-            {faq.q}
-            <ChevronDown />
-          </summary>
-          <p className="mt-2 text-gray-700">{faq.a}</p>
-        </details>
-      </div>
-    ))}
-  </div>
-</section>
+                    {[
+                        {
+                            q: "Is car decoration included?",
+                            a: "Yes, we provide both simple and premium decoration options."
+                        },
+                        {
+                            q: "When does the car arrive?",
+                            a: "The car is ready 15–20 minutes before your scheduled pickup time."
+                        },
+                        {
+                            q: "Can we customize the decoration?",
+                            a: "Absolutely! You can choose themes, colors, flowers, ribbons, and more."
+                        },
+                    ].map((faq, i) => (
+                        <div key={i} className="border-b py-4">
+                            <details className="cursor-pointer">
+                                <summary className="flex justify-between text-lg font-semibold">
+                                    {faq.q}
+                                    <ChevronDown />
+                                </summary>
+                                <p className="mt-2 text-gray-700">{faq.a}</p>
+                            </details>
+                        </div>
+                    ))}
+                </div>
+            </section>
 
 
             {/* ===== FINAL CTA ===== */}
