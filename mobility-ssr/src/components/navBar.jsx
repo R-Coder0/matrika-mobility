@@ -3,14 +3,14 @@ import { FaBars, FaTimes, FaCar, FaPhoneAlt } from "react-icons/fa";
 import { Link, useNavigate } from "react-router-dom";
 import { usePopup } from "./PopupContext";
 
-const cityLinks = [
-  ["Delhi", "/delhi"],
-  ["Gurgaon", "/gurgaon"],
-  ["Noida", "/noida"],
-  ["Bangalore", "/bangalore"],
-  ["Hyderabad", "/hyderabad"],
-  ["Mumbai", "/mumbai"],
-];
+// const cityLinks = [
+//   ["Delhi", "/delhi"],
+//   ["Gurgaon", "/gurgaon"],
+//   ["Noida", "/noida"],
+//   ["Bangalore", "/bangalore"],
+//   ["Hyderabad", "/hyderabad"],
+//   ["Mumbai", "/mumbai"],
+// ];
 
 const Navbar = () => {
   const [open, setOpen] = useState(false);
@@ -80,7 +80,7 @@ const Navbar = () => {
             ))}
 
             {/* Cities Dropdown */}
-            <div className="relative group">
+            {/* <div className="relative group">
               <button className="flex items-center gap-1 text-gray-700 hover:text-black font-medium transition-all duration-300 relative">
                 Cities
                 <span className="text-xs">▼</span>
@@ -98,7 +98,7 @@ const Navbar = () => {
                   </Link>
                 ))}
               </div>
-            </div>
+            </div> */}
 
             {/* CTA */}
             <Link
@@ -188,7 +188,7 @@ const Navbar = () => {
               ))}
 
               {/* Cities section */}
-              <div className="pt-4 border-t border-gray-200">
+              {/* <div className="pt-4 border-t border-gray-200">
                 <p className="text-xs font-semibold text-gray-500 uppercase mb-3">
                   Cities We Serve
                 </p>
@@ -204,7 +204,7 @@ const Navbar = () => {
                     </Link>
                   ))}
                 </div>
-              </div>
+              </div> */}
 
               {/* Contact */}
               <div className="pt-6 border-t border-gray-200 space-y-4">

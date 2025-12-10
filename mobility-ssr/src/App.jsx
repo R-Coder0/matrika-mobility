@@ -19,12 +19,7 @@ import ServicesPage from './pages/Service';
 import BlogPage from './pages/BlogPage';
 import BlogPostPage from './pages/BlogDetails';
 import WeddingCar from './pages/WeddingCar';
-import GurgaonTaxiPage from './pages/Gurugaon';
-import DelhiTaxiPage from './pages/Delhi';
-import NoidaTaxiPage from './pages/Noida';
-import HyderabadTaxiPage from './pages/Hyderabad';
-import MumbaiTaxiPage from './pages/Mumbai';
-import BangaloreTaxiPage from './pages/Banglore';
+import FloatingContact from './components/FloatingContact';
 
 
 export default function App() {
@@ -48,13 +43,8 @@ export default function App() {
           <Route path="/airport-transfer" element={<AirportTransferPage />} />
           <Route path="/out-station" element={<OutstationTransferPage />} />
           <Route path="/wedding-car" element={<WeddingCar />} />
-          <Route path="/Gurgaon" element={<GurgaonTaxiPage/>} />
-          <Route path="/Delhi" element={<DelhiTaxiPage/>} />
-          <Route path="/Noida" element={<NoidaTaxiPage/>} />
-          <Route path="/Hyderabad" element={<HyderabadTaxiPage/>} />
-          <Route path="/Mumbai" element={<MumbaiTaxiPage/>} />
-          <Route path="/bangalore" element={<BangaloreTaxiPage/>} />
         </Routes>
+        <FloatingContact/>
         <Footer />
       </PopupProvider>
     </>
