@@ -104,7 +104,7 @@ export default function AirportTransferPage() {
       </div>
 
       {/* CTA Section */}
-      <div className="bg-gradient-to-r from-amber-500 to-amber-600 shadow-xl overflow-hidden">
+      <div className="bg-linear-to-r from-amber-500 to-amber-600 shadow-xl overflow-hidden">
         <div className="grid md:grid-cols-2">
           <div className="p-12">
             <h2 className="text-3xl font-bold mb-4">Ready for a Seamless Airport Experience?</h2>

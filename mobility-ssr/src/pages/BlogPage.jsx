@@ -21,7 +21,7 @@ export default function BlogPage() {
           </p>
 
           {/* Blog Grid */}
-          <div className="mt-10 grid gap-8 grid-cols-[repeat(auto-fit,minmax(280px,1fr))]">
+          <div className="mt-10 grid gap-8 grid-cols-[repeat(auto-fit,minmax(400px,2fr))]">
             {posts.map((post) => (
               <Link
                 key={post.slug}

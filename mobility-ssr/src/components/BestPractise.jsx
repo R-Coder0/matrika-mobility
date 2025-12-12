@@ -35,11 +35,11 @@ export default function BestPracticesSection({
   /* ------- LIST VARIANT (LIGHT THEME) ------- */
   if (variant === "list") {
     return (
-      <section style={{ backgroundColor: "#FFFAFA" }} className={className}>
+      <section style={{ backgroundColor: "#FFFFFF" }} className={className}>
         <div className="container mx-auto px-6 max-w-7xl py-12">
           <div className="mb-6">
             <h2 className="text-3xl md:text-4xl font-extrabold text-gray-900">
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-amber-500 to-amber-600">
+              <span className="text-transparent bg-clip-text bg-linear-to-r from-amber-500 to-amber-600">
                 {title}
               </span>
             </h2>
@@ -61,7 +61,7 @@ export default function BestPracticesSection({
 
   /* ------- GRID VARIANT (LIGHT THEME) ------- */
   return (
-    <section style={{ backgroundColor: "#FFFAFA" }} className={className}>
+    <section style={{ backgroundColor: "#FFFFFF" }} className={className}>
       <div className="container mx-auto px-6 max-w-7xl py-14">
 
         <motion.div
@@ -72,7 +72,7 @@ export default function BestPracticesSection({
           className="text-center mb-10"
         >
           <h2 className="text-3xl md:text-4xl font-extrabold text-gray-900">
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-amber-500 to-amber-600">
+            <span className="text-transparent bg-clip-text bg-linear-to-r from-amber-500 to-amber-600">
               {title}
             </span>
           </h2>

@@ -26,6 +26,18 @@ import CorporateGurgaonPage from './pages/CorporateGurugaon';
 import CorporateBangalorePage from './pages/CorporateBanglore';
 import CorporateHyderabadPage from './pages/CorporateHyderabad';
 import CorporateMumbaiPage from './pages/CorporateMumbai';
+import LocalOutstationDelhi from './pages/localOutstation/Delhi';
+import LocalSpotRentalNoida from './pages/localOutstation/Noida';
+import LocalSpotRentalGurugram from './pages/localOutstation/Gurugaon';
+import LongTermFixedRentalDelhi from './pages/LongFixRental/Delhi';
+import LongTermFixedRentalNoida from './pages/LongFixRental/Noida';
+import AirportTransfersDelhi from './pages/AirportTransfer/Delhi';
+import LongTermFixedRentalGurugram from './pages/LongFixRental/Gurugram';
+import AirportTransfersNoida from './pages/AirportTransfer/Noida';
+import AirportTransfersGurugram from './pages/AirportTransfer/Gurugram';
+import MICEDelhi from './pages/MICE/Delhi';
+import MICENoida from './pages/MICE/Noida';
+import MICEGurugram from './pages/MICE/Gurugram';
 
 
 export default function App() {
@@ -49,12 +61,24 @@ export default function App() {
           <Route path="/airport-transfer" element={<AirportTransferPage />} />
           <Route path="/out-station" element={<OutstationTransferPage />} />
           <Route path="/wedding-car" element={<WeddingCar />} />
-          <Route path="/corporate/corporate-in-delhi" element={<CorporateDelhiPage />} />
-          <Route path="/corporate/corporate-in-noida" element={<CorporateNoidaPage />} />
-          <Route path="/corporate/corporate-in-gurugaon" element={<CorporateGurgaonPage />} />
-          <Route path="/corporate/corporate-in-banglore" element={<CorporateBangalorePage />} />
-          <Route path="/corporate/corporate-in-hyderabad" element={<CorporateHyderabadPage/>} />
-          <Route path="/corporate/corporate-in-mumbai" element={<CorporateMumbaiPage/>} />
+          <Route path="/corporate/corporate-service-in-delhi" element={<CorporateDelhiPage />} />
+          <Route path="/corporate/corporate-service-in-noida" element={<CorporateNoidaPage />} />
+          <Route path="/corporate/corporate-service-in-gurugaon" element={<CorporateGurgaonPage />} />
+          <Route path="/corporate/corporate-service-in-banglore" element={<CorporateBangalorePage />} />
+          <Route path="/corporate/corporate-service-in-hyderabad" element={<CorporateHyderabadPage/>} />
+          <Route path="/corporate/corporate-service-in-mumbai" element={<CorporateMumbaiPage/>} />
+          <Route path="/services/spot-rentals/delhi" element={<LocalOutstationDelhi/>} />
+          <Route path="/services/spot-rentals/noida" element={<LocalSpotRentalNoida/>} />
+          <Route path="/services/spot-rentals/gurugram" element={<LocalSpotRentalGurugram/>} />
+          <Route path="/services/fixed-rentals/delhi" element={<LongTermFixedRentalDelhi/>} />
+          <Route path="/services/fixed-rentals/noida" element={<LongTermFixedRentalNoida/>} />
+          <Route path="/services/fixed-rentals/gurugram" element={<LongTermFixedRentalGurugram/>} />
+          <Route path="/services/airport-transfers/delhi" element={<AirportTransfersDelhi/>} />
+          <Route path="/services/airport-transfers/noida" element={<AirportTransfersNoida/>} />
+          <Route path="/services/airport-transfers/gurugram" element={<AirportTransfersGurugram/>} />
+          <Route path="/services/mice/delhi" element={<MICEDelhi/>} />
+          <Route path="/services/mice/noida" element={<MICENoida/>} />
+          <Route path="/services/mice/gurugram" element={<MICEGurugram/>} />
         </Routes>
         <FloatingContact/>
         <Footer />

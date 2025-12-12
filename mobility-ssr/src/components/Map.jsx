@@ -25,12 +25,8 @@ const GlobalAvailabilitySection = () => {
   ];
 
   return (
-    <div style={{ backgroundColor: "#FFFAFA" }} className="py-16">
+    <div style={{ backgroundColor: "#FFFFFF" }} className="py-4">
       <div className="container mx-auto px-6 max-w-7xl text-center">
-        <div className="flex items-center justify-center mb-6 gap-4">
-          {/* Using your uploaded logo path - tooling will convert local path to URL */}
-          <img src="/mnt/data/logo.png" alt="Taxi Tribe" className="h-10 object-contain" />
-        </div>
 
         <h2 className="text-3xl font-bold mb-4 text-gray-900">Now Serving Globally</h2>
         <p className="text-gray-600 mb-10 text-lg">
