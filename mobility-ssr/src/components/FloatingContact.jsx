@@ -2,10 +2,11 @@ import { useState } from "react";
 import emailjs from "emailjs-com";
 import { FaPhoneAlt, FaWhatsapp, FaEnvelope } from "react-icons/fa";
 
-// 👉 yahan apne real EmailJS IDs daal dena:
-const EMAILJS_PUBLIC_KEY = "YOUR_PUBLIC_KEY_HERE";
-const EMAILJS_SERVICE_ID = "YOUR_SERVICE_ID_HERE";
-const EMAILJS_TEMPLATE_ID = "YOUR_TEMPLATE_ID_HERE";
+/* === EmailJS credentials === */
+const EMAILJS_PUBLIC_KEY = "lc85WOgfXS2GGvIlW";
+const EMAILJS_SERVICE_ID = "service_goe734o";
+const EMAILJS_TEMPLATE_ID = "template_s1y5olw";
+/* =========================== */
 
 const FloatingContact = () => {
   const [open, setOpen] = useState(false);
@@ -19,47 +20,69 @@ const FloatingContact = () => {
     message: "",
   });
 
+  // field change handler
   const handleChange = (e) => {
     const { name, value } = e.target;
     setFormData((prev) => ({ ...prev, [name]: value }));
   };
 
+  // SUBMIT handler
   const handleSubmit = async (e) => {
     e.preventDefault();
     setLoading(true);
     setStatus({ type: "", message: "" });
 
+    // EmailJS payload (aliases added for template)
+    const payload = {
+      from_name: formData.from_name,
+      reply_to: formData.reply_to,
+      phone: formData.phone,
+      message: formData.message,
+
+      // Aliases, so EmailJS template {{name}}, {{email}} works
+      name: formData.from_name,
+      email: formData.reply_to,
+
+      time: new Date().toLocaleString(),
+      title: document.title || "TaxiTribe",
+    };
+
+    console.log("Email payload:", payload);
+
     try {
-      await emailjs.send(
+      const res = await emailjs.send(
         EMAILJS_SERVICE_ID,
         EMAILJS_TEMPLATE_ID,
-        formData,
+        payload,
         EMAILJS_PUBLIC_KEY
       );
 
-      setStatus({
-        type: "success",
-        message: "Thank you! We will contact you shortly.",
-      });
+      console.log("EmailJS result:", res);
+
+      setStatus({ type: "success", message: "Thank you! We will contact you shortly." });
+
       setFormData({
         from_name: "",
         reply_to: "",
         phone: "",
         message: "",
       });
+
+      setTimeout(() => {
+        setOpen(false);
+        setStatus({ type: "", message: "" });
+      }, 1500);
     } catch (error) {
       console.error("EmailJS error:", error);
+
       let msg = "Something went wrong. Please try again.";
 
-      if (error && (error.status === 412 || /Invalid grant/i.test(error.text || ""))) {
+      if (error?.status === 412 || /Invalid grant/i.test(error?.text || "")) {
         msg =
-          "Email issue (Gmail auth). Please reconnect Gmail in EmailJS dashboard or contact us by phone/WhatsApp.";
+          "Email sending failed (Gmail auth expired). Please reconnect Gmail inside EmailJS.";
       }
 
-      setStatus({
-        type: "error",
-        message: msg,
-      });
+      setStatus({ type: "error", message: msg });
     } finally {
       setLoading(false);
     }
@@ -67,292 +90,255 @@ const FloatingContact = () => {
 
   return (
     <>
-      {/* 🔹 DESKTOP VERSION – Left Side Vertical Buttons */}
-      <div className="hidden md:flex fixed right-4 top-1/2 translate-y-1/2 flex-col gap-4 z-50">
+      {/* ---------------- DESKTOP FLOATING ICONS ---------------- */}
+      <div className="hidden md:flex fixed right-4 top-1/2 -translate-y-1/2 flex-col gap-4 z-50">
+
         {/* Enquiry Button */}
         <button
           type="button"
           onClick={() => setOpen((prev) => !prev)}
-          className="group relative w-14 h-14 flex items-center justify-center rounded-full bg-gradient-to-br from-amber-400 to-orange-500 text-white shadow-xl hover:shadow-2xl hover:scale-110 transition-all duration-300"
-          aria-label="Enquiry"
+          className="group relative w-14 h-14 flex items-center justify-center 
+                     rounded-full bg-linear-to-br from-amber-400 to-orange-500 
+                     text-white shadow-xl hover:shadow-2xl hover:scale-110 
+                     transition-all duration-300"
         >
           <FaEnvelope className="text-xl" />
-          <span className="absolute left-16 whitespace-nowrap bg-gray-900 text-white text-xs px-3 py-1 rounded-md opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none">
-            Quick Enquiry
+          <span className="absolute right-16 bg-black text-white text-xs px-3 py-1 rounded-md opacity-0 group-hover:opacity-100 transition">
+            Enquiry
           </span>
         </button>
 
-        {/* Call Button */}
+        {/* Call */}
         <a
           href="tel:+917011438890"
-          className="group relative w-14 h-14 flex items-center justify-center rounded-full bg-gradient-to-br from-blue-500 to-blue-600 text-white shadow-xl hover:shadow-2xl hover:scale-110 transition-all duration-300 animate-pulse"
-          aria-label="Call"
+          className="group relative w-14 h-14 flex items-center justify-center 
+                     rounded-full bg-linear-to-br from-blue-500 to-blue-600 text-white 
+                     shadow-xl hover:scale-110 transition-all duration-300"
         >
           <FaPhoneAlt className="text-xl" />
-          <span className="absolute left-16 whitespace-nowrap bg-gray-900 text-white text-xs px-3 py-1 rounded-md opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none">
+          <span className="absolute right-16 bg-black text-white text-xs px-3 py-1 rounded-md opacity-0 group-hover:opacity-100 transition">
             Call Now
           </span>
         </a>
 
-        {/* WhatsApp Button */}
+        {/* WhatsApp */}
         <a
-          href="https://wa.me/917011438890?text=Hi%20TaxiTribe%2C%20I%20need%20a%20corporate%20car%20rental%20quote."
+          href="https://wa.me/917011438890?text=Hi%20TaxiTribe%2C%20I%20need%20a%20quote."
           target="_blank"
           rel="noopener noreferrer"
-          className="group relative w-14 h-14 flex items-center justify-center rounded-full bg-gradient-to-br from-green-400 to-green-600 text-white shadow-xl hover:shadow-2xl hover:scale-110 transition-all duration-300"
-          aria-label="WhatsApp"
+          className="group relative w-14 h-14 flex items-center justify-center 
+                     rounded-full bg-linear-to-br from-green-400 to-green-600 text-white 
+                     shadow-xl hover:scale-110 transition-all duration-300"
         >
           <FaWhatsapp className="text-2xl" />
-          <span className="absolute left-16 whitespace-nowrap bg-gray-900 text-white text-xs px-3 py-1 rounded-md opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none">
-            WhatsApp Us
+          <span className="absolute right-16 bg-black text-white text-xs px-3 py-1 rounded-md opacity-0 group-hover:opacity-100 transition">
+            WhatsApp
           </span>
         </a>
       </div>
 
-      {/* 🔹 MOBILE VERSION – Bottom Fixed Bar (3 Columns) */}
-      <div className="md:hidden fixed bottom-0 left-0 right-0 z-50 bg-white border-t-2 border-gray-200 shadow-2xl">
-        <div className="grid grid-cols-3 gap-0">
-          {/* Enquiry */}
+      {/* ---------------- MOBILE BOTTOM BAR ---------------- */}
+      <div className="md:hidden fixed bottom-0 left-0 right-0 z-50 bg-white border-t shadow-xl">
+        <div className="grid grid-cols-3 text-center">
           <button
-            type="button"
             onClick={() => setOpen((prev) => !prev)}
-            className="flex flex-col items-center justify-center py-3 bg-gradient-to-br from-amber-400 to-orange-500 text-white active:bg-orange-600 transition-all"
+            className="py-3 bg-linear-to-br from-amber-400 to-orange-500 text-white"
           >
-            <FaEnvelope className="text-xl mb-1" />
-            <span className="text-xs font-semibold">Enquiry</span>
+            <FaEnvelope className="text-xl mx-auto" />
+            <p className="text-xs">Enquiry</p>
           </button>
 
-          {/* Call */}
-          <a
-            href="tel:+917011438890"
-            className="flex flex-col items-center justify-center py-3 bg-gradient-to-br from-blue-500 to-blue-600 text-white active:bg-blue-700 transition-all"
-          >
-            <FaPhoneAlt className="text-xl mb-1 animate-pulse" />
-            <span className="text-xs font-semibold">Call</span>
+          <a href="tel:+917011438890" className="py-3 bg-blue-600 text-white">
+            <FaPhoneAlt className="text-xl mx-auto" />
+            <p className="text-xs">Call</p>
           </a>
 
-          {/* WhatsApp */}
           <a
-            href="https://wa.me/917011438890?text=Hi%20TaxiTribe%2C%20I%20need%20a%20corporate%20car%20rental%20quote."
+            href="https://wa.me/917011438890"
             target="_blank"
-            rel="noopener noreferrer"
-            className="flex flex-col items-center justify-center py-3 bg-gradient-to-br from-green-400 to-green-600 text-white active:bg-green-700 transition-all"
+            className="py-3 bg-green-600 text-white"
           >
-            <FaWhatsapp className="text-2xl mb-1" />
-            <span className="text-xs font-semibold">WhatsApp</span>
+            <FaWhatsapp className="text-xl mx-auto" />
+            <p className="text-xs">WhatsApp</p>
           </a>
         </div>
       </div>
 
-      {/* 🔹 DESKTOP – Slide-out Panel (Left Side) */}
-{/* 🔹 DESKTOP – Slide-out Panel (RIGHT Side) */}
-<div
-  className={`hidden md:block fixed top-1/2 right-0 -translate-y-1/2 z-50 transition-transform duration-300 ease-out
-  ${open ? "translate-x-0" : "translate-x-full"}`}
->
-  <div className="w-96 bg-white border-l-4 border-orange-500 rounded-l-3xl shadow-2xl p-6">
-    <div className="flex items-center justify-between mb-4">
-      <h3 className="text-lg font-bold text-gray-800 flex items-center gap-2">
-        <FaEnvelope className="text-orange-500" />
-        Quick Enquiry
-      </h3>
-      <button
-        type="button"
-        onClick={() => setOpen(false)}
-        className="text-2xl leading-none text-gray-400 hover:text-gray-800 transition"
-      >
-        &times;
-      </button>
-    </div>
-
-    <div className="space-y-4">
-      <div>
-        <label className="block mb-2 text-sm font-semibold text-gray-700">
-          Name*
-        </label>
-        <input
-          type="text"
-          name="from_name"
-          value={formData.from_name}
-          onChange={handleChange}
-          required
-          className="w-full px-4 py-3 text-sm border-2 border-gray-300 rounded-lg outline-none focus:border-orange-500 focus:ring-2 focus:ring-orange-200 transition"
-        />
-      </div>
-
-      <div>
-        <label className="block mb-2 text-sm font-semibold text-gray-700">
-          Email*
-        </label>
-        <input
-          type="email"
-          name="reply_to"
-          value={formData.reply_to}
-          onChange={handleChange}
-          required
-          className="w-full px-4 py-3 text-sm border-2 border-gray-300 rounded-lg outline-none focus:border-orange-500 focus:ring-2 focus:ring-orange-200 transition"
-        />
-      </div>
-
-      <div>
-        <label className="block mb-2 text-sm font-semibold text-gray-700">
-          Phone*
-        </label>
-        <input
-          type="tel"
-          name="phone"
-          value={formData.phone}
-          onChange={handleChange}
-          required
-          className="w-full px-4 py-3 text-sm border-2 border-gray-300 rounded-lg outline-none focus:border-orange-500 focus:ring-2 focus:ring-orange-200 transition"
-        />
-      </div>
-
-      <div>
-        <label className="block mb-2 text-sm font-semibold text-gray-700">
-          Requirement*
-        </label>
-        <textarea
-          name="message"
-          rows={4}
-          value={formData.message}
-          onChange={handleChange}
-          required
-          className="w-full px-4 py-3 text-sm border-2 border-gray-300 rounded-lg outline-none focus:border-orange-500 focus:ring-2 focus:ring-orange-200 transition resize-none"
-        />
-      </div>
-
-      <button
-        type="button"
-        onClick={handleSubmit}
-        disabled={loading}
-        className="w-full px-4 py-3 text-base font-bold text-white bg-gradient-to-r from-orange-500 to-amber-500 rounded-lg hover:from-orange-600 hover:to-amber-600 disabled:opacity-60 shadow-lg hover:shadow-xl transition-all"
-      >
-        {loading ? "Sending..." : "Submit Enquiry"}
-      </button>
-
-      {status.message && (
-        <p
-          className={`mt-2 text-sm font-semibold ${
-            status.type === "success" ? "text-green-600" : "text-red-600"
-          }`}
-        >
-          {status.message}
-        </p>
-      )}
-    </div>
-  </div>
-</div>
-
-
-      {/* 🔹 MOBILE – Bottom Slide-up Panel */}
+      {/* ---------------- DESKTOP SLIDE PANEL (RIGHT) ---------------- */}
       <div
-        className={`md:hidden fixed bottom-0 left-0 right-0 z-40 transition-transform duration-300 ease-out
-        ${open ? "translate-y-0" : "translate-y-full"}`}
+        className={`hidden md:block fixed top-1/2 right-0 -translate-y-1/2 z-50 transition-transform duration-300 ${
+          open ? "translate-x-0" : "translate-x-full"
+        }`}
       >
-        <div className="bg-white rounded-t-3xl shadow-2xl p-5 pb-24 max-h-[85vh] overflow-y-auto border-t-4 border-orange-500">
+        <div className="w-96 bg-white p-6 border-l-4 border-orange-500 rounded-l-3xl shadow-2xl">
           <div className="flex items-center justify-between mb-4">
-            <h3 className="text-base font-bold text-gray-800 flex items-center gap-2">
+            <h3 className="text-lg font-bold flex items-center gap-2">
               <FaEnvelope className="text-orange-500" />
               Quick Enquiry
             </h3>
-            <button
-              type="button"
-              onClick={() => setOpen(false)}
-              className="text-2xl leading-none text-gray-400 hover:text-gray-800"
-            >
+            <button onClick={() => setOpen(false)} className="text-2xl text-gray-400">
               &times;
             </button>
           </div>
 
-          <div className="space-y-3">
+          {/* FORM */}
+          <form onSubmit={handleSubmit} className="space-y-4">
+
             <div>
-              <label className="block mb-1 text-xs font-semibold text-gray-700">
-                Name*
-              </label>
+              <label className="text-sm">Full name *</label>
               <input
-                type="text"
                 name="from_name"
                 value={formData.from_name}
                 onChange={handleChange}
                 required
-                className="w-full px-3 py-2 text-sm border-2 border-gray-300 rounded-lg outline-none focus:border-orange-500 focus:ring-2 focus:ring-orange-200"
+                className="w-full px-4 py-3 border-2 border-gray-100 rounded-xl focus:border-orange-400 outline-none"
               />
             </div>
 
-            <div>
-              <label className="block mb-1 text-xs font-semibold text-gray-700">
-                Email*
-              </label>
-              <input
-                type="email"
-                name="reply_to"
-                value={formData.reply_to}
-                onChange={handleChange}
-                required
-                className="w-full px-3 py-2 text-sm border-2 border-gray-300 rounded-lg outline-none focus:border-orange-500 focus:ring-2 focus:ring-orange-200"
-              />
+            <div className="grid grid-cols-2 gap-3">
+
+              <div>
+                <label className="text-sm">Email *</label>
+                <input
+                  name="reply_to"
+                  type="email"
+                  value={formData.reply_to}
+                  onChange={handleChange}
+                  required
+                  className="w-full px-4 py-3 border-2 border-gray-100 rounded-xl focus:border-orange-400 outline-none"
+                />
+              </div>
+
+              <div>
+                <label className="text-sm">Phone *</label>
+                <input
+                  name="phone"
+                  value={formData.phone}
+                  onChange={handleChange}
+                  required
+                  className="w-full px-4 py-3 border-2 border-gray-100 rounded-xl focus:border-orange-400 outline-none"
+                />
+              </div>
+
             </div>
 
             <div>
-              <label className="block mb-1 text-xs font-semibold text-gray-700">
-                Phone*
-              </label>
-              <input
-                type="tel"
-                name="phone"
-                value={formData.phone}
-                onChange={handleChange}
-                required
-                className="w-full px-3 py-2 text-sm border-2 border-gray-300 rounded-lg outline-none focus:border-orange-500 focus:ring-2 focus:ring-orange-200"
-              />
-            </div>
-
-            <div>
-              <label className="block mb-1 text-xs font-semibold text-gray-700">
-                Requirement*
-              </label>
+              <label className="text-sm">Requirement *</label>
               <textarea
                 name="message"
-                rows={3}
+                rows={4}
                 value={formData.message}
                 onChange={handleChange}
                 required
-                className="w-full px-3 py-2 text-sm border-2 border-gray-300 rounded-lg outline-none focus:border-orange-500 focus:ring-2 focus:ring-orange-200 resize-none"
-              />
+                className="w-full px-4 py-3 border-2 border-gray-100 rounded-xl focus:border-orange-400 outline-none"
+              ></textarea>
             </div>
 
             <button
-              type="button"
-              onClick={handleSubmit}
+              type="submit"
               disabled={loading}
-              className="w-full px-4 py-3 text-sm font-bold text-white bg-gradient-to-r from-orange-500 to-amber-500 rounded-lg hover:from-orange-600 hover:to-amber-600 disabled:opacity-60 shadow-lg"
+              className="w-full py-3 text-white font-bold bg-linear-to-r from-orange-500 to-amber-500 rounded-lg"
             >
               {loading ? "Sending..." : "Submit Enquiry"}
             </button>
 
             {status.message && (
-              <p
-                className={`mt-2 text-xs font-semibold ${
-                  status.type === "success" ? "text-green-600" : "text-red-600"
-                }`}
-              >
+              <p className={`text-sm mt-1 ${status.type === "success" ? "text-green-600" : "text-red-500"}`}>
                 {status.message}
               </p>
             )}
-          </div>
+
+          </form>
         </div>
       </div>
 
-      {/* Mobile overlay backdrop */}
+      {/* ---------------- MOBILE SLIDE-UP PANEL ---------------- */}
       {open && (
         <div
-          className="md:hidden fixed inset-0 bg-black/50 z-30"
+          className="md:hidden fixed inset-0 bg-black/50 z-40"
           onClick={() => setOpen(false)}
-        />
+        ></div>
       )}
+
+      <div
+        className={`md:hidden fixed bottom-0 left-0 right-0 z-50 transition-transform duration-300 ${
+          open ? "translate-y-0" : "translate-y-full"
+        }`}
+      >
+        <div className="bg-white p-5 pb-24 rounded-t-3xl shadow-2xl border-t-4 border-orange-500 max-h-[85vh] overflow-y-auto">
+          <div className="flex justify-between items-center mb-3">
+            <h3 className="font-bold text-base flex items-center gap-2">
+              <FaEnvelope className="text-orange-500" /> Quick Enquiry
+            </h3>
+            <button className="text-2xl text-gray-400" onClick={() => setOpen(false)}>
+              &times;
+            </button>
+          </div>
+
+          {/* MOBILE FORM */}
+          <form onSubmit={handleSubmit} className="space-y-3">
+
+            <div>
+              <label className="text-xs">Full name *</label>
+              <input
+                name="from_name"
+                value={formData.from_name}
+                onChange={handleChange}
+                className="w-full px-3 py-2 border-2 border-gray-200 rounded-lg"
+              />
+            </div>
+
+            <div>
+              <label className="text-xs">Email *</label>
+              <input
+                name="reply_to"
+                type="email"
+                value={formData.reply_to}
+                onChange={handleChange}
+                className="w-full px-3 py-2 border-2 border-gray-200 rounded-lg"
+              />
+            </div>
+
+            <div>
+              <label className="text-xs">Phone *</label>
+              <input
+                name="phone"
+                value={formData.phone}
+                onChange={handleChange}
+                className="w-full px-3 py-2 border-2 border-gray-200 rounded-lg"
+              />
+            </div>
+
+            <div>
+              <label className="text-xs">Requirement *</label>
+              <textarea
+                name="message"
+                rows={3}
+                value={formData.message}
+                onChange={handleChange}
+                className="w-full px-3 py-2 border-2 border-gray-200 rounded-lg"
+              ></textarea>
+            </div>
+
+            <button
+              type="submit"
+              disabled={loading}
+              className="w-full py-3 text-white font-bold bg-amber-500 rounded-lg"
+            >
+              {loading ? "Sending..." : "Submit Enquiry"}
+            </button>
+
+            {status.message && (
+              <p className={`text-xs mt-1 ${status.type === "success" ? "text-green-600" : "text-red-500"}`}>
+                {status.message}
+              </p>
+            )}
+
+          </form>
+        </div>
+      </div>
     </>
   );
 };
 
-export default FloatingContact; 
+export default FloatingContact;

@@ -3,18 +3,19 @@ import { FaBars, FaTimes, FaCar, FaPhoneAlt } from "react-icons/fa";
 import { Link, useNavigate } from "react-router-dom";
 import { usePopup } from "./PopupContext";
 
-// const cityLinks = [
-//   ["Delhi", "/delhi"],
-//   ["Gurgaon", "/gurgaon"],
-//   ["Noida", "/noida"],
-//   ["Bangalore", "/bangalore"],
-//   ["Hyderabad", "/hyderabad"],
-//   ["Mumbai", "/mumbai"],
-// ];
+const statesList = [
+  ["Delhi", "/corporate/corporate-in-delhi"],
+  ["Noida", "/corporate/corporate-in-noida"],
+  ["Gurugram", "/corporate/corporate-in-gurugaon"],
+  ["Hyderabad", "/corporate/corporate-in-hyderabad"],
+  ["Bengaluru", "/corporate/corporate-in-banglore"],
+  ["Mumbai", "/corporate/corporate-in-mumbai"],
+];
 
 const Navbar = () => {
   const [open, setOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
+  const [mobileCorporateOpen, setMobileCorporateOpen] = useState(false);
   const { setShowPopup } = usePopup();
   const navigate = useNavigate();
 
@@ -62,7 +63,7 @@ const Navbar = () => {
           <div className="hidden lg:flex items-center space-x-8">
             {[
               ["Home", "/"],
-              ["Corporate", "/corporate-protocol"],
+              // Corporate will be rendered separately as a dropdown
               ["Our Fleet", "/our-fleet"],
               ["Services", "/services"],
               ["About", "/about-us"],
@@ -79,26 +80,31 @@ const Navbar = () => {
               </Link>
             ))}
 
-            {/* Cities Dropdown */}
-            {/* <div className="relative group">
-              <button className="flex items-center gap-1 text-gray-700 hover:text-black font-medium transition-all duration-300 relative">
-                Cities
-                <span className="text-xs">▼</span>
-                <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-amber-500 transition-all duration-300 group-hover:w-full"></span>
-              </button>
+            {/* Corporate Dropdown (Desktop) */}
+            <div className="relative group">
+              <div className="flex items-center gap-2 cursor-pointer">
+                <Link
+                  to="/corporate-protocol"
+                  className="text-gray-700 hover:text-black font-medium transition-all duration-300"
+                >
+                  Corporate
+                </Link>
+                <span className="text-xs text-gray-500">▼</span>
+              </div>
 
-              <div className="absolute right-0 mt-3 w-48 bg-white rounded-xl shadow-lg border border-gray-100 py-2 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200">
-                {cityLinks.map(([label, link]) => (
-                  <Link
+              <div className="absolute left-0 mt-3 w-56 bg-white rounded-xl shadow-lg border border-gray-100 py-2 opacity-0 invisible group-hover:opacity-100 group-hover:visible transform translate-y-1 group-hover:translate-y-0 transition-all duration-200">
+                {statesList.map(([label, link]) => (
+                  <a
                     key={label}
-                    to={link}
+                    href={link}
                     className="block px-4 py-2 text-sm text-gray-700 hover:bg-amber-50 hover:text-black"
+                    // links are dummy `#` as requested
                   >
                     {label}
-                  </Link>
+                  </a>
                 ))}
               </div>
-            </div> */}
+            </div>
 
             {/* CTA */}
             <Link
@@ -126,11 +132,7 @@ const Navbar = () => {
               className="text-gray-800 hover:text-amber-500 transition"
               aria-label="Toggle menu"
             >
-              {open ? (
-                <FaTimes className="text-2xl" />
-              ) : (
-                <FaBars className="text-2xl" />
-              )}
+              {open ? <FaTimes className="text-2xl" /> : <FaBars className="text-2xl" />}
             </button>
           </div>
         </div>
@@ -139,9 +141,7 @@ const Navbar = () => {
       {/* Mobile Menu Overlay */}
       <div
         className={`fixed inset-0 z-40 transition-all duration-300 lg:hidden ${
-          open
-            ? "bg-black/20 backdrop-blur-sm opacity-100"
-            : "opacity-0 pointer-events-none"
+          open ? "bg-black/20 backdrop-blur-sm opacity-100" : "opacity-0 pointer-events-none"
         }`}
       >
         <div
@@ -158,10 +158,7 @@ const Navbar = () => {
                   Taxi <span className="text-amber-500">Tribe</span>
                 </div>
               </div>
-              <button
-                onClick={toggleMenu}
-                className="text-gray-800 hover:text-amber-500"
-              >
+              <button onClick={toggleMenu} className="text-gray-800 hover:text-amber-500">
                 <FaTimes className="text-xl" />
               </button>
             </div>
@@ -170,7 +167,6 @@ const Navbar = () => {
             <div className="flex-1 p-6 space-y-6 overflow-y-auto">
               {[
                 ["Home", "/"],
-                ["Corporate", "/corporate-protocol"],
                 ["Our Fleet", "/our-fleet"],
                 ["Services", "/services"],
                 ["About", "/about-us"],
@@ -187,24 +183,29 @@ const Navbar = () => {
                 </Link>
               ))}
 
-              {/* Cities section */}
-              {/* <div className="pt-4 border-t border-gray-200">
-                <p className="text-xs font-semibold text-gray-500 uppercase mb-3">
-                  Cities We Serve
-                </p>
-                <div className="space-y-2">
-                  {cityLinks.map(([label, link]) => (
-                    <Link
+              {/* Mobile Corporate Accordion */}
+              <div className="pt-4 border-t border-gray-200">
+                <button
+                  className="w-full flex items-center justify-between text-gray-700 font-medium text-lg"
+                  onClick={() => setMobileCorporateOpen((s) => !s)}
+                  aria-expanded={mobileCorporateOpen}
+                >
+                  <span>Corporate</span>
+                  <span className="text-sm">{mobileCorporateOpen ? "▲" : "▼"}</span>
+                </button>
+
+                <div className={`mt-3 space-y-2 overflow-hidden transition-all duration-200 ${mobileCorporateOpen ? 'max-h-96' : 'max-h-0'}`}>
+                  {statesList.map(([label, link]) => (
+                    <a
                       key={label}
-                      to={link}
-                      className="block text-gray-600 hover:text-black text-sm font-medium transition-all duration-300 hover:translate-x-2"
-                      onClick={() => handleNavClick(link)}
+                      href={link}
+                      className="block text-gray-600 hover:text-black text-sm font-medium transition-all duration-300 px-2 py-2 rounded-md hover:bg-amber-50"
                     >
                       {label}
-                    </Link>
+                    </a>
                   ))}
                 </div>
-              </div> */}
+              </div>
 
               {/* Contact */}
               <div className="pt-6 border-t border-gray-200 space-y-4">
@@ -226,9 +227,7 @@ const Navbar = () => {
 
             {/* Footer */}
             <div className="p-6 border-t border-gray-200">
-              <p className="text-gray-500 text-sm text-center">
-                Premium Car Rental Service
-              </p>
+              <p className="text-gray-500 text-sm text-center">Premium Car Rental Service</p>
             </div>
           </div>
         </div>

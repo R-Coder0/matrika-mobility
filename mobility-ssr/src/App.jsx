@@ -20,6 +20,12 @@ import BlogPage from './pages/BlogPage';
 import BlogPostPage from './pages/BlogDetails';
 import WeddingCar from './pages/WeddingCar';
 import FloatingContact from './components/FloatingContact';
+import CorporateDelhiPage from './pages/CorporateDelhi';
+import CorporateNoidaPage from './pages/CorporateNoida';
+import CorporateGurgaonPage from './pages/CorporateGurugaon';
+import CorporateBangalorePage from './pages/CorporateBanglore';
+import CorporateHyderabadPage from './pages/CorporateHyderabad';
+import CorporateMumbaiPage from './pages/CorporateMumbai';
 
 
 export default function App() {
@@ -43,6 +49,12 @@ export default function App() {
           <Route path="/airport-transfer" element={<AirportTransferPage />} />
           <Route path="/out-station" element={<OutstationTransferPage />} />
           <Route path="/wedding-car" element={<WeddingCar />} />
+          <Route path="/corporate/corporate-in-delhi" element={<CorporateDelhiPage />} />
+          <Route path="/corporate/corporate-in-noida" element={<CorporateNoidaPage />} />
+          <Route path="/corporate/corporate-in-gurugaon" element={<CorporateGurgaonPage />} />
+          <Route path="/corporate/corporate-in-banglore" element={<CorporateBangalorePage />} />
+          <Route path="/corporate/corporate-in-hyderabad" element={<CorporateHyderabadPage/>} />
+          <Route path="/corporate/corporate-in-mumbai" element={<CorporateMumbaiPage/>} />
         </Routes>
         <FloatingContact/>
         <Footer />

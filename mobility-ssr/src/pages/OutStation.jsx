@@ -40,7 +40,7 @@ export default function OutstationTransferPage() {
   return (
     <div className="min-h-screen bg-gray-900 text-white">
       {/* Hero Section */}
-      <div className="relative bg-gradient-to-r from-gray-900 to-black py-24 px-4 overflow-hidden">
+      <div className="relative bg-linear-to-r from-gray-900 to-black py-24 px-4 overflow-hidden">
         <div className="max-w-7xl mx-auto text-center relative z-10">
           <h1 className="text-4xl md:text-5xl font-bold mb-6">
             Outstation <span className="text-amber-500">Transfer</span> Services
@@ -104,7 +104,7 @@ export default function OutstationTransferPage() {
       </div>
 
       {/* CTA Section */}
-      <div className="bg-gradient-to-r from-amber-500 to-amber-600 shadow-xl overflow-hidden">
+      <div className="bg-linear-to-r from-amber-500 to-amber-600 shadow-xl overflow-hidden">
         <div className="grid md:grid-cols-2">
           <div className="p-12">
             <h2 className="text-3xl font-bold mb-4">Ready for Your Outstation Journey?</h2>

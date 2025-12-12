@@ -1,27 +1,58 @@
-import React, { useState, useEffect } from "react";
-import emailjs from 'emailjs-com';
+import React, { useState, useEffect, useRef } from "react";
+import emailjs from "emailjs-com";
 
 export default function BookingDialog({ open, model, onOpenChange, onSubmit }) {
   const [formData, setFormData] = useState({
-    name: '',
-    email: '',
-    phone: '',
-    corporateName: '',
-    selectCity: '',
-    selectCountry: '',
-    message: ''
+    name: "",
+    email: "",
+    phone: "",
+    corporateName: "",
+    selectCity: "",
+    selectCountry: "",
+    message: ""
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitted, setSubmitted] = useState(false);
+  const dialogRef = useRef(null); // <-- ref to scrollable modal container
 
   useEffect(() => {
     if (model) {
-      setFormData(prev => ({
+      setFormData((prev) => ({
         ...prev,
         message: `Interested in booking: ${model}`
       }));
     }
   }, [model]);
+
+  // When modal opens -> lock body scroll, scroll modal to top and focus first input
+  useEffect(() => {
+    if (open) {
+      // lock background scrolling
+      const prevOverflow = document.body.style.overflow;
+      document.body.style.overflow = "hidden";
+
+      // small timeout to wait for DOM paint / keyboard on mobile
+      const t = setTimeout(() => {
+        if (dialogRef.current) {
+          // scroll modal content to top
+          dialogRef.current.scrollTo({ top: 0, behavior: "smooth" });
+
+          // focus first input (name)
+          const firstInput = dialogRef.current.querySelector('input[name="name"]');
+          if (firstInput) firstInput.focus({ preventScroll: true });
+        }
+      }, 50);
+
+      return () => {
+        clearTimeout(t);
+        // restore body overflow when modal closes
+        document.body.style.overflow = prevOverflow || "";
+      };
+    } else {
+      // cleanup if it closes
+      document.body.style.overflow = "";
+    }
+  }, [open]);
 
   const handleInputChange = (e) => {
     setFormData({
@@ -36,41 +67,40 @@ export default function BookingDialog({ open, model, onOpenChange, onSubmit }) {
 
     try {
       const result = await emailjs.send(
-        'service_goe734o', // Replace with your service ID
-        'template_1p60xx7', // Replace with your template ID
+        "service_goe734o", // Replace with your service ID
+        "template_1p60xx7", // Replace with your template ID
         {
           ...formData,
-          model: model || 'General Inquiry'
+          model: model || "General Inquiry"
         },
-         'lc85WOgfXS2GGvIlW' // Replace with your user ID
+        "lc85WOgfXS2GGvIlW" // Replace with your user ID
       );
 
-      console.log('Email sent successfully:', result.text);
-      
+      console.log("Email sent successfully:", result.text);
+
       setIsSubmitting(false);
       setSubmitted(true);
-      
+
       if (onSubmit) onSubmit(formData);
-      
+
       setFormData({
-        name: '',
-        email: '',
-        phone: '',
-        corporateName: '',
-        selectCity: '',
-        selectCountry: '',
-        message: ''
+        name: "",
+        email: "",
+        phone: "",
+        corporateName: "",
+        selectCity: "",
+        selectCountry: "",
+        message: ""
       });
 
       setTimeout(() => {
         setSubmitted(false);
         onOpenChange(false);
       }, 2000);
-      
     } catch (error) {
-      console.error('Error sending email:', error);
+      console.error("Error sending email:", error);
       setIsSubmitting(false);
-      
+
       // Fallback to original simulation if EmailJS fails
       setTimeout(() => {
         setIsSubmitting(false);
@@ -88,13 +118,18 @@ export default function BookingDialog({ open, model, onOpenChange, onSubmit }) {
 
   return (
     <div className="fixed inset-0 z-50 bg-black/30 backdrop-blur-sm flex items-center justify-center p-4 overflow-y-auto">
-      <div className="bg-white text-gray-800 rounded-3xl shadow-2xl w-full max-w-lg relative max-h-[90vh] overflow-y-auto">
+      <div
+        ref={dialogRef} // <-- ref here
+        className="bg-white text-gray-800 rounded-3xl shadow-2xl w-full max-w-lg relative max-h-[90vh] overflow-y-auto"
+      >
         {/* Decorative Header Background */}
         <div className="bg-linear-to-r from-yellow-400 via-amber-500 to-yellow-500 h-2 sticky top-0"></div>
 
         {/* Close Button */}
         <button
-          onClick={() => onOpenChange(false)}
+          onClick={() => {
+            onOpenChange(false);
+          }}
           className="absolute top-4 right-4 text-gray-400 hover:text-gray-600 text-2xl font-light transition-colors duration-200 z-10"
           aria-label="Close popup"
         >
@@ -129,6 +164,7 @@ export default function BookingDialog({ open, model, onOpenChange, onSubmit }) {
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-3 md:gap-4">
                   <div className="relative">
                     <input
+                      autoComplete="name"
                       type="text"
                       name="name"
                       value={formData.name}
@@ -227,7 +263,7 @@ export default function BookingDialog({ open, model, onOpenChange, onSubmit }) {
                       Processing...
                     </div>
                   ) : (
-                    'Get Quote'
+                    "Get Quote"
                   )}
                 </button>
               </form>
