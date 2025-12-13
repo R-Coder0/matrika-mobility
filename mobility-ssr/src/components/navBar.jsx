@@ -94,7 +94,7 @@ const Navbar = () => {
             <img
               src="/logo.png"
               alt="Taxi Tribe"
-              className="h-14 w-auto group-hover:opacity-80 transition duration-300"
+              className="h-8 md:h-14 w-auto group-hover:opacity-80 transition duration-300"
             />
           </Link>
           

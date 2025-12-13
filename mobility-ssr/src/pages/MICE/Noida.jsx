@@ -36,7 +36,7 @@ export default function MICENoida() {
             </Helmet>
 
             {/* ================= HERO ================= */}
-            <div className="relative min-h-[70vh] flex items-center">
+            <div className="relative min-h-[70vh] pt-28 md:pt-14 pb-24 md:pb-14 flex items-center">
                 <img
                     src="https://images.unsplash.com/photo-1511578314322-379afb476865?auto=format&fit=crop&w=2000&q=70"
                     alt="MICE Transport Services in Noida"

@@ -36,7 +36,7 @@ export default function AirportTransfersGurugram() {
       </Helmet>
 
       {/* ================= HERO ================= */}
-      <div className="relative min-h-[70vh] flex items-center">
+            <div className="relative min-h-[70vh] pt-28 md:pt-14 pb-24 md:pb-14 flex items-center">
         <img
           src="https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?auto=format&fit=crop&w=2000&q=70"
           alt="Airport Transfers in Gurugram"

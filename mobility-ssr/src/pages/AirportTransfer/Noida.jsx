@@ -36,7 +36,7 @@ export default function AirportTransfersNoida() {
       </Helmet>
 
       {/* ================= HERO ================= */}
-      <div className="relative min-h-[70vh] flex items-center">
+            <div className="relative min-h-[70vh] pt-28 md:pt-14 pb-24 md:pb-14 flex items-center">
         <img
           src="https://images.unsplash.com/photo-1504384308090-c894fdcc538d?auto=format&fit=crop&w=2000&q=70"
           alt="Airport Transfers in Noida"

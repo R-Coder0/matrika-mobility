@@ -37,7 +37,7 @@ export default function LongTermFixedRentalGurugram() {
             </Helmet>
 
             {/* ================= HERO ================= */}
-            <div className="relative min-h-[70vh] flex items-center">
+            <div className="relative min-h-[70vh] pt-28 md:pt-14 pb-24 md:pb-14 flex items-center">
                 <img
                     src="https://images.unsplash.com/photo-1503376780353-7e6692767b70?auto=format&fit=crop&w=2000&q=70"
                     alt="Long-Term Fixed Car Rentals in Gurugram"

@@ -68,7 +68,8 @@ const Footer = () => {
       {/* Location Cards Section */}
       <div className="container mx-auto px-6 py-8">
         <h3 className="text-2xl font-bold text-white text-center mb-8">Our Locations</h3>
-        <div className="grid grid-cols-2 md:grid-cols-3 gap-6">
+<div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
+
 
           {/* Head Office Card */}
           <div className="bg-linear-to-br from-gray-900 to-black border border-gray-700 rounded-lg p-6 hover:border-amber-400 transition-all duration-300">
