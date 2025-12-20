@@ -7,7 +7,7 @@ const CITIES = [
   { label: "Delhi", slug: "delhi" },
   { label: "Noida", slug: "noida" },
   { label: "Gurugram", slug: "gurugram" },
-  { label: "Mumbai", slug: "mumbai" },
+  // { label: "Mumbai", slug: "mumbai" },
 ];
 
 export default function Navbar() {

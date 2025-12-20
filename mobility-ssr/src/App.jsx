@@ -41,7 +41,6 @@ export default function App() {
   <Route path="/delhi" element={<Home />} />
   <Route path="/noida" element={<Home />} />
   <Route path="/gurugram" element={<Home />} />
-  <Route path="/mumbai" element={<Home />} />
   {/* STATIC */}
   <Route path="/about-us" element={<AboutPage />} />
   <Route path="/our-fleet" element={<FleetPage />} />

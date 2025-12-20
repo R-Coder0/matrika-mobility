@@ -346,17 +346,55 @@ export default function CorporateNoidaPage() {
                 <BestPracticesSection />
 
                 {/* FAQs */}
-                <section id="faqs" className="mt-12 mb-12">
-                    <h3 className="text-2xl font-semibold text-center mb-6">Frequently Asked Questions</h3>
-                    <div className="max-w-[900px] mx-auto space-y-4">
-                        {faqs.map((f, i) => (
-                            <details key={i} className="bg-white border rounded-lg p-4">
-                                <summary className="font-medium cursor-pointer">{f.q}</summary>
-                                <p className="mt-2 text-gray-700">{f.a}</p>
-                            </details>
-                        ))}
-                    </div>
-                </section>
+<section id="faqs" className="mt-14 mb-14">
+  <h3 className="text-2xl font-semibold text-center mb-8">
+    Frequently Asked Questions
+  </h3>
+
+  <div className="max-w-[1300px] mx-auto px-4">
+    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+      {faqs.map((f, i) => (
+        <details
+          key={i}
+          className="
+            group
+            bg-white
+            border
+            rounded-xl
+            p-5
+            shadow-sm
+            hover:shadow-md
+            transition
+          "
+        >
+          <summary
+            className="
+              font-medium
+              cursor-pointer
+              list-none
+              flex
+              items-start
+              justify-between
+              gap-3
+            "
+          >
+            <span className="text-gray-900">{f.q}</span>
+
+            {/* Arrow */}
+            <span className="text-amber-500 transform transition-transform duration-300 group-open:rotate-180">
+              ▼
+            </span>
+          </summary>
+
+          <p className="mt-3 text-sm text-gray-700 leading-relaxed">
+            {f.a}
+          </p>
+        </details>
+      ))}
+    </div>
+  </div>
+</section>
+
 
                 {/* FINAL CTA */}
                 <div className="bg-linear-to-r from-amber-500 to-amber-600 shadow-xl overflow-hidden">

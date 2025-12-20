@@ -4,21 +4,28 @@ import { CITIES, SERVICES } from "../config/importantLinksConfig";
 export default function ImportantLinks() {
   return (
     <section className="bg-gray-50 border-t border-gray-200">
-      <div className="max-w-[1400px] mx-auto px-4 py-10">
+      <div className="max-w-[1400px] mx-auto px-4 py-14">
 
-        <h3 className="text-xl font-bold text-gray-800 mb-6">
+        {/* Title */}
+        <h3 className="text-2xl font-bold text-gray-900 mb-10">
           Important Links
         </h3>
 
-        <div className="space-y-6">
+        {/* Services Grid */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
 
           {SERVICES.map((service) => (
-            <div key={service.label}>
-              <h4 className="text-sm font-semibold text-gray-600 mb-2">
+            <div
+              key={service.label}
+              className="bg-white border rounded-xl p-6 shadow-sm hover:shadow-md transition"
+            >
+              {/* Service Title */}
+              <h4 className="text-base font-semibold text-gray-800 mb-4">
                 {service.label}
               </h4>
 
-              <div className="flex flex-wrap gap-x-4 gap-y-2 text-sm">
+              {/* City Links */}
+              <div className="flex flex-wrap gap-2">
                 {CITIES.map((city) => {
                   const url = `/${service.slug.replace("{city}", city)}`;
 
@@ -26,9 +33,18 @@ export default function ImportantLinks() {
                     <Link
                       key={city}
                       to={url}
-                      className="text-gray-600 hover:text-amber-600 transition"
+                      className="
+                        text-sm
+                        px-3 py-1.5
+                        rounded-full
+                        bg-gray-100
+                        text-gray-700
+                        hover:bg-amber-100
+                        hover:text-amber-700
+                        transition
+                      "
                     >
-                      {service.label} in {city.charAt(0).toUpperCase() + city.slice(1)}
+                      {city.charAt(0).toUpperCase() + city.slice(1)}
                     </Link>
                   );
                 })}

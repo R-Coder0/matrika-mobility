@@ -19,6 +19,32 @@ import BestPracticesSection from "../../components/BestPractise";
 
 export default function LocalSpotRentalGurugram() {
     const [dialogOpen, setDialogOpen] = useState(false);
+        const faqs = [
+        {
+            q: "Do you provide monthly billing for corporate clients?",
+            a: "Yes — we offer consolidated monthly billing and customizable MIS reports tailored to your finance team.",
+        },
+        {
+            q: "Do you provide monthly billing for corporate clients?",
+            a: "Yes — we offer consolidated monthly billing and customizable MIS reports tailored to your finance team.",
+        },
+        {
+            q: "Do you provide monthly billing for corporate clients?",
+            a: "Yes — we offer consolidated monthly billing and customizable MIS reports tailored to your finance team.",
+        },
+        {
+            q: "Do you provide monthly billing for corporate clients?",
+            a: "Yes — we offer consolidated monthly billing and customizable MIS reports tailored to your finance team.",
+        },
+        {
+            q: "Can I add multiple employees under one account?",
+            a: "Absolutely. Our corporate plans support multiple users with role-based access and individual reporting.",
+        },
+        {
+            q: "What is your cancellation policy for corporate bookings?",
+            a: "Cancellation windows vary by product. For standard corporate rentals, cancellations made 24 hours before pickup are free — please check the SLA for event/large bookings.",
+        },
+    ];
 
     return (
         <section className="bg-[#FFFFFF] text-gray-900">
@@ -236,59 +262,54 @@ export default function LocalSpotRentalGurugram() {
             <BestPracticesSection />
 
             {/* ================= FAQ ================= */}
-            <div className="container mx-auto px-6 py-20">
-                <h2 className="text-3xl font-bold mb-10 text-center">
+            <section id="faqs" className="mt-14 mb-14">
+                <h3 className="text-2xl font-semibold text-center mb-8">
                     Frequently Asked Questions
-                </h2>
+                </h3>
 
-                <div className="max-w-3xl mx-auto space-y-4">
-                    {[
-                        {
-                            q: "Which areas do you cover in Gurugram?",
-                            a: "We cover all sectors of Gurugram including Cyber City, Golf Course Road, Udyog Vihar and nearby NCR areas.",
-                        },
-                        {
-                            q: "Do you offer one-way outstation trips from Gurugram?",
-                            a: "Yes, both one-way and round-trip outstation rentals are available.",
-                        },
-                        {
-                            q: "Are chauffeurs trained for corporate travel?",
-                            a: "Yes, all chauffeurs are trained to handle corporate and executive travel requirements.",
-                        },
-                        {
-                            q: "Is pricing transparent?",
-                            a: "Yes, pricing is fully transparent with GST-compliant invoices.",
-                        },
-                    ].map((item, i) => {
-                        const [open, setOpen] = useState(false);
-
-                        return (
-                            <div
+                <div className="max-w-[1500px] mx-auto px-4">
+                    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                        {faqs.map((f, i) => (
+                            <details
                                 key={i}
-                                className="border border-gray-200 rounded-xl overflow-hidden"
+                                className="
+            group
+            bg-white
+            border
+            rounded-xl
+            p-5
+            shadow-sm
+            hover:shadow-md
+            transition
+          "
                             >
-                                <button
-                                    onClick={() => setOpen(!open)}
-                                    className="w-full flex justify-between items-center p-5 text-left font-semibold"
+                                <summary
+                                    className="
+              font-medium
+              cursor-pointer
+              list-none
+              flex
+              items-start
+              justify-between
+              gap-3
+            "
                                 >
-                                    <span>{item.q}</span>
-                                    <FaQuestionCircle
-                                        className={`text-amber-600 transition ${
-                                            open ? "rotate-180" : ""
-                                        }`}
-                                    />
-                                </button>
+                                    <span className="text-gray-900">{f.q}</span>
 
-                                {open && (
-                                    <div className="px-5 pb-5 text-gray-700 text-sm leading-relaxed">
-                                        {item.a}
-                                    </div>
-                                )}
-                            </div>
-                        );
-                    })}
+                                    {/* Arrow */}
+                                    <span className="text-amber-500 transform transition-transform duration-300 group-open:rotate-180">
+                                        ▼
+                                    </span>
+                                </summary>
+
+                                <p className="mt-3 text-sm text-gray-700 leading-relaxed">
+                                    {f.a}
+                                </p>
+                            </details>
+                        ))}
+                    </div>
                 </div>
-            </div>
+            </section>
 
             {/* ================= FINAL CTA ================= */}
             <div className="container mx-auto px-6 pb-24">

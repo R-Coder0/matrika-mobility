@@ -112,6 +112,18 @@ export default function CorporateDelhiPage() {
             a: "Yes — we offer consolidated monthly billing and customizable MIS reports tailored to your finance team.",
         },
         {
+            q: "Do you provide monthly billing for corporate clients?",
+            a: "Yes — we offer consolidated monthly billing and customizable MIS reports tailored to your finance team.",
+        },
+        {
+            q: "Do you provide monthly billing for corporate clients?",
+            a: "Yes — we offer consolidated monthly billing and customizable MIS reports tailored to your finance team.",
+        },
+        {
+            q: "Do you provide monthly billing for corporate clients?",
+            a: "Yes — we offer consolidated monthly billing and customizable MIS reports tailored to your finance team.",
+        },
+        {
             q: "Can I add multiple employees under one account?",
             a: "Absolutely. Our corporate plans support multiple users with role-based access and individual reporting.",
         },
@@ -238,64 +250,64 @@ export default function CorporateDelhiPage() {
                 </section>
 
                 {/* TAILORED SERVICES */}
-{/* TAILORED SERVICES */}
-<section className="mb-16">
-  <h3 className="text-2xl font-semibold text-center mb-10">
-    Tailored Corporate Services
-  </h3>
+                {/* TAILORED SERVICES */}
+                <section className="mb-16">
+                    <h3 className="text-2xl font-semibold text-center mb-10">
+                        Tailored Corporate Services
+                    </h3>
 
-  <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-    {services.map((s, i) => (
-      <article
-        key={i}
-        className="group bg-white rounded-2xl border border-gray-200 shadow-sm hover:shadow-lg transition-all duration-300 flex flex-col overflow-hidden"
-      >
-        {/* IMAGE */}
-        <div className="relative h-44 overflow-hidden">
-          <img
-            src={s.image}
-            alt={s.title}
-            className="w-full h-full object-cover transform group-hover:scale-105 transition duration-500"
-            loading="lazy"
-          />
-        </div>
+                    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+                        {services.map((s, i) => (
+                            <article
+                                key={i}
+                                className="group bg-white rounded-2xl border border-gray-200 shadow-sm hover:shadow-lg transition-all duration-300 flex flex-col overflow-hidden"
+                            >
+                                {/* IMAGE */}
+                                <div className="relative h-44 overflow-hidden">
+                                    <img
+                                        src={s.image}
+                                        alt={s.title}
+                                        className="w-full h-full object-cover transform group-hover:scale-105 transition duration-500"
+                                        loading="lazy"
+                                    />
+                                </div>
 
-        {/* CONTENT */}
-        <div className="flex-1 p-5 flex flex-col">
-          <div className="flex items-start gap-3 mb-3">
-            <div className="w-10 h-10 rounded-lg bg-amber-50 flex items-center justify-center shrink-0">
-              {s.icon}
-            </div>
-            <h4 className="text-lg font-semibold leading-snug">
-              {s.title}
-            </h4>
-          </div>
+                                {/* CONTENT */}
+                                <div className="flex-1 p-5 flex flex-col">
+                                    <div className="flex items-start gap-3 mb-3">
+                                        <div className="w-10 h-10 rounded-lg bg-amber-50 flex items-center justify-center shrink-0">
+                                            {s.icon}
+                                        </div>
+                                        <h4 className="text-lg font-semibold leading-snug">
+                                            {s.title}
+                                        </h4>
+                                    </div>
 
-          <p className="text-sm text-gray-700 mb-4">
-            {s.description}
-          </p>
+                                    <p className="text-sm text-gray-700 mb-4">
+                                        {s.description}
+                                    </p>
 
-          <ul className="text-sm text-gray-700 space-y-1 mb-6">
-            {s.features.map((f, idx) => (
-              <li key={idx} className="flex items-start">
-                <span className="text-amber-500 mr-2 mt-1">•</span>
-                <span>{f}</span>
-              </li>
-            ))}
-          </ul>
+                                    <ul className="text-sm text-gray-700 space-y-1 mb-6">
+                                        {s.features.map((f, idx) => (
+                                            <li key={idx} className="flex items-start">
+                                                <span className="text-amber-500 mr-2 mt-1">•</span>
+                                                <span>{f}</span>
+                                            </li>
+                                        ))}
+                                    </ul>
 
-          {/* CTA */}
-          <button
-            onClick={() => setDialogOpen(true)}
-            className="mt-auto inline-flex items-center gap-2 text-amber-600 font-medium hover:text-amber-700 transition"
-          >
-            Get Quote <ArrowRight className="h-4 w-4" />
-          </button>
-        </div>
-      </article>
-    ))}
-  </div>
-</section>
+                                    {/* CTA */}
+                                    <button
+                                        onClick={() => setDialogOpen(true)}
+                                        className="mt-auto inline-flex items-center gap-2 text-amber-600 font-medium hover:text-amber-700 transition"
+                                    >
+                                        Get Quote <ArrowRight className="h-4 w-4" />
+                                    </button>
+                                </div>
+                            </article>
+                        ))}
+                    </div>
+                </section>
 
 
                 {/* WHY CHOOSE — redesigned (two-column story + 6 polished cards) */}
@@ -361,34 +373,72 @@ export default function CorporateDelhiPage() {
                 <BestPracticesSection />
 
                 {/* FAQs */}
-                <section id="faqs" className="mt-12 mb-12">
-                    <h3 className="text-2xl font-semibold text-center mb-6">Frequently Asked Questions</h3>
-                    <div className="max-w-[900px] mx-auto space-y-4">
-                        {faqs.map((f, i) => (
-                            <details key={i} className="bg-white border rounded-lg p-4">
-                                <summary className="font-medium cursor-pointer">{f.q}</summary>
-                                <p className="mt-2 text-gray-700">{f.a}</p>
-                            </details>
-                        ))}
-                    </div>
-                </section>
+<section id="faqs" className="mt-14 mb-14">
+  <h3 className="text-2xl font-semibold text-center mb-8">
+    Frequently Asked Questions
+  </h3>
+
+  <div className="max-w-[1500px] mx-auto px-4">
+    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+      {faqs.map((f, i) => (
+        <details
+          key={i}
+          className="
+            group
+            bg-white
+            border
+            rounded-xl
+            p-5
+            shadow-sm
+            hover:shadow-md
+            transition
+          "
+        >
+          <summary
+            className="
+              font-medium
+              cursor-pointer
+              list-none
+              flex
+              items-start
+              justify-between
+              gap-3
+            "
+          >
+            <span className="text-gray-900">{f.q}</span>
+
+            {/* Arrow */}
+            <span className="text-amber-500 transform transition-transform duration-300 group-open:rotate-180">
+              ▼
+            </span>
+          </summary>
+
+          <p className="mt-3 text-sm text-gray-700 leading-relaxed">
+            {f.a}
+          </p>
+        </details>
+      ))}
+    </div>
+  </div>
+</section>
+
 
                 {/* FINAL CTA */}
-                        {/* CTA Section */}
-        <div className="bg-linear-to-r from-amber-500 to-amber-600 shadow-xl overflow-hidden">
-          <div className="grid md:grid-cols-2">
-            <div className="p-12">
-              <h2 className="text-2xl font-bold mb-4">Ready to elevate your corporate travel</h2>
-              <p className="text-lg mb-8">
-                “Guaranteed 10% savings on your current annual spends”
-              </p>
-              <button onClick={() => setDialogOpen(true)} className="bg-black text-white px-8 py-3 rounded-lg font-bold hover:bg-gray-900 transition-colors">
-                Get Guote
-              </button>
-            </div>
-            <div className="hidden md:block bg-[url('https://images.unsplash.com/photo-1450101499163-c8848c66ca85?auto=format&fit=crop&w=800')] bg-cover bg-center"></div>
-          </div>
-        </div>
+                {/* CTA Section */}
+                <div className="bg-linear-to-r from-amber-500 to-amber-600 shadow-xl overflow-hidden">
+                    <div className="grid md:grid-cols-2">
+                        <div className="p-12">
+                            <h2 className="text-2xl font-bold mb-4">Ready to elevate your corporate travel</h2>
+                            <p className="text-lg mb-8">
+                                “Guaranteed 10% savings on your current annual spends”
+                            </p>
+                            <button onClick={() => setDialogOpen(true)} className="bg-black text-white px-8 py-3 rounded-lg font-bold hover:bg-gray-900 transition-colors">
+                                Get Guote
+                            </button>
+                        </div>
+                        <div className="hidden md:block bg-[url('https://images.unsplash.com/photo-1450101499163-c8848c66ca85?auto=format&fit=crop&w=800')] bg-cover bg-center"></div>
+                    </div>
+                </div>
             </main>
 
             {/* Booking Dialog */}
@@ -404,3 +454,4 @@ export default function CorporateDelhiPage() {
         </div>
     );
 }
+    
