@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { Briefcase, Users, Globe, ArrowRight, Heart } from "lucide-react";
-import BookingDialog from "../components/BookingCar";
+import BookingDialog from "../../components/BookingCar";
 import {
     FaHandshake,
     FaCogs,
@@ -9,15 +9,15 @@ import {
     FaCalendarAlt,
     FaUsers,
 } from "react-icons/fa";
-import SOPsSection from "./SOPsSection";
-import BestPracticesSection from "../components/BestPractise";
+import SOPsSection from "../SOPsSection";
+import BestPracticesSection from "../../components/BestPractise";
 import { Helmet } from "react-helmet-async";
 
 /**
- * CorporateHyderabadPage — content adapted for Hyderabad
+ * CorporateGurgaonPage — content adapted from Delhi/Noida -> Gurgaon
  */
 
-export default function CorporateHyderabadPage() {
+export default function CorporateGurgaonPage() {
     const [dialogOpen, setDialogOpen] = useState(false);
 
     const services = [
@@ -25,7 +25,7 @@ export default function CorporateHyderabadPage() {
             icon: <Briefcase className="h-8 w-8 text-amber-500" />,
             title: "Executive Corporate Travel",
             description:
-                "SLA-backed rentals for executives — punctual, discreet and secure across Hyderabad's business corridors.",
+                "SLA-backed rentals for executives — punctual, discreet and secure across Gurgaon and its business corridors.",
             image: "/corporate/ect.webp",
             features: [
                 "Hourly, daily & multi-day rental options",
@@ -37,7 +37,7 @@ export default function CorporateHyderabadPage() {
             icon: <Users className="h-8 w-8 text-amber-500" />,
             title: "Event & Conference Transportation",
             description:
-                "End-to-end fleet coordination for conferences, exhibitions and corporate events in Hyderabad's commercial and tech hubs.",
+                "End-to-end fleet coordination for conferences, exhibitions and corporate events in Gurgaon’s commercial hubs.",
             image: "/corporate/eact.jpg",
             features: [
                 "Group shuttles & minibuses",
@@ -48,7 +48,7 @@ export default function CorporateHyderabadPage() {
         {
             icon: <Heart className="h-8 w-8 text-amber-500" />,
             title: "Wedding & Special Occasion Cars",
-            description: "Premium and vintage vehicles for high-profile ceremonies and celebrations across Hyderabad.",
+            description: "Premium and vintage vehicles for high-profile ceremonies and celebrations across Gurgaon.",
             image: "/corporate/wsoc.jpg",
             features: [
                 "Themed vehicle decor",
@@ -59,7 +59,7 @@ export default function CorporateHyderabadPage() {
         {
             icon: <Globe className="h-8 w-8 text-amber-500" />,
             title: "Airport Transfers",
-            description: "Flight-aware pickups with meet-and-greet and baggage assistance for passengers to/from Rajiv Gandhi International Airport (Shamshabad).",
+            description: "Flight-aware pickups with meet-and-greet and baggage assistance for passengers in Gurgaon and surrounding areas.",
             image: "/corporate/at.jpg",
             features: [
                 "Real-time flight tracking",
@@ -120,12 +120,12 @@ export default function CorporateHyderabadPage() {
     return (
         <div className="min-h-screen bg-[#FFFAFA] text-black">
             <Helmet>
-                <title>Best Corporate Car Rental in Hyderabad | TaxiTribe</title>
+                <title>Best Corporate Car Rental in Gurgaon | TaxiTribe</title>
                 <meta
                     name="description"
-                    content="Best corporate car rental in Hyderabad — SLA-backed corporate programs, airport transfers and event transportation with dedicated account managers."
+                    content="Best corporate car rental in Gurgaon — SLA-backed corporate programs, airport transfers and event transportation with dedicated account managers."
                 />
-                <link rel="canonical" href="https://taxitribe.in/corporate/corporate-in-hyderabad" />
+                <link rel="canonical" href="https://taxitribe.in/corporate/corporate-in-gurgaon" />
             </Helmet>
 
             {/* HERO */}
@@ -134,10 +134,10 @@ export default function CorporateHyderabadPage() {
                     className="h-56 md:h-100 bg-center bg-cover relative"
                     style={{
                         backgroundImage:
-                            "linear-gradient(rgba(0,0,0,0.55), rgba(0,0,0,0.55)), url('/hyderabad.png')",
+                            "linear-gradient(rgba(0,0,0,0.55), rgba(0,0,0,0.55)), url('/gurgaon.png')",
                     }}
                     role="img"
-                    aria-label="Corporate car rental in Hyderabad"
+                    aria-label="Corporate car rental in Gurgaon"
                 >
                     <div className="max-w-[1500px] mx-auto px-6 h-full flex items-center">
                         <div className="w-full md:w-2/3 lg:w-1/2 text-white z-10">
@@ -151,16 +151,16 @@ export default function CorporateHyderabadPage() {
                                         <a href="/corporate-protocol" className="hover:underline">Corporate</a>
                                     </li>
                                     <li className="text-gray-400">/</li>
-                                    <li className="font-semibold text-amber-300">Hyderabad</li>
+                                    <li className="font-semibold text-amber-300">Gurgaon</li>
                                 </ol>
                             </nav>
 
                             <h1 className="text-2xl md:text-3xl font-bold leading-snug">
-                                Best Corporate Car Rental in Hyderabad
+                                Best Corporate Car Rental in Gurgaon
                             </h1>
 
                             <p className="mt-3 text-sm md:text-base text-gray-200 max-w-xl">
-                                SLA-backed corporate car rental programs across Hyderabad — HITEC City, Gachibowli, Financial District, Kukatpally and Shamshabad covered with dedicated account managers and real-time tracking.
+                                SLA-backed corporate car rental programs across Gurgaon — Cyber City, MG Road, Golf Course Road and NH-48 covered with dedicated account managers and real-time tracking.
                             </p>
 
                             <div className="mt-4 flex items-center gap-3">
@@ -184,9 +184,10 @@ export default function CorporateHyderabadPage() {
                     <div className="max-w-[1400px] mx-auto grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
                         {/* Left column: intro + CTA */}
                         <div className="lg:col-span-5">
-                            <h2 className="text-2xl font-semibold mb-4">About Our Hyderabad Corporate Program</h2>
+                            <h2 className="text-2xl font-semibold mb-4">About Our Gurgaon Corporate Program</h2>
                             <p className="text-gray-700 leading-relaxed mb-4">
-                                TaxiTribe delivers corporate mobility tuned for Hyderabad — tech district commutes, expressway links and airport transfers. We help companies reduce downtime, centralize billing and improve employee punctuality across HITEC City, Gachibowli, Financial District and beyond.
+                                TaxiTribe delivers corporate mobility that understands Gurgaon — fast-changing traffic patterns, expressway commutes and concentrated business parks.
+                                We help companies reduce downtime, centralize billing and improve employee punctuality across Cyber City, Golf Course Road and beyond.
                             </p>
 
                             <ul className="text-gray-700 mb-6 space-y-2">
@@ -233,60 +234,76 @@ export default function CorporateHyderabadPage() {
                 </section>
 
                 {/* TAILORED SERVICES */}
-                <section className="mb-12">
-                    <h3 className="text-2xl font-semibold text-center mb-6">Tailored Services</h3>
-                    <div className="grid md:grid-cols-2 gap-8">
-                        {services.map((s, i) => (
-                            <article key={i} className="rounded-xl overflow-hidden shadow-lg bg-white">
-                                <div className="relative h-56 bg-gray-100">
-                                    <img src={s.image} alt={s.title} className="w-full h-full object-cover" loading="lazy" />
-                                </div>
+{/* TAILORED SERVICES */}
+<section className="mb-16">
+  <h3 className="text-2xl font-semibold text-center mb-10">
+    Tailored Corporate Services
+  </h3>
 
-                                <div className="p-6">
-                                    <div className="flex items-start gap-4">
-                                        <div className="mt-1">{s.icon}</div>
-                                        <div>
-                                            <h4 className="text-xl font-semibold mb-2">{s.title}</h4>
-                                            <p className="text-gray-700 mb-3">{s.description}</p>
-                                            <ul className="text-gray-700 list-inside space-y-1 mb-4">
-                                                {s.features.map((f, idx) => (
-                                                    <li key={idx} className="flex items-start">
-                                                        <span className="text-amber-500 mr-2 mt-1">•</span>
-                                                        <span>{f}</span>
-                                                    </li>
-                                                ))}
-                                            </ul>
+  <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+    {services.map((s, i) => (
+      <article
+        key={i}
+        className="group bg-white rounded-2xl border border-gray-200 shadow-sm hover:shadow-lg transition-all duration-300 flex flex-col overflow-hidden"
+      >
+        {/* IMAGE */}
+        <div className="relative h-44 overflow-hidden">
+          <img
+            src={s.image}
+            alt={s.title}
+            className="w-full h-full object-cover transform group-hover:scale-105 transition duration-500"
+            loading="lazy"
+          />
+        </div>
 
-                                            <div className="flex items-center justify-between">
-                                                <span className="text-sm text-gray-500">Custom solutions available</span>
-                                                <button
-                                                    onClick={() => setDialogOpen(true)}
-                                                    className="text-amber-500 font-medium flex items-center gap-2 cursor-pointer focus:outline-none"
-                                                    aria-label={`Get quote for ${s.title}`}
-                                                >
-                                                    Get Quote <ArrowRight className="h-4 w-4" />
-                                                </button>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </article>
-                        ))}
-                    </div>
-                </section>
+        {/* CONTENT */}
+        <div className="flex-1 p-5 flex flex-col">
+          <div className="flex items-start gap-3 mb-3">
+            <div className="w-10 h-10 rounded-lg bg-amber-50 flex items-center justify-center shrink-0">
+              {s.icon}
+            </div>
+            <h4 className="text-lg font-semibold leading-snug">
+              {s.title}
+            </h4>
+          </div>
+
+          <p className="text-sm text-gray-700 mb-4">
+            {s.description}
+          </p>
+
+          <ul className="text-sm text-gray-700 space-y-1 mb-6">
+            {s.features.map((f, idx) => (
+              <li key={idx} className="flex items-start">
+                <span className="text-amber-500 mr-2 mt-1">•</span>
+                <span>{f}</span>
+              </li>
+            ))}
+          </ul>
+
+          {/* CTA */}
+          <button
+            onClick={() => setDialogOpen(true)}
+            className="mt-auto inline-flex items-center gap-2 text-amber-600 font-medium hover:text-amber-700 transition"
+          >
+            Get Quote <ArrowRight className="h-4 w-4" />
+          </button>
+        </div>
+      </article>
+    ))}
+  </div>
+</section>
+
 
                 {/* WHY CHOOSE — redesigned (two-column story + 6 polished cards) */}
                 <section className="mb-12">
                     <div className="max-w-[1500px] mx-auto grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
-
-                        {/* LEFT */}
                         <div className="lg:col-span-5">
                             <h3 className="text-2xl font-semibold mb-4">
-                                Why Corporations Trust TaxiTribe in Hyderabad
+                                Why Corporations Trust TaxiTribe in Gurgaon
                             </h3>
 
                             <p className="text-gray-700 leading-relaxed mb-4">
-                                Hyderabad’s tech clusters, expressways and airport linkages need predictable mobility. TaxiTribe pairs local operational experience with SLA-driven processes to keep your teams moving reliably.
+                                Gurgaon’s corporate clusters and expressway traffic need predictable mobility. TaxiTribe pairs local operational experience with SLA-driven processes to keep teams moving reliably.
                             </p>
 
                             <p className="text-gray-700 leading-relaxed mb-6">
@@ -301,7 +318,6 @@ export default function CorporateHyderabadPage() {
                             </button>
                         </div>
 
-                        {/* RIGHT */}
                         <div className="lg:col-span-7">
                             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                                 {benefits.map((b, idx) => (
@@ -322,7 +338,6 @@ export default function CorporateHyderabadPage() {
                                 ))}
                             </div>
                         </div>
-
                     </div>
                 </section>
 
@@ -363,7 +378,7 @@ export default function CorporateHyderabadPage() {
             {/* Booking Dialog */}
             <BookingDialog
                 open={dialogOpen}
-                model="Corporate Rental Program - Hyderabad"
+                model="Corporate Rental Program - Gurgaon"
                 onOpenChange={setDialogOpen}
                 onSubmit={(payload) => {
                     console.log("Corporate Service Booking Payload:", payload);

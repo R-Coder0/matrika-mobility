@@ -81,7 +81,7 @@ export default function SOPsSection({
   return (
     <section
       className={`py-12 ${className}`}
-      style={{ backgroundColor: "#FFF" }}
+      style={{ backgroundColor: "#FFFAFA" }}
     >
       <div className="container mx-auto px-6 max-w-7xl">
         {/* Header row with small logo */}

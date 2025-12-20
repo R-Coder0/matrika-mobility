@@ -6,7 +6,7 @@ import BestPracticesSection from "../components/BestPractise";
 import { Helmet } from "react-helmet";
 
 // -----------------------------------------------------------------------------
-// FLEET PAGE — LIGHT / WHITE THEME
+// FLEET PAGE — LIGHT / [#FFFAFA] THEME
 // -----------------------------------------------------------------------------
 
 const safeSrc = (src) => (typeof src === "string" ? src.split(" ").join("%20") : src);
@@ -131,7 +131,7 @@ export default function FleetPage() {
       </section>
 
       {/* Sticky controls */}
-      <div className="sticky top-0 z-20 bg-white/80 backdrop-blur border-b border-gray-200">
+      <div className="sticky top-0 z-20 bg-[#FFFAFA]/80 backdrop-blur border-b border-gray-200">
         <div className="max-w-7xl mx-auto px-4 py-3 flex flex-col md:flex-row gap-3 md:items-center md:justify-between">
           {/* Brand chips */}
           <div className="flex flex-wrap gap-2">
@@ -143,7 +143,7 @@ export default function FleetPage() {
                   "px-3 py-1.5 rounded-full text-sm border transition " +
                   (brand === b
                     ? "bg-amber-500 text-black border-amber-500"
-                    : "bg-white border-gray-200 text-gray-700 hover:bg-gray-50")
+                    : "bg-[#FFFAFA] border-gray-200 text-gray-700 hover:bg-gray-50")
                 }
               >
                 {b}
@@ -152,7 +152,7 @@ export default function FleetPage() {
           </div>
 
           {/* Search */}
-          <div className="flex items-center gap-2 bg-white border border-gray-200 rounded-xl px-3 py-2 w-full md:w-96">
+          <div className="flex items-center gap-2 bg-[#FFFAFA] border border-gray-200 rounded-xl px-3 py-2 w-full md:w-96">
             <Search className="h-4 w-4 text-gray-400" />
             <input
               value={query}
@@ -176,7 +176,7 @@ export default function FleetPage() {
             {list.map((cat) => (
               <article
                 key={cat.key}
-                className="group bg-white border border-gray-200 rounded-2xl overflow-hidden shadow-sm hover:shadow-md transition-all"
+                className="group bg-[#FFFAFA] border border-gray-200 rounded-2xl overflow-hidden shadow-sm hover:shadow-md transition-all"
               >
                 <div className="relative">
                   <img
@@ -187,7 +187,7 @@ export default function FleetPage() {
                     loading="lazy"
                   />
                   <div className="absolute bottom-3 left-4 text-sm">
-                    <span className="inline-block px-2 py-1 rounded-md bg-white/80 border border-gray-200 text-gray-700 text-xs">
+                    <span className="inline-block px-2 py-1 rounded-md bg-[#FFFAFA]/80 border border-gray-200 text-gray-700 text-xs">
                       {cat.brand}
                     </span>
                     {cat.tag ? (
@@ -228,14 +228,14 @@ export default function FleetPage() {
 
       {/* CTA Section */}
       <div className="max-w-7xl mx-auto px-4 mt-10 pb-10">
-        <div className="bg-white border border-gray-200 rounded-2xl overflow-hidden shadow-sm">
+        <div className="bg-[#FFFAFA] border border-gray-200 rounded-2xl overflow-hidden shadow-sm">
           <div className="grid md:grid-cols-2">
             <div className="p-10">
               <h2 className="text-2xl font-bold mb-4 text-gray-900">Ready to elevate your corporate travel?</h2>
               <p className="text-gray-700 mb-6">Guaranteed 10% savings on your current annual spends</p>
               <button
                 onClick={() => setDialogOpen(true)}
-                className="bg-amber-600 text-white px-6 py-3 rounded-lg font-bold hover:bg-amber-700 transition"
+                className="bg-amber-600 text-[#FFFAFA] px-6 py-3 rounded-lg font-bold hover:bg-amber-700 transition"
               >
                 Get Quote
               </button>

@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { Briefcase, Users, Globe, ArrowRight, Heart } from "lucide-react";
-import BookingDialog from "../components/BookingCar";
+import BookingDialog from "../../components/BookingCar";
 import {
     FaHandshake,
     FaCogs,
@@ -9,15 +9,15 @@ import {
     FaCalendarAlt,
     FaUsers,
 } from "react-icons/fa";
-import SOPsSection from "./SOPsSection";
-import BestPracticesSection from "../components/BestPractise";
+import SOPsSection from "../SOPsSection";
+import BestPracticesSection from "../../components/BestPractise";
 import { Helmet } from "react-helmet-async";
 
 /**
- * CorporateMumbaiPage — content adapted for Mumbai
+ * CorporateNoidaPage — content adapted from Delhi -> Noida
  */
 
-export default function CorporateMumbaiPage() {
+export default function CorporateNoidaPage() {
     const [dialogOpen, setDialogOpen] = useState(false);
 
     const services = [
@@ -25,7 +25,7 @@ export default function CorporateMumbaiPage() {
             icon: <Briefcase className="h-8 w-8 text-amber-500" />,
             title: "Executive Corporate Travel",
             description:
-                "SLA-backed rentals for executives — punctual, discreet and secure across Mumbai’s corporate and financial corridors.",
+                "SLA-backed rentals for executives — punctual, discreet and secure across Noida & Greater Noida.",
             image: "/corporate/ect.webp",
             features: [
                 "Hourly, daily & multi-day rental options",
@@ -37,7 +37,7 @@ export default function CorporateMumbaiPage() {
             icon: <Users className="h-8 w-8 text-amber-500" />,
             title: "Event & Conference Transportation",
             description:
-                "End-to-end fleet coordination for conferences, exhibitions and large-scale events across Mumbai and Navi Mumbai.",
+                "End-to-end fleet coordination for conferences, exhibitions and corporate events in Noida's business districts.",
             image: "/corporate/eact.jpg",
             features: [
                 "Group shuttles & minibuses",
@@ -48,7 +48,7 @@ export default function CorporateMumbaiPage() {
         {
             icon: <Heart className="h-8 w-8 text-amber-500" />,
             title: "Wedding & Special Occasion Cars",
-            description: "Premium and vintage vehicles for high-profile ceremonies and celebrations across Mumbai.",
+            description: "Premium and vintage vehicles for high-profile ceremonies and celebrations across Noida.",
             image: "/corporate/wsoc.jpg",
             features: [
                 "Themed vehicle decor",
@@ -59,7 +59,7 @@ export default function CorporateMumbaiPage() {
         {
             icon: <Globe className="h-8 w-8 text-amber-500" />,
             title: "Airport Transfers",
-            description: "Flight-aware transfers to/from Mumbai International Airport (T1/T2) — smooth and dependable.",
+            description: "Flight-aware pickups with meet-and-greet and baggage assistance for Noida travellers.",
             image: "/corporate/at.jpg",
             features: [
                 "Real-time flight tracking",
@@ -120,12 +120,12 @@ export default function CorporateMumbaiPage() {
     return (
         <div className="min-h-screen bg-[#FFFAFA] text-black">
             <Helmet>
-                <title>Best Corporate Car Rental in Mumbai | TaxiTribe</title>
+                <title>Best Corporate Car Rental in Noida | TaxiTribe</title>
                 <meta
                     name="description"
-                    content="Best corporate car rental in Mumbai — SLA-backed corporate programs, airport transfers and event transportation with dedicated account managers."
+                    content="Best corporate car rental in Noida — SLA-backed corporate programs, airport transfers and event transportation with dedicated account managers."
                 />
-                <link rel="canonical" href="https://taxitribe.in/corporate/corporate-in-mumbai" />
+                <link rel="canonical" href="https://taxitribe.in/corporate/corporate-in-noida" />
             </Helmet>
 
             {/* HERO */}
@@ -134,60 +134,60 @@ export default function CorporateMumbaiPage() {
                     className="h-56 md:h-100 bg-center bg-cover relative"
                     style={{
                         backgroundImage:
-                            "linear-gradient(rgba(0,0,0,0.55), rgba(0,0,0,0.55)), url('/mumbai.png')",
+                            "linear-gradient(rgba(0,0,0,0.55), rgba(0,0,0,0.55)), url('/delhi.png')",
                     }}
                     role="img"
-                    aria-label="Corporate car rental in Mumbai"
+                    aria-label="Corporate car rental in Noida"
                 >
                     <div className="max-w-[1500px] mx-auto px-6 h-full flex items-center">
                         <div className="w-full md:w-2/3 lg:w-1/2 text-white z-10">
-
                             <nav aria-label="Breadcrumb" className="text-sm text-gray-200 mb-2">
                                 <ol className="flex items-center gap-2">
-                                    <li><a href="/" className="hover:underline">Home</a></li>
+                                    <li>
+                                        <a href="/" className="hover:underline">Home</a>
+                                    </li>
                                     <li className="text-gray-400">/</li>
-                                    <li><a href="/corporate-protocol" className="hover:underline">Corporate</a></li>
+                                    <li>
+                                        <a href="/corporate-protocol" className="hover:underline">Corporate</a>
+                                    </li>
                                     <li className="text-gray-400">/</li>
-                                    <li className="font-semibold text-amber-300">Mumbai</li>
+                                    <li className="font-semibold text-amber-300">Noida</li>
                                 </ol>
                             </nav>
 
                             <h1 className="text-2xl md:text-3xl font-bold leading-snug">
-                                Best Corporate Car Rental in Mumbai
+                                Best Corporate Car Rental in Noida
                             </h1>
 
                             <p className="mt-3 text-sm md:text-base text-gray-200 max-w-xl">
-                                SLA-backed corporate car rental programs across Mumbai — BKC, Andheri, Powai, Navi Mumbai and Lower Parel covered with dedicated account managers and real-time tracking.
+                                SLA-backed corporate car rental programs across Noida & Greater Noida — dedicated account managers, real-time tracking and finance-ready reporting.
                             </p>
 
                             <div className="mt-4 flex items-center gap-3">
                                 <button
                                     onClick={() => setDialogOpen(true)}
-                                    className="bg-amber-500 text-black px-4 py-2 rounded-full font-semibold shadow-sm hover:bg-amber-600 transition cursor-pointer focus:outline-none"
+                                    className="bg-amber-500 text-black px-4 py-2 rounded-full font-semibold shadow-sm hover:bg-amber-600 transition cursor-pointer focus:outline-none focus:ring-2 focus:ring-amber-300"
+                                    aria-label="Get quote"
                                 >
                                     Get Quote
                                 </button>
                             </div>
-
                         </div>
                     </div>
                 </div>
             </header>
 
-            {/* MAIN CONTENT */}
+            {/* MAIN */}
             <main className="max-w-[1500px] mx-auto px-6 py-12">
-
-                {/* ABOUT SECTION */}
+                {/* ABOUT — two-column layout: left text/cta, right 6-card grid */}
                 <section className="mb-12">
-                    <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
-
-                        {/* LEFT */}
+                    <div className="max-w-[1400px] mx-auto grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+                        {/* Left column: intro + CTA */}
                         <div className="lg:col-span-5">
-                            <h2 className="text-2xl font-semibold mb-4">About Our Mumbai Corporate Program</h2>
-
+                            <h2 className="text-2xl font-semibold mb-4">About Our Noida Corporate Program</h2>
                             <p className="text-gray-700 leading-relaxed mb-4">
-                                TaxiTribe delivers corporate mobility crafted for Mumbai — high-density commercial zones, financial districts and airport-driven commutes.
-                                We help companies reduce downtime, centralize billing and improve employee punctuality across BKC, Andheri, Powai, Lower Parel and Navi Mumbai.
+                                TaxiTribe delivers corporate mobility built for Noida’s pace — reliable SLAs, trained chauffeurs and finance-ready reporting.
+                                We help companies reduce downtime, centralize billing and improve employee on-time performance across Noida, Noida Expressway and Greater Noida.
                             </p>
 
                             <ul className="text-gray-700 mb-6 space-y-2">
@@ -196,25 +196,30 @@ export default function CorporateMumbaiPage() {
                                 <li>• Event logistics & bulk bookings</li>
                             </ul>
 
-                            <button
-                                onClick={() => setDialogOpen(true)}
-                                className="bg-black text-white px-5 py-2 rounded-md font-medium"
-                            >
-                                Request a Pilot
-                            </button>
+                            <div className="flex gap-3">
+                                <button
+                                    onClick={() => setDialogOpen(true)}
+                                    className="bg-black text-white px-5 py-2 rounded-md font-medium cursor-pointer focus:outline-none focus:ring-2 focus:ring-black"
+                                >
+                                    Request a Pilot
+                                </button>
+                                <a href="#faqs" className="underline self-center text-gray-700 cursor-pointer">See FAQs</a>
+                            </div>
                         </div>
 
-                        {/* RIGHT CARDS */}
+                        {/* Right column: 6 cards */}
                         <div className="lg:col-span-7">
-                            <div className="grid sm:grid-cols-2 gap-4">
+                            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                                 {benefits.map((b, i) => (
                                     <div
                                         key={i}
-                                        className="flex gap-4 bg-white rounded-lg p-4 shadow-sm hover:shadow-md transform hover:-translate-y-1 transition"
+                                        className="flex gap-4 items-start bg-white rounded-lg p-4 shadow-sm hover:shadow-md transform hover:-translate-y-1 transition"
                                         style={{ minHeight: 120 }}
                                     >
-                                        <div className="w-12 h-12 rounded-lg bg-amber-50 flex items-center justify-center">
-                                            {b.icon}
+                                        <div className="shrink-0">
+                                            <div className="w-12 h-12 rounded-lg bg-amber-50 flex items-center justify-center">
+                                                {b.icon}
+                                            </div>
                                         </div>
 
                                         <div className="flex-1">
@@ -225,89 +230,107 @@ export default function CorporateMumbaiPage() {
                                 ))}
                             </div>
                         </div>
-
                     </div>
                 </section>
 
                 {/* TAILORED SERVICES */}
+{/* TAILORED SERVICES */}
+<section className="mb-16">
+  <h3 className="text-2xl font-semibold text-center mb-10">
+    Tailored Corporate Services
+  </h3>
+
+  <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+    {services.map((s, i) => (
+      <article
+        key={i}
+        className="group bg-white rounded-2xl border border-gray-200 shadow-sm hover:shadow-lg transition-all duration-300 flex flex-col overflow-hidden"
+      >
+        {/* IMAGE */}
+        <div className="relative h-44 overflow-hidden">
+          <img
+            src={s.image}
+            alt={s.title}
+            className="w-full h-full object-cover transform group-hover:scale-105 transition duration-500"
+            loading="lazy"
+          />
+        </div>
+
+        {/* CONTENT */}
+        <div className="flex-1 p-5 flex flex-col">
+          <div className="flex items-start gap-3 mb-3">
+            <div className="w-10 h-10 rounded-lg bg-amber-50 flex items-center justify-center shrink-0">
+              {s.icon}
+            </div>
+            <h4 className="text-lg font-semibold leading-snug">
+              {s.title}
+            </h4>
+          </div>
+
+          <p className="text-sm text-gray-700 mb-4">
+            {s.description}
+          </p>
+
+          <ul className="text-sm text-gray-700 space-y-1 mb-6">
+            {s.features.map((f, idx) => (
+              <li key={idx} className="flex items-start">
+                <span className="text-amber-500 mr-2 mt-1">•</span>
+                <span>{f}</span>
+              </li>
+            ))}
+          </ul>
+
+          {/* CTA */}
+          <button
+            onClick={() => setDialogOpen(true)}
+            className="mt-auto inline-flex items-center gap-2 text-amber-600 font-medium hover:text-amber-700 transition"
+          >
+            Get Quote <ArrowRight className="h-4 w-4" />
+          </button>
+        </div>
+      </article>
+    ))}
+  </div>
+</section>
+
+
+                {/* WHY CHOOSE — redesigned (two-column story + 6 polished cards) */}
                 <section className="mb-12">
-                    <h3 className="text-2xl font-semibold text-center mb-6">Tailored Services</h3>
-
-                    <div className="grid md:grid-cols-2 gap-8">
-                        {services.map((s, i) => (
-                            <article key={i} className="rounded-xl shadow-lg overflow-hidden bg-white">
-                                <div className="h-56 bg-gray-100">
-                                    <img src={s.image} alt={s.title} className="w-full h-full object-cover" />
-                                </div>
-
-                                <div className="p-6">
-                                    <div className="flex gap-4 items-start">
-                                        <div className="mt-1">{s.icon}</div>
-
-                                        <div>
-                                            <h4 className="text-xl font-semibold mb-2">{s.title}</h4>
-                                            <p className="text-gray-700 mb-3">{s.description}</p>
-
-                                            <ul className="list-inside space-y-1 mb-4 text-gray-700">
-                                                {s.features.map((f, idx) => (
-                                                    <li key={idx} className="flex items-start">
-                                                        <span className="text-amber-500 mr-2 mt-1">•</span>
-                                                        {f}
-                                                    </li>
-                                                ))}
-                                            </ul>
-
-                                            <button
-                                                onClick={() => setDialogOpen(true)}
-                                                className="text-amber-500 font-medium flex items-center gap-2"
-                                            >
-                                                Get Quote <ArrowRight className="h-4 w-4" />
-                                            </button>
-                                        </div>
-                                    </div>
-                                </div>
-                            </article>
-                        ))}
-                    </div>
-                </section>
-
-                {/* WHY CHOOSE SECTION */}
-                <section className="mb-12">
-                    <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
-
-                        {/* LEFT */}
+                    <div className="max-w-[1500px] mx-auto grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
                         <div className="lg:col-span-5">
-                            <h3 className="text-2xl font-semibold mb-4">Why Corporations Trust TaxiTribe in Mumbai</h3>
+                            <h3 className="text-2xl font-semibold mb-4">
+                                Why Corporations Trust TaxiTribe in Noida
+                            </h3>
 
-                            <p className="text-gray-700 mb-4">
-                                Mumbai’s business hubs, financial centres and airport-linked travel demand predictable corporate mobility. TaxiTribe brings SLA-driven operations with local expertise for maximum reliability.
+                            <p className="text-gray-700 leading-relaxed mb-4">
+                                Noida's business hubs and expressway corridors need dependable mobility. TaxiTribe combines local knowledge with SLA-driven operations to keep your workforce moving on time.
                             </p>
 
-                            <p className="text-gray-700 mb-6">
-                                Our corporate mobility program improves punctuality, optimizes operational costs and streamlines billing through MIS-ready reporting.
+                            <p className="text-gray-700 leading-relaxed mb-6">
+                                Our corporate program reduces downtime, centralizes billing, and gives your team reliable chauffeurs, real-time tracking and clean MIS-ready reporting.
                             </p>
 
                             <button
                                 onClick={() => setDialogOpen(true)}
-                                className="bg-amber-500 text-black px-5 py-2 rounded-md font-medium"
+                                className="bg-amber-500 text-black px-5 py-2 rounded-md font-medium shadow-sm hover:bg-amber-600 transition cursor-pointer focus:outline-none focus:ring-2 focus:ring-amber-300"
                             >
                                 Request a Corporate Quote
                             </button>
                         </div>
 
-                        {/* RIGHT CARDS */}
                         <div className="lg:col-span-7">
-                            <div className="grid sm:grid-cols-2 gap-4">
-                                {benefits.map((b, i) => (
+                            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                                {benefits.map((b, idx) => (
                                     <div
-                                        key={i}
-                                        className="flex gap-4 bg-white rounded-lg p-4 shadow-sm hover:shadow-md transform hover:-translate-y-1 transition"
+                                        key={idx}
+                                        className="flex gap-4 items-start bg-white rounded-lg p-4 shadow-sm hover:shadow-md transform hover:-translate-y-1 transition"
                                         style={{ minHeight: 120 }}
                                     >
-                                        <div className="w-12 h-12 rounded-lg bg-amber-50 flex items-center justify-center">
-                                            {b.icon}
+                                        <div className="shrink-0 w-12 h-12 rounded-lg bg-amber-50 flex items-center justify-center">
+                                            <div className="text-amber-500">{b.icon}</div>
                                         </div>
-                                        <div>
+
+                                        <div className="flex-1">
                                             <h4 className="font-semibold">{b.title}</h4>
                                             <p className="text-sm text-gray-700 mt-1">{b.desc}</p>
                                         </div>
@@ -315,18 +338,16 @@ export default function CorporateMumbaiPage() {
                                 ))}
                             </div>
                         </div>
-
                     </div>
                 </section>
 
-                {/* SOPs & BEST PRACTICES */}
+                {/* SOPs & Best Practices */}
                 <SOPsSection />
                 <BestPracticesSection />
 
                 {/* FAQs */}
-                <section id="faqs" className="my-12">
+                <section id="faqs" className="mt-12 mb-12">
                     <h3 className="text-2xl font-semibold text-center mb-6">Frequently Asked Questions</h3>
-
                     <div className="max-w-[900px] mx-auto space-y-4">
                         {faqs.map((f, i) => (
                             <details key={i} className="bg-white border rounded-lg p-4">
@@ -338,30 +359,26 @@ export default function CorporateMumbaiPage() {
                 </section>
 
                 {/* FINAL CTA */}
-                <div className="bg-linear-to-r from-amber-500 to-amber-600 shadow-xl">
-                    <div className="grid md:grid-cols-2">
-                        <div className="p-12">
-                            <h2 className="text-2xl font-bold mb-4">Ready to elevate your corporate travel?</h2>
-                            <p className="text-lg mb-8">“Guaranteed 10% savings on your annual mobility spends.”</p>
-
-                            <button
-                                onClick={() => setDialogOpen(true)}
-                                className="bg-black text-white px-8 py-3 rounded-lg font-bold"
-                            >
-                                Get Quote
-                            </button>
-                        </div>
-
-                        <div className="hidden md:block bg-[url('https://images.unsplash.com/photo-1450101499163-c8848c66ca85?auto=format&fit=crop&w=800')] bg-cover bg-center"></div>
+                <div className="bg-linear-to-r from-amber-500 to-amber-600 shadow-xl overflow-hidden">
+                  <div className="grid md:grid-cols-2">
+                    <div className="p-12">
+                      <h2 className="text-2xl font-bold mb-4">Ready to elevate your corporate travel</h2>
+                      <p className="text-lg mb-8">
+                        “Guaranteed 10% savings on your current annual spends”
+                      </p>
+                      <button onClick={() => setDialogOpen(true)} className="bg-black text-white px-8 py-3 rounded-lg font-bold hover:bg-gray-900 transition-colors">
+                        Get Quote
+                      </button>
                     </div>
+                    <div className="hidden md:block bg-[url('https://images.unsplash.com/photo-1450101499163-c8848c66ca85?auto=format&fit=crop&w=800')] bg-cover bg-center"></div>
+                  </div>
                 </div>
-
             </main>
 
-            {/* BOOKING DIALOG */}
+            {/* Booking Dialog */}
             <BookingDialog
                 open={dialogOpen}
-                model="Corporate Rental Program - Mumbai"
+                model="Corporate Rental Program - Noida"
                 onOpenChange={setDialogOpen}
                 onSubmit={(payload) => {
                     console.log("Corporate Service Booking Payload:", payload);

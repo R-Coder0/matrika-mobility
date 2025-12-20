@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { Briefcase, Users, Globe, ArrowRight, Heart } from "lucide-react";
-import BookingDialog from "../components/BookingCar";
+import BookingDialog from "../../components/BookingCar";
 import {
     FaHandshake,
     FaCogs,
@@ -9,15 +9,15 @@ import {
     FaCalendarAlt,
     FaUsers,
 } from "react-icons/fa";
-import SOPsSection from "./SOPsSection";
-import BestPracticesSection from "../components/BestPractise";
+import SOPsSection from "../SOPsSection";
+import BestPracticesSection from "../../components/BestPractise";
 import { Helmet } from "react-helmet-async";
 
 /**
- * CorporateGurgaonPage — content adapted from Delhi/Noida -> Gurgaon
+ * CorporateHyderabadPage — content adapted for Hyderabad
  */
 
-export default function CorporateGurgaonPage() {
+export default function CorporateHyderabadPage() {
     const [dialogOpen, setDialogOpen] = useState(false);
 
     const services = [
@@ -25,7 +25,7 @@ export default function CorporateGurgaonPage() {
             icon: <Briefcase className="h-8 w-8 text-amber-500" />,
             title: "Executive Corporate Travel",
             description:
-                "SLA-backed rentals for executives — punctual, discreet and secure across Gurgaon and its business corridors.",
+                "SLA-backed rentals for executives — punctual, discreet and secure across Hyderabad's business corridors.",
             image: "/corporate/ect.webp",
             features: [
                 "Hourly, daily & multi-day rental options",
@@ -37,7 +37,7 @@ export default function CorporateGurgaonPage() {
             icon: <Users className="h-8 w-8 text-amber-500" />,
             title: "Event & Conference Transportation",
             description:
-                "End-to-end fleet coordination for conferences, exhibitions and corporate events in Gurgaon’s commercial hubs.",
+                "End-to-end fleet coordination for conferences, exhibitions and corporate events in Hyderabad's commercial and tech hubs.",
             image: "/corporate/eact.jpg",
             features: [
                 "Group shuttles & minibuses",
@@ -48,7 +48,7 @@ export default function CorporateGurgaonPage() {
         {
             icon: <Heart className="h-8 w-8 text-amber-500" />,
             title: "Wedding & Special Occasion Cars",
-            description: "Premium and vintage vehicles for high-profile ceremonies and celebrations across Gurgaon.",
+            description: "Premium and vintage vehicles for high-profile ceremonies and celebrations across Hyderabad.",
             image: "/corporate/wsoc.jpg",
             features: [
                 "Themed vehicle decor",
@@ -59,7 +59,7 @@ export default function CorporateGurgaonPage() {
         {
             icon: <Globe className="h-8 w-8 text-amber-500" />,
             title: "Airport Transfers",
-            description: "Flight-aware pickups with meet-and-greet and baggage assistance for passengers in Gurgaon and surrounding areas.",
+            description: "Flight-aware pickups with meet-and-greet and baggage assistance for passengers to/from Rajiv Gandhi International Airport (Shamshabad).",
             image: "/corporate/at.jpg",
             features: [
                 "Real-time flight tracking",
@@ -120,12 +120,12 @@ export default function CorporateGurgaonPage() {
     return (
         <div className="min-h-screen bg-[#FFFAFA] text-black">
             <Helmet>
-                <title>Best Corporate Car Rental in Gurgaon | TaxiTribe</title>
+                <title>Best Corporate Car Rental in Hyderabad | TaxiTribe</title>
                 <meta
                     name="description"
-                    content="Best corporate car rental in Gurgaon — SLA-backed corporate programs, airport transfers and event transportation with dedicated account managers."
+                    content="Best corporate car rental in Hyderabad — SLA-backed corporate programs, airport transfers and event transportation with dedicated account managers."
                 />
-                <link rel="canonical" href="https://taxitribe.in/corporate/corporate-in-gurgaon" />
+                <link rel="canonical" href="https://taxitribe.in/corporate/corporate-in-hyderabad" />
             </Helmet>
 
             {/* HERO */}
@@ -134,10 +134,10 @@ export default function CorporateGurgaonPage() {
                     className="h-56 md:h-100 bg-center bg-cover relative"
                     style={{
                         backgroundImage:
-                            "linear-gradient(rgba(0,0,0,0.55), rgba(0,0,0,0.55)), url('/gurgaon.png')",
+                            "linear-gradient(rgba(0,0,0,0.55), rgba(0,0,0,0.55)), url('/hyderabad.png')",
                     }}
                     role="img"
-                    aria-label="Corporate car rental in Gurgaon"
+                    aria-label="Corporate car rental in Hyderabad"
                 >
                     <div className="max-w-[1500px] mx-auto px-6 h-full flex items-center">
                         <div className="w-full md:w-2/3 lg:w-1/2 text-white z-10">
@@ -151,16 +151,16 @@ export default function CorporateGurgaonPage() {
                                         <a href="/corporate-protocol" className="hover:underline">Corporate</a>
                                     </li>
                                     <li className="text-gray-400">/</li>
-                                    <li className="font-semibold text-amber-300">Gurgaon</li>
+                                    <li className="font-semibold text-amber-300">Hyderabad</li>
                                 </ol>
                             </nav>
 
                             <h1 className="text-2xl md:text-3xl font-bold leading-snug">
-                                Best Corporate Car Rental in Gurgaon
+                                Best Corporate Car Rental in Hyderabad
                             </h1>
 
                             <p className="mt-3 text-sm md:text-base text-gray-200 max-w-xl">
-                                SLA-backed corporate car rental programs across Gurgaon — Cyber City, MG Road, Golf Course Road and NH-48 covered with dedicated account managers and real-time tracking.
+                                SLA-backed corporate car rental programs across Hyderabad — HITEC City, Gachibowli, Financial District, Kukatpally and Shamshabad covered with dedicated account managers and real-time tracking.
                             </p>
 
                             <div className="mt-4 flex items-center gap-3">
@@ -184,10 +184,9 @@ export default function CorporateGurgaonPage() {
                     <div className="max-w-[1400px] mx-auto grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
                         {/* Left column: intro + CTA */}
                         <div className="lg:col-span-5">
-                            <h2 className="text-2xl font-semibold mb-4">About Our Gurgaon Corporate Program</h2>
+                            <h2 className="text-2xl font-semibold mb-4">About Our Hyderabad Corporate Program</h2>
                             <p className="text-gray-700 leading-relaxed mb-4">
-                                TaxiTribe delivers corporate mobility that understands Gurgaon — fast-changing traffic patterns, expressway commutes and concentrated business parks.
-                                We help companies reduce downtime, centralize billing and improve employee punctuality across Cyber City, Golf Course Road and beyond.
+                                TaxiTribe delivers corporate mobility tuned for Hyderabad — tech district commutes, expressway links and airport transfers. We help companies reduce downtime, centralize billing and improve employee punctuality across HITEC City, Gachibowli, Financial District and beyond.
                             </p>
 
                             <ul className="text-gray-700 mb-6 space-y-2">
@@ -279,13 +278,15 @@ export default function CorporateGurgaonPage() {
                 {/* WHY CHOOSE — redesigned (two-column story + 6 polished cards) */}
                 <section className="mb-12">
                     <div className="max-w-[1500px] mx-auto grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+
+                        {/* LEFT */}
                         <div className="lg:col-span-5">
                             <h3 className="text-2xl font-semibold mb-4">
-                                Why Corporations Trust TaxiTribe in Gurgaon
+                                Why Corporations Trust TaxiTribe in Hyderabad
                             </h3>
 
                             <p className="text-gray-700 leading-relaxed mb-4">
-                                Gurgaon’s corporate clusters and expressway traffic need predictable mobility. TaxiTribe pairs local operational experience with SLA-driven processes to keep teams moving reliably.
+                                Hyderabad’s tech clusters, expressways and airport linkages need predictable mobility. TaxiTribe pairs local operational experience with SLA-driven processes to keep your teams moving reliably.
                             </p>
 
                             <p className="text-gray-700 leading-relaxed mb-6">
@@ -300,6 +301,7 @@ export default function CorporateGurgaonPage() {
                             </button>
                         </div>
 
+                        {/* RIGHT */}
                         <div className="lg:col-span-7">
                             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                                 {benefits.map((b, idx) => (
@@ -320,6 +322,7 @@ export default function CorporateGurgaonPage() {
                                 ))}
                             </div>
                         </div>
+
                     </div>
                 </section>
 
@@ -360,7 +363,7 @@ export default function CorporateGurgaonPage() {
             {/* Booking Dialog */}
             <BookingDialog
                 open={dialogOpen}
-                model="Corporate Rental Program - Gurgaon"
+                model="Corporate Rental Program - Hyderabad"
                 onOpenChange={setDialogOpen}
                 onSubmit={(payload) => {
                     console.log("Corporate Service Booking Payload:", payload);

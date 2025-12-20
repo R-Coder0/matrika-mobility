@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { use, useEffect, useState } from 'react';
 import Hero from '../components/hero';
 import FleetSection from '../components/fleetsection';
 import BenefitsAndWhy from '../components/whychooseus';
@@ -9,9 +9,16 @@ import MapAndFormSection from '../components/MapadnFormSection';
 import BookingDialog from '../components/BookingCar'; // Importing the BookingDialog component
 import TaxiTestimonials from '../components/Testimonial';
 import { Helmet } from "react-helmet";
+import useDetectCity from '../hooks/useDetectCity';
+import { useCity } from '../context/CityContext';
 
 const Home = () => {
-  const [dialogOpen, setDialogOpen] = useState(false); // state to control BookingDialog visibility
+  const [dialogOpen, setDialogOpen] = useState(false); 
+  const detectedCity = useDetectCity();
+  const {setCity} = useCity();
+  useEffect(() => {
+    setCity(detectedCity);
+  }, [detectedCity]);
   return (
 
     <div className='bg-[#FFFAFA] text-black'>
@@ -28,7 +35,7 @@ const Home = () => {
       {/* <FaqSection/> */}
       {/* <MapAndFormSection /> */}
       {/* CTA Section */}
-      <div className="max-w-6xl mx-auto bg-linear-to-r from-amber-500 to-amber-600 shadow-xl overflow-hidden">
+      <div className="max-w-[1500px] mx-auto bg-linear-to-r from-amber-500 to-amber-600 shadow-xl overflow-hidden">
         <div className="grid md:grid-cols-2">
           <div className="p-12">
             <h2 className="text-2xl font-bold mb-4">Ready to elevate your corporate travel</h2>

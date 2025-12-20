@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { Briefcase, Users, Globe, ArrowRight, Heart } from "lucide-react";
-import BookingDialog from "../components/BookingCar";
+import BookingDialog from "../../components/BookingCar";
 import {
     FaHandshake,
     FaCogs,
@@ -9,19 +9,15 @@ import {
     FaCalendarAlt,
     FaUsers,
 } from "react-icons/fa";
-import SOPsSection from "./SOPsSection";
-import BestPracticesSection from "../components/BestPractise";
+import SOPsSection from "../SOPsSection";
+import BestPracticesSection from "../../components/BestPractise";
 import { Helmet } from "react-helmet-async";
 
 /**
- * CorporateDelhiPage — improved About alignment + polish
- * - max width 1700px
- * - hero compact + breadcrumbs
- * - About: two-column (text + 6 card grid), aligned & consistent
- * - All CTAs have cursor-pointer and focus styles
+ * CorporateBangalorePage — content adapted from Gurgaon/Noida -> Bangalore (Bengaluru)
  */
 
-export default function CorporateDelhiPage() {
+export default function CorporateBangalorePage() {
     const [dialogOpen, setDialogOpen] = useState(false);
 
     const services = [
@@ -29,7 +25,7 @@ export default function CorporateDelhiPage() {
             icon: <Briefcase className="h-8 w-8 text-amber-500" />,
             title: "Executive Corporate Travel",
             description:
-                "SLA-backed rentals for executives — punctual, discreet and secure.",
+                "SLA-backed rentals for executives — punctual, discreet and secure across Bengaluru's business corridors.",
             image: "/corporate/ect.webp",
             features: [
                 "Hourly, daily & multi-day rental options",
@@ -41,7 +37,7 @@ export default function CorporateDelhiPage() {
             icon: <Users className="h-8 w-8 text-amber-500" />,
             title: "Event & Conference Transportation",
             description:
-                "End-to-end fleet coordination for conferences, exhibitions and corporate events.",
+                "End-to-end fleet coordination for conferences, exhibitions and corporate events in Bengaluru's tech and convention hubs.",
             image: "/corporate/eact.jpg",
             features: [
                 "Group shuttles & minibuses",
@@ -52,7 +48,7 @@ export default function CorporateDelhiPage() {
         {
             icon: <Heart className="h-8 w-8 text-amber-500" />,
             title: "Wedding & Special Occasion Cars",
-            description: "Premium and vintage vehicles for high-profile ceremonies.",
+            description: "Premium and vintage vehicles for high-profile ceremonies and celebrations across Bengaluru.",
             image: "/corporate/wsoc.jpg",
             features: [
                 "Themed vehicle decor",
@@ -63,7 +59,7 @@ export default function CorporateDelhiPage() {
         {
             icon: <Globe className="h-8 w-8 text-amber-500" />,
             title: "Airport Transfers",
-            description: "Flight-aware pickups with meet-and-greet and baggage assistance.",
+            description: "Flight-aware pickups with meet-and-greet and baggage assistance for passengers travelling to/from Kempegowda International Airport.",
             image: "/corporate/at.jpg",
             features: [
                 "Real-time flight tracking",
@@ -124,12 +120,12 @@ export default function CorporateDelhiPage() {
     return (
         <div className="min-h-screen bg-[#FFFAFA] text-black">
             <Helmet>
-                <title>Best Corporate Car Rental in Delhi | TaxiTribe</title>
+                <title>Best Corporate Car Rental in Bengaluru | TaxiTribe</title>
                 <meta
                     name="description"
-                    content="Best corporate car rental in delhi — SLA-backed corporate programs, airport transfers and event transportation with dedicated account managers."
+                    content="Best corporate car rental in Bengaluru — SLA-backed corporate programs, airport transfers and event transportation with dedicated account managers."
                 />
-                <link rel="canonical" href="https://taxitribe.in/corporate/corporate-in-delhi" />
+                <link rel="canonical" href="https://taxitribe.in/corporate/corporate-in-bengaluru" />
             </Helmet>
 
             {/* HERO */}
@@ -138,10 +134,10 @@ export default function CorporateDelhiPage() {
                     className="h-56 md:h-100 bg-center bg-cover relative"
                     style={{
                         backgroundImage:
-                            "linear-gradient(rgba(0,0,0,0.55), rgba(0,0,0,0.55)), url('/delhi.png')",
+                            "linear-gradient(rgba(0,0,0,0.55), rgba(0,0,0,0.55)), url('/bangalore.png')",
                     }}
                     role="img"
-                    aria-label="Corporate car rental in Delhi"
+                    aria-label="Corporate car rental in Bengaluru"
                 >
                     <div className="max-w-[1500px] mx-auto px-6 h-full flex items-center">
                         <div className="w-full md:w-2/3 lg:w-1/2 text-white z-10">
@@ -155,16 +151,16 @@ export default function CorporateDelhiPage() {
                                         <a href="/corporate-protocol" className="hover:underline">Corporate</a>
                                     </li>
                                     <li className="text-gray-400">/</li>
-                                    <li className="font-semibold text-amber-300">Delhi</li>
+                                    <li className="font-semibold text-amber-300">Bengaluru</li>
                                 </ol>
                             </nav>
 
                             <h1 className="text-2xl md:text-3xl font-bold leading-snug">
-                                Best Corporate Car Rental in Delhi
+                                Best Corporate Car Rental in Bengaluru
                             </h1>
 
                             <p className="mt-3 text-sm md:text-base text-gray-200 max-w-xl">
-                                SLA-backed corporate car rental programs across Delhi NCR — dedicated account managers, real-time tracking and finance-ready reporting.
+                                SLA-backed corporate car rental programs across Bengaluru — Koramangala, Electronic City, Whitefield, Outer Ring Road and KIA covered with dedicated account managers and real-time tracking.
                             </p>
 
                             <div className="mt-4 flex items-center gap-3">
@@ -188,10 +184,9 @@ export default function CorporateDelhiPage() {
                     <div className="max-w-[1400px] mx-auto grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
                         {/* Left column: intro + CTA */}
                         <div className="lg:col-span-5">
-                            <h2 className="text-2xl font-semibold mb-4">About Our Delhi Corporate Program</h2>
+                            <h2 className="text-2xl font-semibold mb-4">About Our Bengaluru Corporate Program</h2>
                             <p className="text-gray-700 leading-relaxed mb-4">
-                                TaxiTribe delivers corporate mobility built for Delhi’s unique demands — predictable SLAs, trained chauffeurs and finance-ready reporting.
-                                We help companies reduce downtime, centralize billing and improve employee on-time performance.
+                                TaxiTribe delivers corporate mobility optimised for Bengaluru — traffic corridors, IT park commutes and airport transfers. We help companies reduce downtime, centralize billing and improve employee punctuality across Koramangala, Whitefield, Electronic City and the Outer Ring Road.
                             </p>
 
                             <ul className="text-gray-700 mb-6 space-y-2">
@@ -281,27 +276,19 @@ export default function CorporateDelhiPage() {
                 </section>
 
                 {/* WHY CHOOSE — redesigned (two-column story + 6 polished cards) */}
-                {/* WHY CHOOSE — aligned with ABOUT section design */}
                 <section className="mb-12">
                     <div className="max-w-[1500px] mx-auto grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
-
-                        {/* LEFT COLUMN — story + CTA */}
                         <div className="lg:col-span-5">
                             <h3 className="text-2xl font-semibold mb-4">
-                                Why Corporations Trust TaxiTribe
+                                Why Corporations Trust TaxiTribe in Bengaluru
                             </h3>
 
                             <p className="text-gray-700 leading-relaxed mb-4">
-                                Operating in Delhi NCR is different — congested corridors, weather
-                                disruptions and time-sensitive corporate schedules demand predictable
-                                mobility. TaxiTribe combines local expertise with SLA-driven operations
-                                to keep your workforce moving on time.
+                                Bengaluru’s IT parks, ring roads and airport commutes require dependable mobility. TaxiTribe pairs local operational experience with SLA-driven processes to keep your teams moving reliably.
                             </p>
 
                             <p className="text-gray-700 leading-relaxed mb-6">
-                                Our corporate program reduces downtime, centralizes billing, and gives
-                                your team reliable chauffeurs, real-time tracking and clean MIS-ready
-                                reporting.
+                                Our corporate program reduces downtime, centralizes billing, and gives your team reliable chauffeurs, real-time tracking and finance-ready reporting.
                             </p>
 
                             <button
@@ -312,7 +299,6 @@ export default function CorporateDelhiPage() {
                             </button>
                         </div>
 
-                        {/* RIGHT COLUMN — 6 BENEFIT CARDS */}
                         <div className="lg:col-span-7">
                             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                                 {benefits.map((b, idx) => (
@@ -333,10 +319,8 @@ export default function CorporateDelhiPage() {
                                 ))}
                             </div>
                         </div>
-
                     </div>
                 </section>
-
 
                 {/* SOPs & Best Practices */}
                 <SOPsSection />
@@ -356,27 +340,26 @@ export default function CorporateDelhiPage() {
                 </section>
 
                 {/* FINAL CTA */}
-                        {/* CTA Section */}
-        <div className="bg-linear-to-r from-amber-500 to-amber-600 shadow-xl overflow-hidden">
-          <div className="grid md:grid-cols-2">
-            <div className="p-12">
-              <h2 className="text-2xl font-bold mb-4">Ready to elevate your corporate travel</h2>
-              <p className="text-lg mb-8">
-                “Guaranteed 10% savings on your current annual spends”
-              </p>
-              <button onClick={() => setDialogOpen(true)} className="bg-black text-white px-8 py-3 rounded-lg font-bold hover:bg-gray-900 transition-colors">
-                Get Guote
-              </button>
-            </div>
-            <div className="hidden md:block bg-[url('https://images.unsplash.com/photo-1450101499163-c8848c66ca85?auto=format&fit=crop&w=800')] bg-cover bg-center"></div>
-          </div>
-        </div>
+                <div className="bg-linear-to-r from-amber-500 to-amber-600 shadow-xl overflow-hidden">
+                  <div className="grid md:grid-cols-2">
+                    <div className="p-12">
+                      <h2 className="text-2xl font-bold mb-4">Ready to elevate your corporate travel</h2>
+                      <p className="text-lg mb-8">
+                        “Guaranteed 10% savings on your current annual spends”
+                      </p>
+                      <button onClick={() => setDialogOpen(true)} className="bg-black text-white px-8 py-3 rounded-lg font-bold hover:bg-gray-900 transition-colors">
+                        Get Quote
+                      </button>
+                    </div>
+                    <div className="hidden md:block bg-[url('https://images.unsplash.com/photo-1450101499163-c8848c66ca85?auto=format&fit=crop&w=800')] bg-cover bg-center"></div>
+                  </div>
+                </div>
             </main>
 
             {/* Booking Dialog */}
             <BookingDialog
                 open={dialogOpen}
-                model="Corporate Rental Program - Delhi"
+                model="Corporate Rental Program - Bengaluru"
                 onOpenChange={setDialogOpen}
                 onSubmit={(payload) => {
                     console.log("Corporate Service Booking Payload:", payload);

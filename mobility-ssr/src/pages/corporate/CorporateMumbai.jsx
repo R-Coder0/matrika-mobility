@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { Briefcase, Users, Globe, ArrowRight, Heart } from "lucide-react";
-import BookingDialog from "../components/BookingCar";
+import BookingDialog from "../../components/BookingCar";
 import {
     FaHandshake,
     FaCogs,
@@ -9,15 +9,15 @@ import {
     FaCalendarAlt,
     FaUsers,
 } from "react-icons/fa";
-import SOPsSection from "./SOPsSection";
-import BestPracticesSection from "../components/BestPractise";
+import SOPsSection from "../SOPsSection";
+import BestPracticesSection from "../../components/BestPractise";
 import { Helmet } from "react-helmet-async";
 
 /**
- * CorporateBangalorePage — content adapted from Gurgaon/Noida -> Bangalore (Bengaluru)
+ * CorporateMumbaiPage — content adapted for Mumbai
  */
 
-export default function CorporateBangalorePage() {
+export default function CorporateMumbaiPage() {
     const [dialogOpen, setDialogOpen] = useState(false);
 
     const services = [
@@ -25,7 +25,7 @@ export default function CorporateBangalorePage() {
             icon: <Briefcase className="h-8 w-8 text-amber-500" />,
             title: "Executive Corporate Travel",
             description:
-                "SLA-backed rentals for executives — punctual, discreet and secure across Bengaluru's business corridors.",
+                "SLA-backed rentals for executives — punctual, discreet and secure across Mumbai’s corporate and financial corridors.",
             image: "/corporate/ect.webp",
             features: [
                 "Hourly, daily & multi-day rental options",
@@ -37,7 +37,7 @@ export default function CorporateBangalorePage() {
             icon: <Users className="h-8 w-8 text-amber-500" />,
             title: "Event & Conference Transportation",
             description:
-                "End-to-end fleet coordination for conferences, exhibitions and corporate events in Bengaluru's tech and convention hubs.",
+                "End-to-end fleet coordination for conferences, exhibitions and large-scale events across Mumbai and Navi Mumbai.",
             image: "/corporate/eact.jpg",
             features: [
                 "Group shuttles & minibuses",
@@ -48,7 +48,7 @@ export default function CorporateBangalorePage() {
         {
             icon: <Heart className="h-8 w-8 text-amber-500" />,
             title: "Wedding & Special Occasion Cars",
-            description: "Premium and vintage vehicles for high-profile ceremonies and celebrations across Bengaluru.",
+            description: "Premium and vintage vehicles for high-profile ceremonies and celebrations across Mumbai.",
             image: "/corporate/wsoc.jpg",
             features: [
                 "Themed vehicle decor",
@@ -59,7 +59,7 @@ export default function CorporateBangalorePage() {
         {
             icon: <Globe className="h-8 w-8 text-amber-500" />,
             title: "Airport Transfers",
-            description: "Flight-aware pickups with meet-and-greet and baggage assistance for passengers travelling to/from Kempegowda International Airport.",
+            description: "Flight-aware transfers to/from Mumbai International Airport (T1/T2) — smooth and dependable.",
             image: "/corporate/at.jpg",
             features: [
                 "Real-time flight tracking",
@@ -120,12 +120,12 @@ export default function CorporateBangalorePage() {
     return (
         <div className="min-h-screen bg-[#FFFAFA] text-black">
             <Helmet>
-                <title>Best Corporate Car Rental in Bengaluru | TaxiTribe</title>
+                <title>Best Corporate Car Rental in Mumbai | TaxiTribe</title>
                 <meta
                     name="description"
-                    content="Best corporate car rental in Bengaluru — SLA-backed corporate programs, airport transfers and event transportation with dedicated account managers."
+                    content="Best corporate car rental in Mumbai — SLA-backed corporate programs, airport transfers and event transportation with dedicated account managers."
                 />
-                <link rel="canonical" href="https://taxitribe.in/corporate/corporate-in-bengaluru" />
+                <link rel="canonical" href="https://taxitribe.in/corporate/corporate-in-mumbai" />
             </Helmet>
 
             {/* HERO */}
@@ -134,59 +134,60 @@ export default function CorporateBangalorePage() {
                     className="h-56 md:h-100 bg-center bg-cover relative"
                     style={{
                         backgroundImage:
-                            "linear-gradient(rgba(0,0,0,0.55), rgba(0,0,0,0.55)), url('/bangalore.png')",
+                            "linear-gradient(rgba(0,0,0,0.55), rgba(0,0,0,0.55)), url('/mumbai.png')",
                     }}
                     role="img"
-                    aria-label="Corporate car rental in Bengaluru"
+                    aria-label="Corporate car rental in Mumbai"
                 >
                     <div className="max-w-[1500px] mx-auto px-6 h-full flex items-center">
                         <div className="w-full md:w-2/3 lg:w-1/2 text-white z-10">
+
                             <nav aria-label="Breadcrumb" className="text-sm text-gray-200 mb-2">
                                 <ol className="flex items-center gap-2">
-                                    <li>
-                                        <a href="/" className="hover:underline">Home</a>
-                                    </li>
+                                    <li><a href="/" className="hover:underline">Home</a></li>
                                     <li className="text-gray-400">/</li>
-                                    <li>
-                                        <a href="/corporate-protocol" className="hover:underline">Corporate</a>
-                                    </li>
+                                    <li><a href="/corporate-protocol" className="hover:underline">Corporate</a></li>
                                     <li className="text-gray-400">/</li>
-                                    <li className="font-semibold text-amber-300">Bengaluru</li>
+                                    <li className="font-semibold text-amber-300">Mumbai</li>
                                 </ol>
                             </nav>
 
                             <h1 className="text-2xl md:text-3xl font-bold leading-snug">
-                                Best Corporate Car Rental in Bengaluru
+                                Best Corporate Car Rental in Mumbai
                             </h1>
 
                             <p className="mt-3 text-sm md:text-base text-gray-200 max-w-xl">
-                                SLA-backed corporate car rental programs across Bengaluru — Koramangala, Electronic City, Whitefield, Outer Ring Road and KIA covered with dedicated account managers and real-time tracking.
+                                SLA-backed corporate car rental programs across Mumbai — BKC, Andheri, Powai, Navi Mumbai and Lower Parel covered with dedicated account managers and real-time tracking.
                             </p>
 
                             <div className="mt-4 flex items-center gap-3">
                                 <button
                                     onClick={() => setDialogOpen(true)}
-                                    className="bg-amber-500 text-black px-4 py-2 rounded-full font-semibold shadow-sm hover:bg-amber-600 transition cursor-pointer focus:outline-none focus:ring-2 focus:ring-amber-300"
-                                    aria-label="Get quote"
+                                    className="bg-amber-500 text-black px-4 py-2 rounded-full font-semibold shadow-sm hover:bg-amber-600 transition cursor-pointer focus:outline-none"
                                 >
                                     Get Quote
                                 </button>
                             </div>
+
                         </div>
                     </div>
                 </div>
             </header>
 
-            {/* MAIN */}
+            {/* MAIN CONTENT */}
             <main className="max-w-[1500px] mx-auto px-6 py-12">
-                {/* ABOUT — two-column layout: left text/cta, right 6-card grid */}
+
+                {/* ABOUT SECTION */}
                 <section className="mb-12">
-                    <div className="max-w-[1400px] mx-auto grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
-                        {/* Left column: intro + CTA */}
+                    <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+
+                        {/* LEFT */}
                         <div className="lg:col-span-5">
-                            <h2 className="text-2xl font-semibold mb-4">About Our Bengaluru Corporate Program</h2>
+                            <h2 className="text-2xl font-semibold mb-4">About Our Mumbai Corporate Program</h2>
+
                             <p className="text-gray-700 leading-relaxed mb-4">
-                                TaxiTribe delivers corporate mobility optimised for Bengaluru — traffic corridors, IT park commutes and airport transfers. We help companies reduce downtime, centralize billing and improve employee punctuality across Koramangala, Whitefield, Electronic City and the Outer Ring Road.
+                                TaxiTribe delivers corporate mobility crafted for Mumbai — high-density commercial zones, financial districts and airport-driven commutes.
+                                We help companies reduce downtime, centralize billing and improve employee punctuality across BKC, Andheri, Powai, Lower Parel and Navi Mumbai.
                             </p>
 
                             <ul className="text-gray-700 mb-6 space-y-2">
@@ -195,30 +196,25 @@ export default function CorporateBangalorePage() {
                                 <li>• Event logistics & bulk bookings</li>
                             </ul>
 
-                            <div className="flex gap-3">
-                                <button
-                                    onClick={() => setDialogOpen(true)}
-                                    className="bg-black text-white px-5 py-2 rounded-md font-medium cursor-pointer focus:outline-none focus:ring-2 focus:ring-black"
-                                >
-                                    Request a Pilot
-                                </button>
-                                <a href="#faqs" className="underline self-center text-gray-700 cursor-pointer">See FAQs</a>
-                            </div>
+                            <button
+                                onClick={() => setDialogOpen(true)}
+                                className="bg-black text-white px-5 py-2 rounded-md font-medium"
+                            >
+                                Request a Pilot
+                            </button>
                         </div>
 
-                        {/* Right column: 6 cards */}
+                        {/* RIGHT CARDS */}
                         <div className="lg:col-span-7">
-                            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                            <div className="grid sm:grid-cols-2 gap-4">
                                 {benefits.map((b, i) => (
                                     <div
                                         key={i}
-                                        className="flex gap-4 items-start bg-white rounded-lg p-4 shadow-sm hover:shadow-md transform hover:-translate-y-1 transition"
+                                        className="flex gap-4 bg-white rounded-lg p-4 shadow-sm hover:shadow-md transform hover:-translate-y-1 transition"
                                         style={{ minHeight: 120 }}
                                     >
-                                        <div className="shrink-0">
-                                            <div className="w-12 h-12 rounded-lg bg-amber-50 flex items-center justify-center">
-                                                {b.icon}
-                                            </div>
+                                        <div className="w-12 h-12 rounded-lg bg-amber-50 flex items-center justify-center">
+                                            {b.icon}
                                         </div>
 
                                         <div className="flex-1">
@@ -229,44 +225,44 @@ export default function CorporateBangalorePage() {
                                 ))}
                             </div>
                         </div>
+
                     </div>
                 </section>
 
                 {/* TAILORED SERVICES */}
                 <section className="mb-12">
                     <h3 className="text-2xl font-semibold text-center mb-6">Tailored Services</h3>
+
                     <div className="grid md:grid-cols-2 gap-8">
                         {services.map((s, i) => (
-                            <article key={i} className="rounded-xl overflow-hidden shadow-lg bg-white">
-                                <div className="relative h-56 bg-gray-100">
-                                    <img src={s.image} alt={s.title} className="w-full h-full object-cover" loading="lazy" />
+                            <article key={i} className="rounded-xl shadow-lg overflow-hidden bg-white">
+                                <div className="h-56 bg-gray-100">
+                                    <img src={s.image} alt={s.title} className="w-full h-full object-cover" />
                                 </div>
 
                                 <div className="p-6">
-                                    <div className="flex items-start gap-4">
+                                    <div className="flex gap-4 items-start">
                                         <div className="mt-1">{s.icon}</div>
+
                                         <div>
                                             <h4 className="text-xl font-semibold mb-2">{s.title}</h4>
                                             <p className="text-gray-700 mb-3">{s.description}</p>
-                                            <ul className="text-gray-700 list-inside space-y-1 mb-4">
+
+                                            <ul className="list-inside space-y-1 mb-4 text-gray-700">
                                                 {s.features.map((f, idx) => (
                                                     <li key={idx} className="flex items-start">
                                                         <span className="text-amber-500 mr-2 mt-1">•</span>
-                                                        <span>{f}</span>
+                                                        {f}
                                                     </li>
                                                 ))}
                                             </ul>
 
-                                            <div className="flex items-center justify-between">
-                                                <span className="text-sm text-gray-500">Custom solutions available</span>
-                                                <button
-                                                    onClick={() => setDialogOpen(true)}
-                                                    className="text-amber-500 font-medium flex items-center gap-2 cursor-pointer focus:outline-none"
-                                                    aria-label={`Get quote for ${s.title}`}
-                                                >
-                                                    Get Quote <ArrowRight className="h-4 w-4" />
-                                                </button>
-                                            </div>
+                                            <button
+                                                onClick={() => setDialogOpen(true)}
+                                                className="text-amber-500 font-medium flex items-center gap-2"
+                                            >
+                                                Get Quote <ArrowRight className="h-4 w-4" />
+                                            </button>
                                         </div>
                                     </div>
                                 </div>
@@ -275,43 +271,43 @@ export default function CorporateBangalorePage() {
                     </div>
                 </section>
 
-                {/* WHY CHOOSE — redesigned (two-column story + 6 polished cards) */}
+                {/* WHY CHOOSE SECTION */}
                 <section className="mb-12">
-                    <div className="max-w-[1500px] mx-auto grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
-                        <div className="lg:col-span-5">
-                            <h3 className="text-2xl font-semibold mb-4">
-                                Why Corporations Trust TaxiTribe in Bengaluru
-                            </h3>
+                    <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
 
-                            <p className="text-gray-700 leading-relaxed mb-4">
-                                Bengaluru’s IT parks, ring roads and airport commutes require dependable mobility. TaxiTribe pairs local operational experience with SLA-driven processes to keep your teams moving reliably.
+                        {/* LEFT */}
+                        <div className="lg:col-span-5">
+                            <h3 className="text-2xl font-semibold mb-4">Why Corporations Trust TaxiTribe in Mumbai</h3>
+
+                            <p className="text-gray-700 mb-4">
+                                Mumbai’s business hubs, financial centres and airport-linked travel demand predictable corporate mobility. TaxiTribe brings SLA-driven operations with local expertise for maximum reliability.
                             </p>
 
-                            <p className="text-gray-700 leading-relaxed mb-6">
-                                Our corporate program reduces downtime, centralizes billing, and gives your team reliable chauffeurs, real-time tracking and finance-ready reporting.
+                            <p className="text-gray-700 mb-6">
+                                Our corporate mobility program improves punctuality, optimizes operational costs and streamlines billing through MIS-ready reporting.
                             </p>
 
                             <button
                                 onClick={() => setDialogOpen(true)}
-                                className="bg-amber-500 text-black px-5 py-2 rounded-md font-medium shadow-sm hover:bg-amber-600 transition cursor-pointer focus:outline-none focus:ring-2 focus:ring-amber-300"
+                                className="bg-amber-500 text-black px-5 py-2 rounded-md font-medium"
                             >
                                 Request a Corporate Quote
                             </button>
                         </div>
 
+                        {/* RIGHT CARDS */}
                         <div className="lg:col-span-7">
-                            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                                {benefits.map((b, idx) => (
+                            <div className="grid sm:grid-cols-2 gap-4">
+                                {benefits.map((b, i) => (
                                     <div
-                                        key={idx}
-                                        className="flex gap-4 items-start bg-white rounded-lg p-4 shadow-sm hover:shadow-md transform hover:-translate-y-1 transition"
+                                        key={i}
+                                        className="flex gap-4 bg-white rounded-lg p-4 shadow-sm hover:shadow-md transform hover:-translate-y-1 transition"
                                         style={{ minHeight: 120 }}
                                     >
-                                        <div className="shrink-0 w-12 h-12 rounded-lg bg-amber-50 flex items-center justify-center">
-                                            <div className="text-amber-500">{b.icon}</div>
+                                        <div className="w-12 h-12 rounded-lg bg-amber-50 flex items-center justify-center">
+                                            {b.icon}
                                         </div>
-
-                                        <div className="flex-1">
+                                        <div>
                                             <h4 className="font-semibold">{b.title}</h4>
                                             <p className="text-sm text-gray-700 mt-1">{b.desc}</p>
                                         </div>
@@ -319,16 +315,18 @@ export default function CorporateBangalorePage() {
                                 ))}
                             </div>
                         </div>
+
                     </div>
                 </section>
 
-                {/* SOPs & Best Practices */}
+                {/* SOPs & BEST PRACTICES */}
                 <SOPsSection />
                 <BestPracticesSection />
 
                 {/* FAQs */}
-                <section id="faqs" className="mt-12 mb-12">
+                <section id="faqs" className="my-12">
                     <h3 className="text-2xl font-semibold text-center mb-6">Frequently Asked Questions</h3>
+
                     <div className="max-w-[900px] mx-auto space-y-4">
                         {faqs.map((f, i) => (
                             <details key={i} className="bg-white border rounded-lg p-4">
@@ -340,26 +338,30 @@ export default function CorporateBangalorePage() {
                 </section>
 
                 {/* FINAL CTA */}
-                <div className="bg-linear-to-r from-amber-500 to-amber-600 shadow-xl overflow-hidden">
-                  <div className="grid md:grid-cols-2">
-                    <div className="p-12">
-                      <h2 className="text-2xl font-bold mb-4">Ready to elevate your corporate travel</h2>
-                      <p className="text-lg mb-8">
-                        “Guaranteed 10% savings on your current annual spends”
-                      </p>
-                      <button onClick={() => setDialogOpen(true)} className="bg-black text-white px-8 py-3 rounded-lg font-bold hover:bg-gray-900 transition-colors">
-                        Get Quote
-                      </button>
+                <div className="bg-linear-to-r from-amber-500 to-amber-600 shadow-xl">
+                    <div className="grid md:grid-cols-2">
+                        <div className="p-12">
+                            <h2 className="text-2xl font-bold mb-4">Ready to elevate your corporate travel?</h2>
+                            <p className="text-lg mb-8">“Guaranteed 10% savings on your annual mobility spends.”</p>
+
+                            <button
+                                onClick={() => setDialogOpen(true)}
+                                className="bg-black text-white px-8 py-3 rounded-lg font-bold"
+                            >
+                                Get Quote
+                            </button>
+                        </div>
+
+                        <div className="hidden md:block bg-[url('https://images.unsplash.com/photo-1450101499163-c8848c66ca85?auto=format&fit=crop&w=800')] bg-cover bg-center"></div>
                     </div>
-                    <div className="hidden md:block bg-[url('https://images.unsplash.com/photo-1450101499163-c8848c66ca85?auto=format&fit=crop&w=800')] bg-cover bg-center"></div>
-                  </div>
                 </div>
+
             </main>
 
-            {/* Booking Dialog */}
+            {/* BOOKING DIALOG */}
             <BookingDialog
                 open={dialogOpen}
-                model="Corporate Rental Program - Bengaluru"
+                model="Corporate Rental Program - Mumbai"
                 onOpenChange={setDialogOpen}
                 onSubmit={(payload) => {
                     console.log("Corporate Service Booking Payload:", payload);

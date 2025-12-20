@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { Briefcase, Users, Globe, ArrowRight, Heart } from "lucide-react";
-import BookingDialog from "../components/BookingCar";
+import BookingDialog from "../../components/BookingCar";
 import {
     FaHandshake,
     FaCogs,
@@ -9,15 +9,19 @@ import {
     FaCalendarAlt,
     FaUsers,
 } from "react-icons/fa";
-import SOPsSection from "./SOPsSection";
-import BestPracticesSection from "../components/BestPractise";
+import SOPsSection from "../SOPsSection";
+import BestPracticesSection from "../../components/BestPractise";
 import { Helmet } from "react-helmet-async";
 
 /**
- * CorporateNoidaPage — content adapted from Delhi -> Noida
+ * CorporateDelhiPage — improved About alignment + polish
+ * - max width 1700px
+ * - hero compact + breadcrumbs
+ * - About: two-column (text + 6 card grid), aligned & consistent
+ * - All CTAs have cursor-pointer and focus styles
  */
 
-export default function CorporateNoidaPage() {
+export default function CorporateDelhiPage() {
     const [dialogOpen, setDialogOpen] = useState(false);
 
     const services = [
@@ -25,7 +29,7 @@ export default function CorporateNoidaPage() {
             icon: <Briefcase className="h-8 w-8 text-amber-500" />,
             title: "Executive Corporate Travel",
             description:
-                "SLA-backed rentals for executives — punctual, discreet and secure across Noida & Greater Noida.",
+                "SLA-backed rentals for executives — punctual, discreet and secure.",
             image: "/corporate/ect.webp",
             features: [
                 "Hourly, daily & multi-day rental options",
@@ -37,7 +41,7 @@ export default function CorporateNoidaPage() {
             icon: <Users className="h-8 w-8 text-amber-500" />,
             title: "Event & Conference Transportation",
             description:
-                "End-to-end fleet coordination for conferences, exhibitions and corporate events in Noida's business districts.",
+                "End-to-end fleet coordination for conferences, exhibitions and corporate events.",
             image: "/corporate/eact.jpg",
             features: [
                 "Group shuttles & minibuses",
@@ -48,7 +52,7 @@ export default function CorporateNoidaPage() {
         {
             icon: <Heart className="h-8 w-8 text-amber-500" />,
             title: "Wedding & Special Occasion Cars",
-            description: "Premium and vintage vehicles for high-profile ceremonies and celebrations across Noida.",
+            description: "Premium and vintage vehicles for high-profile ceremonies.",
             image: "/corporate/wsoc.jpg",
             features: [
                 "Themed vehicle decor",
@@ -59,7 +63,7 @@ export default function CorporateNoidaPage() {
         {
             icon: <Globe className="h-8 w-8 text-amber-500" />,
             title: "Airport Transfers",
-            description: "Flight-aware pickups with meet-and-greet and baggage assistance for Noida travellers.",
+            description: "Flight-aware pickups with meet-and-greet and baggage assistance.",
             image: "/corporate/at.jpg",
             features: [
                 "Real-time flight tracking",
@@ -120,12 +124,12 @@ export default function CorporateNoidaPage() {
     return (
         <div className="min-h-screen bg-[#FFFAFA] text-black">
             <Helmet>
-                <title>Best Corporate Car Rental in Noida | TaxiTribe</title>
+                <title>Best Corporate Car Rental in Delhi | TaxiTribe</title>
                 <meta
                     name="description"
-                    content="Best corporate car rental in Noida — SLA-backed corporate programs, airport transfers and event transportation with dedicated account managers."
+                    content="Best corporate car rental in delhi — SLA-backed corporate programs, airport transfers and event transportation with dedicated account managers."
                 />
-                <link rel="canonical" href="https://taxitribe.in/corporate/corporate-in-noida" />
+                <link rel="canonical" href="https://taxitribe.in/corporate/corporate-in-delhi" />
             </Helmet>
 
             {/* HERO */}
@@ -137,7 +141,7 @@ export default function CorporateNoidaPage() {
                             "linear-gradient(rgba(0,0,0,0.55), rgba(0,0,0,0.55)), url('/delhi.png')",
                     }}
                     role="img"
-                    aria-label="Corporate car rental in Noida"
+                    aria-label="Corporate car rental in Delhi"
                 >
                     <div className="max-w-[1500px] mx-auto px-6 h-full flex items-center">
                         <div className="w-full md:w-2/3 lg:w-1/2 text-white z-10">
@@ -151,16 +155,16 @@ export default function CorporateNoidaPage() {
                                         <a href="/corporate-protocol" className="hover:underline">Corporate</a>
                                     </li>
                                     <li className="text-gray-400">/</li>
-                                    <li className="font-semibold text-amber-300">Noida</li>
+                                    <li className="font-semibold text-amber-300">Delhi</li>
                                 </ol>
                             </nav>
 
                             <h1 className="text-2xl md:text-3xl font-bold leading-snug">
-                                Best Corporate Car Rental in Noida
+                                Best Corporate Car Rental in Delhi
                             </h1>
 
                             <p className="mt-3 text-sm md:text-base text-gray-200 max-w-xl">
-                                SLA-backed corporate car rental programs across Noida & Greater Noida — dedicated account managers, real-time tracking and finance-ready reporting.
+                                SLA-backed corporate car rental programs across Delhi NCR — dedicated account managers, real-time tracking and finance-ready reporting.
                             </p>
 
                             <div className="mt-4 flex items-center gap-3">
@@ -184,10 +188,10 @@ export default function CorporateNoidaPage() {
                     <div className="max-w-[1400px] mx-auto grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
                         {/* Left column: intro + CTA */}
                         <div className="lg:col-span-5">
-                            <h2 className="text-2xl font-semibold mb-4">About Our Noida Corporate Program</h2>
+                            <h2 className="text-2xl font-semibold mb-4">About Our Delhi Corporate Program</h2>
                             <p className="text-gray-700 leading-relaxed mb-4">
-                                TaxiTribe delivers corporate mobility built for Noida’s pace — reliable SLAs, trained chauffeurs and finance-ready reporting.
-                                We help companies reduce downtime, centralize billing and improve employee on-time performance across Noida, Noida Expressway and Greater Noida.
+                                TaxiTribe delivers corporate mobility built for Delhi’s unique demands — predictable SLAs, trained chauffeurs and finance-ready reporting.
+                                We help companies reduce downtime, centralize billing and improve employee on-time performance.
                             </p>
 
                             <ul className="text-gray-700 mb-6 space-y-2">
@@ -234,62 +238,88 @@ export default function CorporateNoidaPage() {
                 </section>
 
                 {/* TAILORED SERVICES */}
-                <section className="mb-12">
-                    <h3 className="text-2xl font-semibold text-center mb-6">Tailored Services</h3>
-                    <div className="grid md:grid-cols-2 gap-8">
-                        {services.map((s, i) => (
-                            <article key={i} className="rounded-xl overflow-hidden shadow-lg bg-white">
-                                <div className="relative h-56 bg-gray-100">
-                                    <img src={s.image} alt={s.title} className="w-full h-full object-cover" loading="lazy" />
-                                </div>
+{/* TAILORED SERVICES */}
+<section className="mb-16">
+  <h3 className="text-2xl font-semibold text-center mb-10">
+    Tailored Corporate Services
+  </h3>
 
-                                <div className="p-6">
-                                    <div className="flex items-start gap-4">
-                                        <div className="mt-1">{s.icon}</div>
-                                        <div>
-                                            <h4 className="text-xl font-semibold mb-2">{s.title}</h4>
-                                            <p className="text-gray-700 mb-3">{s.description}</p>
-                                            <ul className="text-gray-700 list-inside space-y-1 mb-4">
-                                                {s.features.map((f, idx) => (
-                                                    <li key={idx} className="flex items-start">
-                                                        <span className="text-amber-500 mr-2 mt-1">•</span>
-                                                        <span>{f}</span>
-                                                    </li>
-                                                ))}
-                                            </ul>
+  <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+    {services.map((s, i) => (
+      <article
+        key={i}
+        className="group bg-white rounded-2xl border border-gray-200 shadow-sm hover:shadow-lg transition-all duration-300 flex flex-col overflow-hidden"
+      >
+        {/* IMAGE */}
+        <div className="relative h-44 overflow-hidden">
+          <img
+            src={s.image}
+            alt={s.title}
+            className="w-full h-full object-cover transform group-hover:scale-105 transition duration-500"
+            loading="lazy"
+          />
+        </div>
 
-                                            <div className="flex items-center justify-between">
-                                                <span className="text-sm text-gray-500">Custom solutions available</span>
-                                                <button
-                                                    onClick={() => setDialogOpen(true)}
-                                                    className="text-amber-500 font-medium flex items-center gap-2 cursor-pointer focus:outline-none"
-                                                    aria-label={`Get quote for ${s.title}`}
-                                                >
-                                                    Get Quote <ArrowRight className="h-4 w-4" />
-                                                </button>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </article>
-                        ))}
-                    </div>
-                </section>
+        {/* CONTENT */}
+        <div className="flex-1 p-5 flex flex-col">
+          <div className="flex items-start gap-3 mb-3">
+            <div className="w-10 h-10 rounded-lg bg-amber-50 flex items-center justify-center shrink-0">
+              {s.icon}
+            </div>
+            <h4 className="text-lg font-semibold leading-snug">
+              {s.title}
+            </h4>
+          </div>
+
+          <p className="text-sm text-gray-700 mb-4">
+            {s.description}
+          </p>
+
+          <ul className="text-sm text-gray-700 space-y-1 mb-6">
+            {s.features.map((f, idx) => (
+              <li key={idx} className="flex items-start">
+                <span className="text-amber-500 mr-2 mt-1">•</span>
+                <span>{f}</span>
+              </li>
+            ))}
+          </ul>
+
+          {/* CTA */}
+          <button
+            onClick={() => setDialogOpen(true)}
+            className="mt-auto inline-flex items-center gap-2 text-amber-600 font-medium hover:text-amber-700 transition"
+          >
+            Get Quote <ArrowRight className="h-4 w-4" />
+          </button>
+        </div>
+      </article>
+    ))}
+  </div>
+</section>
+
 
                 {/* WHY CHOOSE — redesigned (two-column story + 6 polished cards) */}
+                {/* WHY CHOOSE — aligned with ABOUT section design */}
                 <section className="mb-12">
                     <div className="max-w-[1500px] mx-auto grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+
+                        {/* LEFT COLUMN — story + CTA */}
                         <div className="lg:col-span-5">
                             <h3 className="text-2xl font-semibold mb-4">
-                                Why Corporations Trust TaxiTribe in Noida
+                                Why Corporations Trust TaxiTribe
                             </h3>
 
                             <p className="text-gray-700 leading-relaxed mb-4">
-                                Noida's business hubs and expressway corridors need dependable mobility. TaxiTribe combines local knowledge with SLA-driven operations to keep your workforce moving on time.
+                                Operating in Delhi NCR is different — congested corridors, weather
+                                disruptions and time-sensitive corporate schedules demand predictable
+                                mobility. TaxiTribe combines local expertise with SLA-driven operations
+                                to keep your workforce moving on time.
                             </p>
 
                             <p className="text-gray-700 leading-relaxed mb-6">
-                                Our corporate program reduces downtime, centralizes billing, and gives your team reliable chauffeurs, real-time tracking and clean MIS-ready reporting.
+                                Our corporate program reduces downtime, centralizes billing, and gives
+                                your team reliable chauffeurs, real-time tracking and clean MIS-ready
+                                reporting.
                             </p>
 
                             <button
@@ -300,6 +330,7 @@ export default function CorporateNoidaPage() {
                             </button>
                         </div>
 
+                        {/* RIGHT COLUMN — 6 BENEFIT CARDS */}
                         <div className="lg:col-span-7">
                             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                                 {benefits.map((b, idx) => (
@@ -320,8 +351,10 @@ export default function CorporateNoidaPage() {
                                 ))}
                             </div>
                         </div>
+
                     </div>
                 </section>
+
 
                 {/* SOPs & Best Practices */}
                 <SOPsSection />
@@ -341,26 +374,27 @@ export default function CorporateNoidaPage() {
                 </section>
 
                 {/* FINAL CTA */}
-                <div className="bg-linear-to-r from-amber-500 to-amber-600 shadow-xl overflow-hidden">
-                  <div className="grid md:grid-cols-2">
-                    <div className="p-12">
-                      <h2 className="text-2xl font-bold mb-4">Ready to elevate your corporate travel</h2>
-                      <p className="text-lg mb-8">
-                        “Guaranteed 10% savings on your current annual spends”
-                      </p>
-                      <button onClick={() => setDialogOpen(true)} className="bg-black text-white px-8 py-3 rounded-lg font-bold hover:bg-gray-900 transition-colors">
-                        Get Quote
-                      </button>
-                    </div>
-                    <div className="hidden md:block bg-[url('https://images.unsplash.com/photo-1450101499163-c8848c66ca85?auto=format&fit=crop&w=800')] bg-cover bg-center"></div>
-                  </div>
-                </div>
+                        {/* CTA Section */}
+        <div className="bg-linear-to-r from-amber-500 to-amber-600 shadow-xl overflow-hidden">
+          <div className="grid md:grid-cols-2">
+            <div className="p-12">
+              <h2 className="text-2xl font-bold mb-4">Ready to elevate your corporate travel</h2>
+              <p className="text-lg mb-8">
+                “Guaranteed 10% savings on your current annual spends”
+              </p>
+              <button onClick={() => setDialogOpen(true)} className="bg-black text-white px-8 py-3 rounded-lg font-bold hover:bg-gray-900 transition-colors">
+                Get Guote
+              </button>
+            </div>
+            <div className="hidden md:block bg-[url('https://images.unsplash.com/photo-1450101499163-c8848c66ca85?auto=format&fit=crop&w=800')] bg-cover bg-center"></div>
+          </div>
+        </div>
             </main>
 
             {/* Booking Dialog */}
             <BookingDialog
                 open={dialogOpen}
-                model="Corporate Rental Program - Noida"
+                model="Corporate Rental Program - Delhi"
                 onOpenChange={setDialogOpen}
                 onSubmit={(payload) => {
                     console.log("Corporate Service Booking Payload:", payload);
