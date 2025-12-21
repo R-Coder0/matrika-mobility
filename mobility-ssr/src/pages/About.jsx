@@ -74,7 +74,7 @@ export default function AboutPage() {
       </Helmet>
 
       {/* Hero */}
-      <section className="relative min-h-[70vh] flex items-center">
+      <section className="relative min-h-[50vh] flex items-center">
         {/* optional light background image or gradient */}
         <div
           className="absolute inset-0"
@@ -83,11 +83,6 @@ export default function AboutPage() {
               "linear-gradient(90deg, rgba(255,250,240,1) 0%, rgba(255,249,245,1) 50%, rgba(255,250,240,1) 100%)",
           }}
         />
-
-        <div className="absolute top-6 left-6 z-30">
-          {/* Use uploaded logo local path; tool will convert /mnt/data/logo.png to a URL */}
-          <img src="/mnt/data/logo.png" alt="Taxi Tribe" className="h-12" />
-        </div>
 
         <div
           className={`relative z-20 text-center max-w-5xl mx-auto px-6 transition-all duration-700 ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-6"}`}

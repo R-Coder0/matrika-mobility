@@ -50,6 +50,7 @@ export default function App() {
 
   {/* 🔥 ALL SERVICE PAGES */}
   <Route path="/:slug" element={<DynamicServicePage />} />
+  <Route path="/wedding-car" element={<WeddingCar />} />
 </Routes>
 
 

@@ -1,8 +1,75 @@
-import React from "react";
+import React, { useState } from "react";
 import { Phone, Mail, MessageCircle, ChevronDown } from "lucide-react";
 import WeddingHero from "../components/WeddingHero";
 
+
 export default function WeddingCar() {
+    // ================= FORM STATE =================
+    const [formData, setFormData] = useState({
+        name: "",
+        phone: "",
+        email: "",
+        city: "",
+        date: "",
+    });
+
+    const [loading, setLoading] = useState(false);
+    const [status, setStatus] = useState({ type: "", message: "" });
+
+    const handleChange = (e) => {
+        const { name, value } = e.target;
+        setFormData((prev) => ({ ...prev, [name]: value }));
+    };
+
+const handleSubmit = async (e) => {
+  e.preventDefault();
+  setLoading(true);
+  setStatus({ type: "", message: "" });
+
+  try {
+    const res = await fetch("http://localhost:5000/api/wedding-enquiry", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(formData),
+    });
+
+    if (!res.ok) throw new Error("Failed");
+
+    // ✅ GOOGLE ADS CONVERSION EVENT
+    if (window.gtag) {
+      window.gtag("event", "conversion", {
+        send_to: "AW-17769558353/gU4fCLaclNUbENHil5lC",
+      });
+      console.log("🟢 Google Ads conversion fired");
+    } else {
+      console.warn("⚠️ gtag not available");
+    }
+
+    setStatus({
+      type: "success",
+      message: "✅ Enquiry submitted successfully! Our team will contact you shortly.",
+    });
+
+    setFormData({
+      name: "",
+      phone: "",
+      email: "",
+      city: "",
+      date: "",
+    });
+  } catch (error) {
+    console.error("🔴 Form submit error:", error);
+
+    setStatus({
+      type: "error",
+      message: "❌ Something went wrong. Please try again.",
+    });
+  } finally {
+    setLoading(false);
+  }
+};
+
+
     return (
         <div className="w-full font-sans bg-[#FFFAFA] text-black">
 
@@ -123,6 +190,7 @@ export default function WeddingCar() {
 
             {/* ===== FULL-WIDTH ENQUIRY FORM ===== */}
             {/* ===== FULL-WIDTH ENQUIRY FORM ===== */}
+            {/* ================= QUICK ENQUIRY FORM ================= */}
             <section className="py-14 bg-white shadow-inner border-t border-gray-100">
                 <div className="max-w-7xl mx-auto px-6">
 
@@ -130,54 +198,80 @@ export default function WeddingCar() {
                         Quick Enquiry
                     </h2>
 
-                    <form className="grid grid-cols-1 md:grid-cols-5 gap-4 max-w-6xl mx-auto">
+                    <form
+                        onSubmit={handleSubmit}
+                        className="grid grid-cols-1 md:grid-cols-5 gap-4 max-w-6xl mx-auto"
+                    >
 
-                        {/* Name */}
                         <input
                             type="text"
+                            name="name"
+                            value={formData.name}
+                            onChange={handleChange}
                             placeholder="Full Name"
-                            className="p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#FFD400]"
+                            required
+                            className="p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#FFD400]"
                         />
 
-                        {/* Phone */}
                         <input
                             type="tel"
+                            name="phone"
+                            value={formData.phone}
+                            onChange={handleChange}
                             placeholder="Phone Number"
-                            className="p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#FFD400]"
+                            required
+                            className="p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#FFD400]"
                         />
 
-                        {/* Email */}
                         <input
                             type="email"
+                            name="email"
+                            value={formData.email}
+                            onChange={handleChange}
                             placeholder="Email Address"
-                            className="p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#FFD400]"
+                            required
+                            className="p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#FFD400]"
                         />
 
-                        {/* City */}
                         <input
                             type="text"
+                            name="city"
+                            value={formData.city}
+                            onChange={handleChange}
                             placeholder="City / Location"
-                            className="p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#FFD400]"
+                            className="p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#FFD400]"
                         />
 
-                        {/* Date */}
                         <input
                             type="date"
-                            className="p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#FFD400]"
+                            name="date"
+                            value={formData.date}
+                            onChange={handleChange}
+                            className="p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#FFD400]"
                         />
 
-
-                        {/* FULL-WIDTH BUTTON (comes below on mobile/tablet) */}
                         <button
                             type="submit"
-                            className="md:col-span-6 bg-[#FFD400] text-black rounded-lg font-semibold shadow-sm hover:shadow-md transition px-6 py-3"
+                            disabled={loading}
+                            className="md:col-span-5 bg-[#FFD400] text-black rounded-lg font-semibold hover:shadow-md transition px-6 py-3 disabled:opacity-60"
                         >
-                            Submit Enquiry
+                            {loading ? "Submitting..." : "Submit Enquiry"}
                         </button>
                     </form>
 
-                    <p className="text-center text-xs text-gray-500 mt-3">
-                        Our team will get back to you instantly.
+                    {status.message && (
+                        <p
+                            className={`text-center mt-4 font-medium ${status.type === "success"
+                                    ? "text-green-600"
+                                    : "text-red-600"
+                                }`}
+                        >
+                            {status.message}
+                        </p>
+                    )}
+
+                    <p className="text-center text-xs text-gray-500 mt-2">
+                        Your details are safe with us.
                     </p>
                 </div>
             </section>
