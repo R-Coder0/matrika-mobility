@@ -79,7 +79,7 @@ const handleSubmit = async (e) => {
             {/* ===== THIN CONTACT STRIP ===== */}
             <div className="w-full bg-[#FFD400] py-3">
                 <div className="container mx-auto px-6 flex justify-center gap-8">
-                    <p className="flex items-center gap-2"><Phone size={18} /> +91 7011438890</p>
+                    <p className="flex items-center gap-2"><Phone size={18} /> +91 7011438890</p>
                     <p className="flex items-center gap-2"><Mail size={18} /> sales@taxitribe.in</p>
                     <p className=" items-center gap-2 hidden md:flex"><MessageCircle size={18} /> WhatsApp</p>
                 </div>
@@ -385,7 +385,7 @@ const handleSubmit = async (e) => {
                 <p className="mt-2 text-lg">Premium cars • Elegant décor • Professional chauffeurs</p>
 
                 <a
-                    href="tel:+91-98XXXXXX90"
+                    href="tel:+91 7011438890"
                     className="mt-6 inline-block bg-black text-white px-10 py-4 rounded-xl font-semibold"
                 >
                     Call Now
