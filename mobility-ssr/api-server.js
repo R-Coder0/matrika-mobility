@@ -18,7 +18,7 @@ const PORT = 5000;
 // ✅ CORS ENABLE (THIS IS THE KEY)
 app.use(
   cors({
-    origin: "http://localhost:5173",
+    origin: "https://taxitribe.in",
     methods: ["GET", "POST"],
     allowedHeaders: ["Content-Type"],
   })

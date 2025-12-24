@@ -15,7 +15,6 @@ export default function WeddingCar() {
 
     const [loading, setLoading] = useState(false);
     const [status, setStatus] = useState({ type: "", message: "" });
-
     const handleChange = (e) => {
         const { name, value } = e.target;
         setFormData((prev) => ({ ...prev, [name]: value }));
@@ -25,13 +24,12 @@ export default function WeddingCar() {
         e.preventDefault();
         setLoading(true);
         setStatus({ type: "", message: "" });
-
-        try {
-            const res = await fetch("http://localhost:5000/api/wedding-enquiry", {
-                method: "POST",
-                headers: { "Content-Type": "application/json" },
-                body: JSON.stringify(formData),
-            });
+  try {
+    const res = await fetch("https://taxitribe.in/api/wedding-enquiry", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(formData),
+    });
 
             if (!res.ok) throw new Error("Failed");
 
