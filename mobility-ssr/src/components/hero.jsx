@@ -124,7 +124,7 @@ export default function Hero() {
   return (
     <>
       {/* HERO BANNER SECTION - Desktop पर form के साथ */}
-      <section className="relative min-h-[80vh] md:min-h-screen overflow-hidden bg-black pt-20">
+      <section className="relative min-h-[70vh] md:min-h-screen overflow-hidden bg-black pt-4 md:pt-20">
         {/* Background Slides */}
         <div className="absolute inset-0">
           {slides.map((s, i) => (

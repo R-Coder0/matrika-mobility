@@ -55,7 +55,7 @@ export default function Navbar() {
             </button>
 
             {cityOpen && (
-              <div className="absolute left-0 mt-2 w-44 bg-white border rounded-lg shadow-xl z-[9999]">
+              <div className="absolute left-0 mt-2 w-44 bg-white border rounded-lg shadow-xl z-9999">
                 {CITIES.map((c) => (
                   <button
                     key={c.slug}

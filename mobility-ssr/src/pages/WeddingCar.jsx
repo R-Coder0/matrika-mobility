@@ -21,53 +21,53 @@ export default function WeddingCar() {
         setFormData((prev) => ({ ...prev, [name]: value }));
     };
 
-const handleSubmit = async (e) => {
-  e.preventDefault();
-  setLoading(true);
-  setStatus({ type: "", message: "" });
+    const handleSubmit = async (e) => {
+        e.preventDefault();
+        setLoading(true);
+        setStatus({ type: "", message: "" });
 
-  try {
-    const res = await fetch("http://localhost:5000/api/wedding-enquiry", {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify(formData),
-    });
+        try {
+            const res = await fetch("http://localhost:5000/api/wedding-enquiry", {
+                method: "POST",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify(formData),
+            });
 
-    if (!res.ok) throw new Error("Failed");
+            if (!res.ok) throw new Error("Failed");
 
-    // ✅ GOOGLE ADS CONVERSION EVENT
-    if (window.gtag) {
-      window.gtag("event", "conversion", {
-        send_to: "AW-17769558353/gU4fCLaclNUbENHil5lC",
-      });
-      console.log("🟢 Google Ads conversion fired");
-    } else {
-      console.warn("⚠️ gtag not available");
-    }
+            // ✅ GOOGLE ADS CONVERSION EVENT
+            if (window.gtag) {
+                window.gtag("event", "conversion", {
+                    send_to: "AW-17769558353/gU4fCLaclNUbENHil5lC",
+                });
+                console.log("🟢 Google Ads conversion fired");
+            } else {
+                console.warn("⚠️ gtag not available");
+            }
 
-    setStatus({
-      type: "success",
-      message: "✅ Enquiry submitted successfully! Our team will contact you shortly.",
-    });
+            setStatus({
+                type: "success",
+                message: "✅ Enquiry submitted successfully! Our team will contact you shortly.",
+            });
 
-    setFormData({
-      name: "",
-      phone: "",
-      email: "",
-      city: "",
-      date: "",
-    });
-  } catch (error) {
-    console.error("🔴 Form submit error:", error);
+            setFormData({
+                name: "",
+                phone: "",
+                email: "",
+                city: "",
+                date: "",
+            });
+        } catch (error) {
+            console.error("🔴 Form submit error:", error);
 
-    setStatus({
-      type: "error",
-      message: "❌ Something went wrong. Please try again.",
-    });
-  } finally {
-    setLoading(false);
-  }
-};
+            setStatus({
+                type: "error",
+                message: "❌ Something went wrong. Please try again.",
+            });
+        } finally {
+            setLoading(false);
+        }
+    };
 
 
     return (
@@ -262,8 +262,8 @@ const handleSubmit = async (e) => {
                     {status.message && (
                         <p
                             className={`text-center mt-4 font-medium ${status.type === "success"
-                                    ? "text-green-600"
-                                    : "text-red-600"
+                                ? "text-green-600"
+                                : "text-red-600"
                                 }`}
                         >
                             {status.message}
@@ -385,11 +385,20 @@ const handleSubmit = async (e) => {
                 <p className="mt-2 text-lg">Premium cars • Elegant décor • Professional chauffeurs</p>
 
                 <a
-                    href="tel:+91 7011438890"
+                    href="tel:+917011438890"
+                    onClick={() => {
+                        if (window.gtag) {
+                            window.gtag("event", "conversion", {
+                                send_to: "AW-17769558353/AbCdEfGhIjK", // 👈 YOUR CALL CONVERSION ID
+                            });
+                            console.log("📞 Call conversion fired");
+                        }
+                    }}
                     className="mt-6 inline-block bg-black text-white px-10 py-4 rounded-xl font-semibold"
                 >
                     Call Now
                 </a>
+ 
             </section>
 
         </div>

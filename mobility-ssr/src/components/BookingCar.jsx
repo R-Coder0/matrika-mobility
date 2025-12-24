@@ -123,7 +123,7 @@ export default function BookingDialog({ open, model, onOpenChange, onSubmit }) {
         className="bg-white text-gray-800 rounded-3xl shadow-2xl w-full max-w-lg relative max-h-[90vh] overflow-y-auto"
       >
         {/* Decorative Header Background */}
-        <div className="bg-linear-to-r from-yellow-400 via-amber-500 to-yellow-500 h-2 sticky top-0"></div>
+        {/* <div className="bg-linear-to-r from-yellow-400 via-amber-500 to-yellow-500 h-2 sticky top-0"></div> */}
 
         {/* Close Button */}
         <button
@@ -141,7 +141,7 @@ export default function BookingDialog({ open, model, onOpenChange, onSubmit }) {
             <>
               {/* Header */}
               <div className="text-center mb-6">
-                <div className="inline-flex items-center justify-center w-14 h-14 md:w-16 md:h-16 bg-linear-to-br from-yellow-400 to-amber-500 rounded-full mb-4 shadow-lg">
+                {/* <div className="inline-flex items-center justify-center w-14 h-14 md:w-16 md:h-16 bg-linear-to-br from-yellow-400 to-amber-500 rounded-full mb-4 shadow-lg">
                   <svg className="w-6 h-6 md:w-8 md:h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
                   </svg>
@@ -151,7 +151,7 @@ export default function BookingDialog({ open, model, onOpenChange, onSubmit }) {
                 </h2>
                 <p className="text-gray-600 text-sm">
                   "Get Quote – Let's Design Your Custom Rental Program."
-                </p>
+                </p> */}
                 {model && (
                   <p className="text-amber-600 font-medium mt-2">
                     Selected: {model}
@@ -269,7 +269,7 @@ export default function BookingDialog({ open, model, onOpenChange, onSubmit }) {
               </form>
 
               {/* Trust indicators */}
-              <div className="mt-6 pt-4 border-t border-gray-200">
+              {/* <div className="mt-6 pt-4 border-t border-gray-200">
                 <div className="flex flex-wrap items-center justify-center gap-3 md:gap-6 text-xs text-gray-500">
                   <div className="flex items-center">
                     <svg className="w-4 h-4 mr-1 text-green-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -290,7 +290,7 @@ export default function BookingDialog({ open, model, onOpenChange, onSubmit }) {
                     Best Prices
                   </div>
                 </div>
-              </div>
+              </div> */}
             </>
           ) : (
             // Success State
