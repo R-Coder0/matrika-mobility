@@ -5,7 +5,7 @@ import SOPsSection from "./SOPsSection";
 import { Helmet } from "react-helmet";
 
 // Single-page About (white theme)
-const FALLBACK = "/cars/placeholder.jpg";
+const FALLBACK = "/cars/merc2026/1.jpeg";
 
 export default function AboutPage() {
   const [isVisible, setIsVisible] = useState(false);
