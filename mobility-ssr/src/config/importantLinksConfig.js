@@ -3,7 +3,7 @@ export const CITIES = ["delhi", "noida", "gurugram"];
 export const SERVICES = [
   {
     label: "Airport Transfer",
-    slug: "airpot-transport-in-{city}",
+    slug: "airport-transport-in-{city}",
   },
   {
     label: "Local & Outstation",

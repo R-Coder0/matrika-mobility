@@ -123,9 +123,9 @@ export default function CorporateGurgaonPage() {
                 <title>Best Corporate Car Rental in Gurgaon | TaxiTribe</title>
                 <meta
                     name="description"
-                    content="Best corporate car rental in Gurgaon — SLA-backed corporate programs, airport transfers and event transportation with dedicated account managers."
+                    content="Best corporate car rental in Gurugram — SLA-backed corporate programs, airport transfers and event transportation with dedicated account managers."
                 />
-                <link rel="canonical" href="https://taxitribe.in/corporate/corporate-in-gurgaon" />
+                <link rel="canonical" href="https://taxitribe.in/corporate/corporate-in-gurugram" />
             </Helmet>
 
             {/* HERO */}

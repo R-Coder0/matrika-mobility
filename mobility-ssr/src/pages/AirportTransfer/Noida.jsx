@@ -31,7 +31,7 @@ export default function AirportTransfersNoida() {
         />
         <link
           rel="canonical"
-          href="https://taxitribe.in/services/airport-transfers/noida"
+          href="https://taxitribe.in/airport-transport-in-noida"
         />
       </Helmet>
 

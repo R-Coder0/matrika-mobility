@@ -141,7 +141,7 @@ export default function CorporateDelhiPage() {
                     name="description"
                     content="Best corporate car rental in delhi — SLA-backed corporate programs, airport transfers and event transportation with dedicated account managers."
                 />
-                <link rel="canonical" href="https://taxitribe.in/corporate/corporate-in-delhi" />
+                <link rel="canonical" href="hhttps://taxitribe.in/corporate-car-rental-delhi" />
             </Helmet>
 
             {/* HERO */}

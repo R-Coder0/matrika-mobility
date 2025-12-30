@@ -87,7 +87,7 @@ export default function Footer() {
           <h4 className="text-white font-semibold mb-4">Services</h4>
           <ul className="space-y-3 text-sm">
             <li><Link to="/corporate-car-rental-delhi" className="hover:text-amber-400">Corporate Car Rental</Link></li>
-            <li><Link to="/airpot-transport-in-delhi" className="hover:text-amber-400">Airport Transfers</Link></li>
+            <li><Link to="/airport-transport-in-delhi" className="hover:text-amber-400">Airport Transfers</Link></li>
             <li><Link to="/local-outstation-service-in-delhi" className="hover:text-amber-400">Local & Outstation</Link></li>
             <li><Link to="/mice-in-delhi" className="hover:text-amber-400">MICE Services</Link></li>
           </ul>

@@ -31,7 +31,7 @@ export default function MICEGurugram() {
                 />
                 <link
                     rel="canonical"
-                    href="https://taxitribe.in/services/mice/gurugram"
+                    href="https://taxitribe.in/mice-in-gurugram"
                 />
             </Helmet>
 

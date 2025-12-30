@@ -22,9 +22,9 @@ import CorporateGurgaonPage from "../pages/corporate/CorporateGurugaon";
 
 export const serviceRouteMap = {
   // Airport Transfers
-  "airpot-transport-in-delhi": AirportTransfersDelhi,
-  "airpot-transport-in-noida": AirportTransfersNoida,
-  "airpot-transport-in-gurugram": AirportTransfersGurugram,
+  "airport-transport-in-delhi": AirportTransfersDelhi,
+  "airport-transport-in-noida": AirportTransfersNoida,
+  "airport-transport-in-gurugram": AirportTransfersGurugram,
 
   // Local & Outstation
   "local-outstation-service-in-delhi": LocalOutstationDelhi,

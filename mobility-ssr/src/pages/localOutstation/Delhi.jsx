@@ -58,7 +58,7 @@ export default function LocalSpotRentalDelhi() {
                 />
                 <link
                     rel="canonical"
-                    href="https://taxitribe.in/services/spot-rentals/delhi"
+                    href="https://taxitribe.in/local-outstation-service-in-delhi"
                 />
             </Helmet>
 

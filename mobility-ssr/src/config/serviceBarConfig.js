@@ -7,7 +7,7 @@ export const SERVICE_BAR_ITEMS = [
   },
   {
     label: "Airport Transfer",
-    slug: "airpot-transport-in-{city}",
+    slug: "airport-transport-in-{city}",
     icon: "/icons/plane.svg",
   },
   {

@@ -31,7 +31,7 @@ export default function MICEDelhi() {
                 />
                 <link
                     rel="canonical"
-                    href="https://taxitribe.in/services/mice/delhi"
+                    href="https://taxitribe.in/mice-in-delhi"
                 />
             </Helmet>
 

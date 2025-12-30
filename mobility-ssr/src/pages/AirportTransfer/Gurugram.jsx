@@ -31,7 +31,7 @@ export default function AirportTransfersGurugram() {
         />
         <link
           rel="canonical"
-          href="https://taxitribe.in/services/airport-transfers/gurugram"
+          href="https://taxitribe.in/airport-transport-in-gurugram"
         />
       </Helmet>
 

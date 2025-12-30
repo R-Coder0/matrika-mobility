@@ -58,7 +58,7 @@ export default function LocalSpotRentalNoida() {
                 />
                 <link
                     rel="canonical"
-                    href="https://taxitribe.in/services/spot-rentals/noida"
+                    href="https://taxitribe.in/local-outstation-service-in-noida"
                 />
             </Helmet>
 

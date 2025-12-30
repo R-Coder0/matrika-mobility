@@ -32,7 +32,7 @@ export default function LongTermFixedRentalNoida() {
                 />
                 <link
                     rel="canonical"
-                    href="https://taxitribe.in/services/fixed-rentals/noida"
+                    href="https://taxitribe.in/long-term-fixed-rental-noida"
                 />
             </Helmet>
 

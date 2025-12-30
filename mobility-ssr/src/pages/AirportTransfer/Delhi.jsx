@@ -31,7 +31,7 @@ export default function AirportTransfersDelhi() {
         />
         <link
           rel="canonical"
-          href="https://taxitribe.in/services/airport-transfers/delhi"
+          href="https://taxitribe.in/airport-transport-in-delhi"
         />
       </Helmet>
 

@@ -31,7 +31,7 @@ export default function MICENoida() {
                 />
                 <link
                     rel="canonical"
-                    href="https://taxitribe.in/services/mice/noida"
+                    href="https://taxitribe.in/mice-in-noida"
                 />
             </Helmet>
 

@@ -58,7 +58,7 @@ export default function LocalSpotRentalGurugram() {
                 />
                 <link
                     rel="canonical"
-                    href="https://taxitribe.in/services/spot-rentals/gurugram"
+                    href="https://taxitribe.in/local-outstation-service-in-gurugram"
                 />
             </Helmet>
 
