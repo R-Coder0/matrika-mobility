@@ -1,4 +1,20 @@
 User-agent: *
+Disallow:
+
+# GPT, AI bots and Ads bots
+User-agent: GPTBot
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: AdsBot-Google
+Allow: /
+
+User-agent: AdsBot-Google-Mobile
 Allow: /
 
 Sitemap: https://taxitribe.in/sitemap.xml
