@@ -6,51 +6,52 @@ export default function TaxiTestimonials({
   subheading = "We deliver Safe, Reliable, On-time mobility. Our customers noticed.",
   speed = 24,
 }) {
-  const fallback = useMemo(
-    () => [
-      {
-        quote:
-          "Booking with Taxi Tribe was seamless. The driver arrived early, the car was spotless, and my team reached the airport stress-free.",
-        name: "Ananya Mehta",
-        role: "Executive Assistant",
-        company: "FutureTech Pvt Ltd",
-        avatar: "",
-      },
-      {
-        quote:
-          "We needed daily office transfers for our staff. The rides were punctual every morning, and communication was excellent.",
-        name: "Karan Sharma",
-        role: "HR Manager",
-        company: "BrightCore Solutions",
-        avatar: "",
-      },
-      {
-        quote:
-          "Taxi Tribe handled our client delegation from abroad. Professional drivers and luxury cars created a great first impression.",
-        name: "Ritu Kapoor",
-        role: "Events Lead",
-        company: "Summit Global",
-        avatar: "",
-      },
-      {
-        quote:
-          "During our 3-day conference, the entire transport logistics ran without a hitch. Really reliable service.",
-        name: "Mohit Verma",
-        role: "Operations Head",
-        company: "NextWave Conferences",
-        avatar: "",
-      },
-      {
-        quote:
-          "Safe, courteous, and consistent. Our employees felt secure even in late-night drops, which matters a lot.",
-        name: "Sonal Agarwal",
-        role: "Admin",
-        company: "Innova Consulting",
-        avatar: "",
-      },
-    ],
-    []
-  );
+const fallback = useMemo(
+  () => [
+    {
+      quote:
+        "Reliable service with strong operational support. We use TaxiTribe for daily employee transport and the experience has been consistent. Pickups are on time, drivers are professional, and the operations team provides quick support in case of plan changes.",
+      name: "Amit Verma",
+      role: "",
+      company: "",
+      avatar: "",
+    },
+    {
+      quote:
+        "Booked TaxiTribe for airport transfers during a tight travel schedule and the experience was good. The driver tracked the flight, arrived on time, and helped with the luggage. Live tracking was helpful as I always knew where the car was.",
+      name: "Neha Kulkarni",
+      role: "",
+      company: "",
+      avatar: "",
+    },
+    {
+      quote:
+        "We partnered with TaxiTribe for a three-day corporate conference involving multiple venues. Managing several pickups is usually chaotic, but their on-ground team handled coordination smoothly without any issues.",
+      name: "Rohit Mehra",
+      role: "",
+      company: "",
+      avatar: "",
+    },
+    {
+      quote:
+        "I opted for a long-term car rental instead of buying a new vehicle, and TaxiTribe made the process simple. The car was well-maintained and support was available whenever needed. It has been hassle-free compared to ownership.",
+      name: "Pooja Nair",
+      role: "",
+      company: "",
+      avatar: "",
+    },
+    {
+      quote:
+        "We moved part of our office commute to EV transportation through TaxiTribe. The transition was smooth, drivers were familiar with charging and routes, and the vehicles were comfortable for daily travel.",
+      name: "Sandeep Iyer",
+      role: "",
+      company: "",
+      avatar: "",
+    },
+  ],
+  []
+);
+
 
   const items = testimonials?.length ? testimonials : fallback;
 

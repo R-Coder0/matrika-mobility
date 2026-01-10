@@ -1,92 +1,126 @@
-import React from 'react';
+import React from "react";
 
 export default function ServicesSection() {
   const services = [
     {
-      title: 'Corporate Services',
-      subtitle: '200+ Cities',
+      title: "Corporate Mobility Solutions",
       description:
-        'We offer corporate clients seamless travel with our reliable chauffeur services. Enjoy the convenience of door-to-door pickup in a neat and comfortable car, ensuring a smooth, stress-free journey. Our courteous chauffeurs provide affordable luxury, making every ride a premium experience.',
-      img: '/services/s1.png',
-      alt: 'Chauffeured executive sedan in front of office'
+        "SLA-backed corporate mobility solutions are designed for corporate employee transportation, corporate car rental and corporate chauffeur services.",
+      points: [
+        "Hourly, daily, and multi-day corporate rental options",
+        "Local city travel and outstation business trips",
+        "Sedans, SUVs and luxury cars",
+      ],
     },
     {
-      title: 'City Drive',
-      subtitle: '',
+      title: "Conference & Event Transportation",
       description:
-        'Explore your city with unparalleled convenience and comfort with our local rental service. Whether you need a car for a few hours of errands, a full day of sightseeing, or a chauffeur for a special event, we offer flexible packages to suit your every need. Enjoy the freedom of a private car with the added benefit of a professional driver who knows the city inside out.',
-      img: '/services/s2.jpg',
-      alt: 'Car driving through city streets'
+        "End-to-end event transportation management for conferences, exhibitions, off-sites, and large-scale business events.",
+      points: [
+        "Group shuttles, minibuses, and fleet deployments",
+        "Staggered pickups and multi-venue drop coordination",
+        "Dedicated on-ground logistics and operations support",
+      ],
     },
     {
-      title: 'Outstation Services',
-      subtitle: '',
+      title: "Wedding & Special Occasion Cars",
       description:
-        'Planning a trip beyond city limits? Our outstation services offer the perfect solution. Enjoy the open road in a comfortable, well-maintained car with a professional driver at the wheel. We provide seamless door-to-door service, transparent pricing, and the flexibility to customize your journey, turning every long-distance trip into a relaxing and memorable experience.',
-      img: '/services/s3.jpg',
-      alt: 'Car on highway with mountains in background'
+        "Premium chauffeur-driven vehicles for weddings, ceremonies, and high-profile personal events.",
+      points: [
+        "Luxury and vintage car options with themed decor",
+        "VIP and guest transfers with professional chauffeurs",
+        "Flexible booking windows to accommodate event schedules",
+      ],
     },
     {
-      title: 'Airport Transfer',
-      subtitle: '',
+      title: "Airport Transfers",
       description:
-        'Experience stress-free travel to and from the airport in any city. Our professional chauffeurs track your flight, ensuring a timely pickup and comfortable ride, regardless of delays. With a commitment to punctuality and a fleet of pristine cars, we offer a seamless, affordable, and luxurious airport transfer experience.',
-      img: '/services/s4.jpg',
-      alt: 'Car parked near airport terminal at dusk'
-    }
+        "Reliable airport transfer services with flight-aware pickups and professional support.",
+      points: [
+        "Real-time tracking for timely arrivals and departures",
+        "Baggage assistance services",
+        "Proactive handling of flight delays and schedule changes",
+      ],
+    },
+    {
+      title: "Long-Term Car Rental",
+      description:
+        "Long-term car rental solutions for individuals and organisations that need a vehicle for extended use without the complexity of ownership.",
+      points: [
+        "Monthly rental options",
+        "Dedicated vehicles assigned for long-duration requirements",
+        "Suitable for long-term employee transport, projects, and ongoing travel needs",
+      ],
+    },
+    {
+      title: "Fleet Management Services",
+      description:
+        "End-to-end fleet management services designed to keep vehicles running efficiently and operations organised.",
+      points: [
+        "Scheduled maintenance and compliance tracking",
+        "Driver coordination and operational oversight",
+        "Centralised reporting for cost and performance visibility",
+      ],
+    },
+    {
+      title: "Electric Vehicle (EV) Transportation Services",
+      description:
+        "EV-based transportation services for organisations looking to adopt cleaner and more sustainable travel options.",
+      points: [
+        "Electric vehicles available for daily travel",
+        "Planned routes and charging coordination for smooth operations",
+        "Drivers trained to handle EV-specific requirements",
+      ],
+    },
+    {
+      title: "Luxury Cab Services",
+      description:
+        "Luxury cab services for travel that requires comfort, privacy, and a more refined experience.",
+      points: [
+        "High-end vehicles maintained to professional standards",
+        "Experienced chauffeurs trained for executive and VIP travel",
+        "Local and outstation travel options",
+      ],
+    },
   ];
 
   return (
-    <section className="py-16" style={{ backgroundColor: "#FFFAFA" }}>
+    <section className="py-14 bg-[#FFFAFA]">
       <div className="container mx-auto px-6">
         
         {/* Heading */}
-        <div className="mb-12 text-center">
-          <h2 className="mb-4 text-4xl md:text-5xl font-bold text-gray-900">
+        <div className="mb-10 text-center">
+          <h2 className="text-4xl font-bold text-gray-900">
             Our <span className="text-amber-600">Services</span>
           </h2>
-          <p className="text-gray-600 max-w-2xl mx-auto">
-            "Premium, Reliable and Comfortable Car services tailored to your needs."
+          <p className="mt-2 text-gray-600 max-w-2xl mx-auto">
+            Car Rental and Mobility Services by TaxiTribe
           </p>
         </div>
 
-        {/* Cards */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
+        {/* Services Grid */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
           {services.map((service) => (
             <div
               key={service.title}
-              className="flex flex-col md:flex-row items-center bg-white rounded-3xl p-6 shadow-sm hover:shadow-md transition-all duration-300 hover:scale-[1.01] border border-gray-100"
+              className="bg-white rounded-xl p-6 border border-gray-100 hover:shadow-md transition"
             >
-              {/* Image */}
-              <div className="w-full md:w-1/3 mb-4 md:mb-0 md:mr-6">
-                <div className="relative h-40 md:h-48 w-full overflow-hidden rounded-2xl shadow-md">
-                  <img
-                    src={service.img}
-                    alt={service.alt}
-                    className="h-full w-full object-cover"
-                    loading="lazy"
-                  />
-                  <div className="absolute inset-0 bg-linear-to-t from-black/20 to-transparent" />
-                </div>
-              </div>
+              <h3 className="text-lg font-semibold text-gray-900 mb-2">
+                {service.title}
+              </h3>
 
-              {/* Text */}
-              <div className="w-full md:w-2/3">
-                <h3 className="text-2xl font-bold text-amber-600 mb-1">
-                  {service.title}
-                </h3>
+              <p className="text-sm text-gray-600 mb-4 leading-relaxed">
+                {service.description}
+              </p>
 
-                {service.subtitle ? (
-                  <p className="text-sm text-amber-500 mb-2 font-semibold">
-                    {service.subtitle}
-                  </p>
-                ) : null}
-
-                <p className="text-gray-700 text-sm leading-relaxed">
-                  {service.description}
-                </p>
-              </div>
-
+              <ul className="space-y-2 text-sm text-gray-700">
+                {service.points.map((point, index) => (
+                  <li key={index} className="flex items-start gap-2">
+                    <span className="mt-1 h-1.5 w-1.5 rounded-full bg-amber-600"></span>
+                    <span>{point}</span>
+                  </li>
+                ))}
+              </ul>
             </div>
           ))}
         </div>

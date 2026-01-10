@@ -25,7 +25,7 @@ export default function FAQSection() {
     {
       question: "What standards does TaxiTribe follow for vehicle quality and maintenance?",
       answer:
-        "All vehicles used by TaxiTribe are well-maintained, with a strict limit on vehicle age of 3 years only and mileage. With regular preventive maintenance, daily safety checks, and hygiene protocols, we ensure consistent comfort and reduced breakdown risk.",
+        "All vehicles used by TaxiTribe are well-maintained, with a strict limit on vehicle age of 3 years and controlled mileage. With regular preventive maintenance, daily safety checks, and hygiene protocols, we ensure consistent comfort and reduced breakdown risk.",
     },
   ];
 
@@ -33,19 +33,19 @@ export default function FAQSection() {
 
   return (
     <section className="py-16 bg-[#FFFAFA]">
-      <div className="max-w-4xl mx-auto px-6 ">
+      <div className="container mx-auto px-6 max-w-4xl">
 
         {/* Header */}
-        <div className="text-center mb-10">
+        <div className="text-center mb-12">
           <h2 className="text-4xl font-bold text-gray-900">
             Frequently Asked <span className="text-amber-600">Questions</span>
           </h2>
           <p className="mt-3 text-gray-600">
-            Everything you need to know about TaxiTribe services
+            Answers to common questions about TaxiTribe’s car rental and mobility services
           </p>
         </div>
 
-        {/* Accordion */}
+        {/* FAQ List */}
         <div className="space-y-4">
           {faqs.map((faq, index) => {
             const isOpen = openIndex === index;
@@ -53,9 +53,8 @@ export default function FAQSection() {
             return (
               <div
                 key={index}
-                className="rounded-xl border border-gray-200 bg-white overflow-hidden transition"
+                className="border border-gray-200 rounded-xl bg-white shadow-sm"
               >
-                {/* Question */}
                 <button
                   onClick={() => setOpenIndex(isOpen ? null : index)}
                   className="w-full flex justify-between items-center px-6 py-4 text-left"
@@ -63,33 +62,20 @@ export default function FAQSection() {
                   <span className="text-gray-900 font-semibold">
                     {faq.question}
                   </span>
-
-                  <span
-                    className={`text-2xl font-light text-amber-600 transition-transform duration-300 ${
-                      isOpen ? "rotate-45" : ""
-                    }`}
-                  >
-                    +
+                  <span className="text-amber-600 text-xl font-bold">
+                    {isOpen ? "−" : "+"}
                   </span>
                 </button>
 
-                {/* Answer (hidden by default) */}
-                <div
-                  className={`grid transition-all duration-300 ease-in-out ${
-                    isOpen
-                      ? "grid-rows-[1fr] opacity-100"
-                      : "grid-rows-[0fr] opacity-0"
-                  }`}
-                >
-                  <div className="overflow-hidden px-6 pb-5 text-gray-700 text-sm leading-relaxed">
+                {isOpen && (
+                  <div className="px-6 pb-5 text-gray-700 text-sm leading-relaxed">
                     {faq.answer}
                   </div>
-                </div>
+                )}
               </div>
             );
           })}
         </div>
-
       </div>
     </section>
   );

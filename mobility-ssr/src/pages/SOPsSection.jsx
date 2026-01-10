@@ -12,62 +12,63 @@ import { motion } from "framer-motion";
 /**
  * SOPsSection (light theme)
  */
-
 const DEFAULT_ITEMS = [
   {
     icon: <FaClipboardCheck className="w-6 h-6 text-amber-600" />,
     heading: "Process-based Operations",
     bullets: [
-      "Reservation TAT 10 min, instant confirmation",
-      "Dispatch QC check 2 hrs before reporting; driver grooming standard",
-      "Billing as per customer: weekly, fortnightly, or monthly",
+      "Clearly defined booking timelines with instant confirmations to avoid uncertainty",
+      "Pre-dispatch quality checks and driver readiness are ensured before every trip",
+      "Flexible billing cycles aligned with client needs for smooth reconciliation",
     ],
   },
   {
     icon: <FaSatelliteDish className="w-6 h-6 text-amber-600" />,
     heading: "Live Tracking",
     bullets: [
-      "All GPS-enabled cars; mobile app driver tracking",
-      "Female traveller tracking end-to-end with call recording",
-      "Whats app SOS button exclusive with Taxitribe",
-      "Panic button in every car; speed governor enabled",
+      "Real-time GPS tracking across all trips for complete visibility and control",
+      "Enhanced monitoring for women with SOS and emergency support",
+      "Built-in safety controls including panic buttons and speed governors",
     ],
   },
   {
     icon: <FaCarSide className="w-6 h-6 text-amber-600" />,
     heading: "Ageing Focus",
     bullets: [
-      "Cars used max 3 years or 1 lakh km, whichever earlier",
-      "Tyre change every 50k km or 18 months, whichever earlier",
+      "Strict vehicle age to under 3 years or 1 lakh kilometers",
+      "Regular replacement of tyres within the period of 50,000 km or 18 months",
+      "Proactive maintenance to reduce breakdowns and service disruption",
     ],
   },
   {
     icon: <FaTools className="w-6 h-6 text-amber-600" />,
     heading: "Safety Measures & Daily Amenities",
     bullets: [
-      "Daily checks: tyres, seat belts, fuel, inspections, servicing",
-      "Water bottles, sanitisers, tissue, newspaper, medical kit, tool box",
-      "Glass hammer, fire extinguisher, extra tyre",
+      "Daily safety checks to ensure vehicles are roadworthy",
+      "Essential amenities provided for comfort and hygiene",
+      "Emergency equipment available in every vehicle",
     ],
   },
   {
     icon: <FaShieldAlt className="w-6 h-6 text-amber-600" />,
     heading: "Contingency Plan",
     bullets: [
-      "Two reservation teams operating in parallel",
-      "Dedicated KAMs and an Operations Manager per location",
+      "Parallel reservation teams to manage peak demand and emergencies",
+      "Dedicated account and operations managers per location",
+      "Backup processes to ensure continuity during disruptions",
     ],
   },
   {
     icon: <FaHeartbeat className="w-6 h-6 text-amber-600" />,
     heading: "Extensive Focus on Health",
     bullets: [
-      "Add - Rigorous hygiene standards, clean-cab protocols, and continuous wellness monitoring to safeguard every journey",
-"Aligned with industry-grade HSSE, GST, and corporate mobility compliances for risk-free partnerships",
-      "Hand sanitisers in all cars; periodic driver testing",
+      "Clean-cab and hygiene protocols followed across all vehicles",
+      "Periodic driver health checks and wellness monitoring",
+      "Compliance with safety, HSSE, and regulatory standards",
     ],
   },
 ];
+
 
 export default function SOPsSection({
   title = "SOPs — Safety, Security, Health & Environment",
@@ -83,7 +84,7 @@ export default function SOPsSection({
       className={`py-12 ${className}`}
       style={{ backgroundColor: "#FFFAFA" }}
     >
-      <div className="container mx-auto px-6 max-w-7xl">
+      <div className="container mx-auto px-6">
         {/* Header row with small logo */}
         <motion.div
           initial={{ opacity: 0, y: 12 }}

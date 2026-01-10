@@ -29,26 +29,26 @@ export default function Hero() {
   const [submitted, setSubmitted] = useState(false);
 
   const slides = [
-    {
-      title: "Corporate Car Rentals Across India",
-      subtitle: "Reliable, Safe & Tech-Enabled",
-      description:
-        "Taxi Tribe provides premium chauffeur-driven cars for corporates, events, and airport transfers, backed by cutting-edge technology and exceptional service.",
-      image: "/banner/banner1.jpeg",
-    },
-    {
-      title: "Luxury Fleet",
-      subtitle: "Premium Experience",
-      description:
-        "Drive in style with our collection of luxury sedans, SUVs, and sports cars.",
-      image: "/banner/banner2.jpeg",
-    },
+    // {
+    //   title: "Corporate Car Rentals Across India",
+    //   subtitle: "Reliable, Safe & Tech-Enabled",
+    //   description:
+    //     "Taxi Tribe provides premium chauffeur-driven cars for corporates, events, and airport transfers, backed by cutting-edge technology and exceptional service.",
+    //   image: "/banner/banner1.jpeg",
+    // },
+    // {
+    //   title: "Luxury Fleet",
+    //   subtitle: "Premium Experience",
+    //   description:
+    //     "Drive in style with our collection of luxury sedans, SUVs, and sports cars.",
+    //   image: "/banner/banner2.jpeg",
+    // },
     {
       title: "24x7 Service",
       subtitle: "And Support",
       description:
-        "Round-the-clock support with instant booking and emergency assistance.",
-      image: "/banner/banner3.jpeg",
+        "TaxiTribe provides reliable car rental and mobility services for daily travel, long-term rentals, events, and corporate employee transportation. These services are backed by defined SLAs, 24×7 support, verified drivers, and transparent billing.",
+     image: "/banner/banner2.jpeg",
     },
   ];
 
@@ -124,7 +124,7 @@ export default function Hero() {
   return (
     <>
       {/* HERO BANNER SECTION - Desktop पर form के साथ */}
-      <section className="relative min-h-[70vh] md:min-h-screen overflow-hidden bg-black pt-4 md:pt-20">
+      <section className="relative min-h-[30vh] md:min-h-screen overflow-hidden bg-black pt-4 md:pt-20">
         {/* Background Slides */}
         <div className="absolute inset-0">
           {slides.map((s, i) => (
@@ -146,7 +146,7 @@ export default function Hero() {
         </div>
 
         {/* HERO MAIN GRID - Desktop पर form साथ में, mobile/tablet पर form हटा देंगे */}
-        <div className="relative z-10 max-w-7xl mx-auto min-h-[90vh] flex items-center px-6 py-10">
+        <div className="relative z-10 max-w-7xl mx-auto min-h-[35vh] md:min-h-[90vh] flex items-center px-6 py-10">
           {/* LEFT CONTENT - Desktop और mobile दोनों में */}
           <div className="lg:w-1/2">
             <h1 className="mb-3 leading-tight text-white">
@@ -163,7 +163,7 @@ export default function Hero() {
             </p>
 
             {/* Trust Indicators */}
-            <div className="mb-8 flex flex-wrap items-center gap-x-6 gap-y-3 text-gray-300">
+            {/* <div className="mb-8 flex flex-wrap items-center gap-x-6 gap-y-3 text-gray-300">
               <div className="flex items-center gap-2">
                 <span className="h-2 w-2 rounded-full bg-green-500 animate-pulse" />
                 <span>Corporate and Expat Solutions</span>
@@ -187,7 +187,7 @@ export default function Hero() {
                 <span className="h-2 w-2 rounded-full bg-yellow-500 animate-pulse" />
                 <span>Instant Booking</span>
               </div>
-            </div>
+            </div> */}
           </div>
 
           {/* RIGHT: FORM - ONLY FOR DESKTOP (lg और ऊपर) */}
@@ -360,7 +360,7 @@ export default function Hero() {
         </div>
 
         {/* DOTS */}
-        <div className="absolute bottom-6 inset-x-0 flex justify-center gap-2">
+        {/* <div className="absolute bottom-6 inset-x-0 flex justify-center gap-2">
           {slides.map((_, i) => (
             <button
               key={i}
@@ -370,7 +370,7 @@ export default function Hero() {
               }`}
             />
           ))}
-        </div>
+        </div> */}
       </section>
 
       {/* FORM SECTION - ONLY FOR MOBILE AND TABLET (lg से छोटे screens) */}
@@ -387,7 +387,7 @@ export default function Hero() {
           </div> */}
 
           <div className="w-full  mx-auto">
-            <div className="rounded-2xl bg-white text-gray-800 shadow-xl overflow-hidden">
+            <div className="rounded-2xl bg-white text-gray-800 overflow-hidden">
               {/* Top gradient strip */}
               <div className="bg-linear-to-r from-yellow-400 via-amber-500 to-yellow-500 h-2" />
 

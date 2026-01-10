@@ -1,106 +1,117 @@
 import React from "react";
 import {
-  FaCar,
   FaClock,
-  FaMapMarkerAlt,
+  FaCar,
   FaWallet,
-  FaPuzzlePiece,
+  FaUserShield,
+  FaRoute,
+  FaUsers,
 } from "react-icons/fa";
 import { FaShield } from "react-icons/fa6";
+import { MdOutlineSupportAgent } from "react-icons/md";
 
 export default function BenefitsAndWhy() {
   const benefits = [
     {
-      icon: <FaMapMarkerAlt />,
-      title: "Pan-India Operations",
-      desc:
-        "Our operations cover metros and tier-2 cities with consistent service quality and reliability.",
-      tone: "sky",
-    },
-    {
-      icon: <FaCar />,
-      title: "Instant Bookings",
-      desc:
-        "Book your ride anytime with instant confirmation through our platform, ensuring smooth travel every time.",
-      tone: "rose",
-    },
-    {
-      icon: <FaShield />,
-      title: "Safety & Security Focus",
-      desc:
-        "Real-time GPS tracking, SOS buttons, and vetted drivers ensure your safety is our top priority.",
-      tone: "orange",
-    },
-    {
       icon: <FaClock />,
-      title: "24×7 Corporate Support Desk",
+      title: "Defined SLAs",
       desc:
-        "Our dedicated support team is available round the clock to assist with bookings, delays, and urgent issues.",
+        "Clear service-level agreements ensure timely pickups, faster issue resolution, and consistent service standards with full accountability.",
+      tone: "amber",
+    },
+    {
+      icon: <MdOutlineSupportAgent />,
+      title: "24×7 Operations & Dedicated Car Desk",
+      desc:
+        "Round-the-clock support to manage bookings, modifications, and escalations in real time, even for last-minute schedule changes.",
       tone: "green",
     },
     {
-      icon: <FaWallet />,
-      title: "Custom and Transparent Billing & MIS Reports",
+      icon: <FaUserShield />,
+      title: "Police-Verified Drivers",
       desc:
-        "Get detailed, accurate, and clear invoices with custom billing options and easy-to-understand MIS reports.",
+        "All drivers are police-verified and professionally trained to minimise safety risks and ensure a reliable travel experience.",
+      tone: "blue",
+    },
+    {
+      icon: <FaShield />,
+      title: "Women Safety Support",
+      desc:
+        "Structured women safety protocols including live trip tracking and a WhatsApp-based SOS system for immediate emergency support.",
+      tone: "rose",
+    },
+    {
+      icon: <FaCar />,
+      title: "Modern & Well-Maintained Vehicles",
+      desc:
+        "All vehicles are under three years old, offering better comfort, fewer breakdowns, and a consistently premium travel experience.",
+      tone: "orange",
+    },
+    {
+      icon: <FaRoute />,
+      title: "Technology-Led Monitoring",
+      desc:
+        "Live trip visibility, centralized coordination, and proactive monitoring help prevent issues before they escalate.",
+      tone: "sky",
+    },
+    {
+      icon: <FaWallet />,
+      title: "Transparent Billing & MIS Reporting",
+      desc:
+        "Single consolidated invoices with clear MIS reports make reconciliation simple for admin and finance teams.",
       tone: "yellow",
     },
     {
-      icon: <FaPuzzlePiece />,
-      title: "Women Safety Top Priority",
+      icon: <FaUsers />,
+      title: "Expert Drivers with Scalable Reach",
       desc:
-        "We prioritize women's safety with dedicated measures like verified drivers and emergency response systems.",
-      tone: "blue",
+        "Trained drivers with deep route knowledge and operational expertise, scalable across locations as requirements grow.",
+      tone: "purple",
     },
   ];
 
   const toneToClasses = {
-    sky: "text-sky-500",
+    amber: "text-amber-600",
+    green: "text-green-600",
+    blue: "text-blue-600",
     rose: "text-rose-500",
     orange: "text-orange-500",
-    green: "text-green-500",
+    sky: "text-sky-500",
     yellow: "text-yellow-500",
-    blue: "text-blue-500",
+    purple: "text-purple-600",
   };
 
   return (
-    <section
-      className="py-16"
-      style={{ backgroundColor: "#FFFAFA" }}
-    >
+    <section className="py-16 bg-[#FFFAFA]">
       <div className="container mx-auto px-6">
 
         {/* Header */}
         <div className="text-center mb-12">
           <span className="inline-block rounded-full bg-amber-100 text-amber-600 px-4 py-1 text-sm font-semibold">
-            Taxi Tribe
+            TaxiTribe
           </span>
 
-          <h2 className="mt-4 text-4xl md:text-5xl font-black text-gray-900">
-            Why choose <span className="text-amber-600">Taxi Tribe?</span>
+          <h2 className="mt-4 text-4xl md:text-5xl font-bold text-gray-900">
+            Why Choose <span className="text-amber-600">TaxiTribe</span>
           </h2>
 
           <p className="mt-3 text-gray-600 max-w-2xl mx-auto">
-            "Here’s what you get when you book with us."
+            Car Rental and Mobility Services built for reliability, safety, and scale.
           </p>
         </div>
 
-        {/* Benefits grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        {/* Benefits Grid */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
           {benefits.map((b) => (
             <div
               key={b.title}
-              className="group rounded-2xl border border-gray-200 bg-white p-6 shadow-sm hover:shadow-md transition hover:scale-[1.02]"
+              className="rounded-2xl border border-gray-200 bg-white p-6 shadow-sm hover:shadow-md transition hover:scale-[1.02]"
             >
-              <div className="mb-4 text-3xl">
-                <span
-                  className={`${toneToClasses[b.tone] || "text-amber-600"} inline-flex`}
-                >
-                  {b.icon}
-                </span>
+              <div className={`mb-4 text-3xl ${toneToClasses[b.tone]}`}>
+                {b.icon}
               </div>
 
-              <h3 className="text-gray-900 text-lg font-bold">
+              <h3 className="text-gray-900 text-lg font-semibold">
                 {b.title}
               </h3>
 

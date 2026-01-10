@@ -34,55 +34,65 @@ export const SafetySection = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 gap-10 items-center">
           {/* Text Content */}
           <div>
-            <h2 className="text-4xl md:text-5xl font-extrabold text-gray-900 mb-4 leading-tight">
-              Safety for <span className="text-amber-600">All</span>
+            <h2 className="text-4xl md:text-3xl font-extrabold text-gray-900 mb-2 leading-tight">
+           How We Ensure Safe and Reliable Operations
             </h2>
 
-            <div className="w-20 h-1 bg-amber-500 mb-6 rounded-full" />
+            <div className="w-15 h-1 bg-amber-500 mb-4 rounded-full" />
 
-            <div className="space-y-5 text-gray-700 text-base md:text-lg">
-              <p>
-                At Taxi Tribe, your safety is paramount. Our fleet is equipped with
-                advanced GPS tracking, allowing us to monitor your journey in
-                real-time for added security and efficiency. Every vehicle also
-                carries a fire extinguisher for all-scenario preparedness. We place
-                a special emphasis on women's safety, with a discreet push-button
-                SOS system in every car that instantly alerts our 24x7 support team,
-                ensuring immediate assistance is just a click away.
-              </p>
+<div className="space-y-4 text-gray-700 text-base md:text-[16px]">
+  <p>
+    At Taxi Tribe, safety is central to our car rental and mobility services.
+    Every trip is supported by real-time GPS tracking, 24×7 monitoring, and
+    essential in-car safety equipment to ensure secure and reliable travel for
+    both personal and corporate needs.
+  </p>
 
-              <p>
-                Our professional drivers are meticulously vetted and trained,
-                providing a secure, comfortable, and stress-free experience for every
-                passenger.
-              </p>
+  <p>
+    We place a strong focus on women’s safety with SOS-enabled support and trained,
+    verified chauffeurs. With consistent safety standards across metro, Tier 2,
+    and Tier 3 cities, Taxi Tribe delivers the same trusted and professional
+    experience wherever you travel.
+  </p>
 
-              <p>
-                For us, our philosophy of a Tribe represents a trusted community — a
-                network of people bound by shared values of care, accountability,
-                and vigilance. This network extends deep into Tier 2 and Tier 3
-                cities, where personal connection and human empathy still define
-                service. Our aim is to create a mobility ecosystem where a woman
-                travelling in a smaller city feels as safe and supported as she
-                would in a Tier 1 environment.
-              </p>
+  {/* Safety & Operations Points */}
+  <ul className="mt-6 space-y-3 text-gray-800 text-sm md:text-base">
+    <li className="flex items-start gap-2">
+      <span className="mt-1 h-1.5 w-1.5 rounded-full bg-amber-600"></span>
+      Daily Vehicle Maintenance and Safety Checks
+    </li>
+    <li className="flex items-start gap-2">
+      <span className="mt-1 h-1.5 w-1.5 rounded-full bg-amber-600"></span>
+      Preventive Maintenance
+    </li>
+    <li className="flex items-start gap-2">
+      <span className="mt-1 h-1.5 w-1.5 rounded-full bg-amber-600"></span>
+      Standardised Safety Inspections and Audits
+    </li>
+    <li className="flex items-start gap-2">
+      <span className="mt-1 h-1.5 w-1.5 rounded-full bg-amber-600"></span>
+      Clearly Documented Operating and Safety Protocols
+    </li>
+    <li className="flex items-start gap-2">
+      <span className="mt-1 h-1.5 w-1.5 rounded-full bg-amber-600"></span>
+      Transparent Pricing with Defined Policies
+    </li>
+    <li className="flex items-start gap-2">
+      <span className="mt-1 h-1.5 w-1.5 rounded-full bg-amber-600"></span>
+      Structured Reservation Management
+    </li>
+    <li className="flex items-start gap-2">
+      <span className="mt-1 h-1.5 w-1.5 rounded-full bg-amber-600"></span>
+      Dedicated Customer Support and Escalation Handling
+    </li>
+    <li className="flex items-start gap-2">
+      <span className="mt-1 h-1.5 w-1.5 rounded-full bg-amber-600"></span>
+     Strict Cleanliness and Hygiene Standards
+    </li>
+  </ul>
+</div>
 
-              <p>
-                To achieve this, we ensure that our driver and support community is
-                trained on the same safety and service parameters as those in
-                metropolitan cities. This means consistent training, behavioural
-                standards, and response systems across all operational geographies —
-                ensuring that every passenger, regardless of city or region,
-                experiences the same high standards of safety and professionalism.
-              </p>
 
-              <p>
-                At Taxi Tribe, safety is not just a protocol — it’s a culture. One
-                that travels with every passenger, strengthened by empathy, powered
-                by technology, and rooted in a community that moves together as one
-                Tribe.
-              </p>
-            </div>
           </div>
 
           {/* 4-Image Grid */}

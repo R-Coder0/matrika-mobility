@@ -11,6 +11,8 @@ import TaxiTestimonials from '../components/Testimonial';
 import { Helmet } from "react-helmet";
 import useDetectCity from '../hooks/useDetectCity';
 import { useCity } from '../context/CityContext';
+import AboutSection from '../components/aboutSection';
+import SOPsSection from './SOPsSection';
 
 const Home = () => {
   const [dialogOpen, setDialogOpen] = useState(false); 
@@ -23,15 +25,19 @@ const Home = () => {
 
     <div className='bg-[#FFFAFA] text-black'>
       <Helmet>
-        <title>Book 24x7 Car Rental & Taxi Services | Corporate Cabs Services</title>
-        <meta name="description" content="Book your ride online with TaxiTribe. 24x7 taxi booking, airport transfers & corporate travel—safe, quick, and affordable. Book now!" />
+        <title>Car Rental and Mobility Service across 30+ Cities - TaxiTribe
+</title>
+        <meta name="description" content="TaxiTribe provides car rental and mobility services across 30+ cities backed by defined SLAs, police-verified drivers, 24×7 support & transparent billing." />
          <link rel="canonical" href="https://taxitribe.in/" />
       </Helmet>
       <Hero />
+      <AboutSection/>
       <FleetSection />
       <BenefitsAndWhy />
+      <SOPsSection/>
       <SafetySection />
       <TaxiTestimonials />
+      <FaqSection/>
       {/* <FaqSection/> */}
       {/* <MapAndFormSection /> */}
       {/* CTA Section */}
