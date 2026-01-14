@@ -8,6 +8,9 @@ import {
     FaFileInvoice,
     FaCalendarAlt,
     FaUsers,
+    FaShieldAlt,
+    FaCarSide,
+    FaUsersCog,
 } from "react-icons/fa";
 import SOPsSection from "../SOPsSection";
 import BestPracticesSection from "../../components/BestPractise";
@@ -76,62 +79,76 @@ export default function CorporateDelhiPage() {
     const benefits = [
         {
             icon: <FaHandshake className="text-amber-500 h-6 w-6" />,
-            title: "SLA-Backed Reliability",
-            desc: "Guaranteed pickup windows, proactive rerouting and on-time performance monitoring.",
+            title: "Defined SLAs",
+            desc: "Travel in Delhi requires clarity. With clearly defined service-level agreements, pickups stay on time, issues are resolved quickly, and service standards remain consistent across routes and locations.",
         },
         {
             icon: <FaCogs className="text-amber-500 h-6 w-6" />,
-            title: "Dedicated Account Managers",
-            desc: "Single point of contact for billing, operations and escalations—fast resolution.",
-        },
-        {
-            icon: <FaTachometerAlt className="text-amber-500 h-6 w-6" />,
-            title: "Real-Time Tracking",
-            desc: "Live vehicle positions, ETA updates and integrated alerts for stakeholders.",
-        },
-        {
-            icon: <FaFileInvoice className="text-amber-500 h-6 w-6" />,
-            title: "MIS & Finance-Ready Reports",
-            desc: "Consolidated monthly invoicing, exportable reports and cost-centre tagging.",
-        },
-        {
-            icon: <FaCalendarAlt className="text-amber-500 h-6 w-6" />,
-            title: "Event & Bulk Expertise",
-            desc: "Route planning, staggered pick-ups and dedicated event ops.",
+            title: "24×7 Operations and Dedicated Car Desk",
+            desc: "Daily travel schedules often change. Our operations team works 24×7 to manage bookings, route changes, and escalations across Delhi and nearby areas.",
         },
         {
             icon: <FaUsers className="text-amber-500 h-6 w-6" />,
-            title: "Trained Drivers & Teams",
-            desc: "Background-checked chauffeurs and pro operations staff trained for corporate service.",
+            title: "Police-Verified Drivers",
+            desc: "All drivers are police-verified and trained to follow professional conduct. This helps reduce safety risks and complaints during regular travel.",
+        },
+        {
+            icon: <FaShieldAlt className="text-amber-500 h-6 w-6" />,
+            title: "Built-In Safety Support for Women",
+            desc: "Every trip includes live tracking and access to a WhatsApp-based SOS system. This ensures timely support for women travellers during late hours or long routes.",
+        },
+        {
+            icon: <FaCarSide className="text-amber-500 h-6 w-6" />,
+            title: "Modern, Well-Maintained Vehicles",
+            desc: "All vehicles operating in Delhi are under three years old. This lowers the chance of breakdowns and ensures consistent comfort across daily and long-distance travel.",
+        },
+        {
+            icon: <FaTachometerAlt className="text-amber-500 h-6 w-6" />,
+            title: "Technology-Led Monitoring and Coordination",
+            desc: "Trips are monitored in real time through live tracking and central coordination. This allows quicker response when traffic or schedule changes occur.",
+        },
+        {
+            icon: <FaFileInvoice className="text-amber-500 h-6 w-6" />,
+            title: "Transparent Billing and MIS Reporting",
+            desc: "One consolidated invoice with detailed MIS reports helps admin and finance teams manage travel expenses across multiple locations.",
+        },
+        {
+            icon: <FaUsersCog className="text-amber-500 h-6 w-6" />,
+            title: "Expert Drivers with Scalable Reach",
+            desc: "Drivers familiar with routes, traffic conditions, and shift timings support smooth travel and allow services to scale as requirements grow.",
         },
     ];
 
-    const faqs = [
-        {
-            q: "Do you provide monthly billing for corporate clients?",
-            a: "Yes — we offer consolidated monthly billing and customizable MIS reports tailored to your finance team.",
-        },
-        {
-            q: "Do you provide monthly billing for corporate clients?",
-            a: "Yes — we offer consolidated monthly billing and customizable MIS reports tailored to your finance team.",
-        },
-        {
-            q: "Do you provide monthly billing for corporate clients?",
-            a: "Yes — we offer consolidated monthly billing and customizable MIS reports tailored to your finance team.",
-        },
-        {
-            q: "Do you provide monthly billing for corporate clients?",
-            a: "Yes — we offer consolidated monthly billing and customizable MIS reports tailored to your finance team.",
-        },
-        {
-            q: "Can I add multiple employees under one account?",
-            a: "Absolutely. Our corporate plans support multiple users with role-based access and individual reporting.",
-        },
-        {
-            q: "What is your cancellation policy for corporate bookings?",
-            a: "Cancellation windows vary by product. For standard corporate rentals, cancellations made 24 hours before pickup are free — please check the SLA for event/large bookings.",
-        },
-    ];
+
+const faqs = [
+  {
+    question: "What types of corporate car rental services does TaxiTribe offer in Delhi?",
+    answer:
+      "TaxiTribe provides corporate car rental services in Delhi for daily employee transportation, shift-based travel, executive and leadership movement, airport transfers, long-term corporate rentals, and event or conference transportation.",
+  },
+  {
+    question: "Which areas in Delhi does TaxiTribe cover for corporate employee transportation?",
+    answer:
+      "TaxiTribe supports corporate travel across major business hubs in Delhi, including Nehru Place, Connaught Place, Aerocity, and nearby commercial zones, with the ability to scale coverage based on organisational needs.",
+  },
+  {
+    question: "How does TaxiTribe ensure on-time pickups in Delhi traffic conditions?",
+    answer:
+      "TaxiTribe operates with defined SLAs, trained drivers familiar with local routes, and real-time trip monitoring. A dedicated operations team manages coordination and route adjustments to minimise delays.",
+  },
+  {
+    question: "What safety measures are in place for employees, especially women travellers?",
+    answer:
+      "All drivers are police-verified and professionally trained. Trips include live tracking, in-vehicle safety features, and a WhatsApp-based SOS system to ensure timely support during travel, including late-night or early-morning shifts.",
+  },
+  {
+    question: "How does billing work for corporate car rental services in Delhi?",
+    answer:
+      "TaxiTribe follows a transparent and centralised billing process. Corporate clients receive a single consolidated invoice along with detailed MIS reports, making expense tracking and reconciliation easier for admin and finance teams.",
+  },
+];
+
+    const [openIndex, setOpenIndex] = useState(null);
 
     return (
         <div className="min-h-screen bg-[#FFFAFA] text-black">
@@ -176,7 +193,8 @@ export default function CorporateDelhiPage() {
                             </h1>
 
                             <p className="mt-3 text-sm md:text-base text-gray-200 max-w-xl">
-                                SLA-backed corporate car rental programs across Delhi NCR — dedicated account managers, real-time tracking and finance-ready reporting.
+                                TaxiTribe provides a reliable corporate car rental service in Delhi for corporate employee transportation. These services are backed by defined SLAs, 24×7 support, verified drivers, and transparent billing.
+
                             </p>
 
                             <div className="mt-4 flex items-center gap-3">
@@ -197,13 +215,12 @@ export default function CorporateDelhiPage() {
             <main className="max-w-[1500px] mx-auto px-6 py-12">
                 {/* ABOUT — two-column layout: left text/cta, right 6-card grid */}
                 <section className="mb-12">
-                    <div className="max-w-[1400px] mx-auto grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+                    <div className="max-w-[1400px] mx-auto grid grid-cols-1 lg:grid-cols-10 gap-8 items-start">
                         {/* Left column: intro + CTA */}
                         <div className="lg:col-span-5">
-                            <h2 className="text-2xl font-semibold mb-4">About Our Delhi Corporate Program</h2>
+                            <h2 className="text-2xl font-semibold mb-4">Corporate Car Rental Services in Delhi by TaxiTribe</h2>
                             <p className="text-gray-700 leading-relaxed mb-4">
-                                TaxiTribe delivers corporate mobility built for Delhi’s unique demands — predictable SLAs, trained chauffeurs and finance-ready reporting.
-                                We help companies reduce downtime, centralize billing and improve employee on-time performance.
+                                TaxiTribe is a corporate car rental service provider in Delhi, supporting travel across major business hubs such as Nehru Place, Connaught Place and Aerocity. With trained drivers, modern vehicles, live tracking, and transparent pricing, TaxiTribe makes travel easier to plan and manage, even when schedules or requirements change.
                             </p>
 
                             <ul className="text-gray-700 mb-6 space-y-2">
@@ -224,148 +241,179 @@ export default function CorporateDelhiPage() {
                         </div>
 
                         {/* Right column: 6 cards */}
-                        <div className="lg:col-span-7">
+                        <div className="lg:col-span-5">
                             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                                {benefits.map((b, i) => (
-                                    <div
-                                        key={i}
-                                        className="flex gap-4 items-start bg-white rounded-lg p-4 shadow-sm hover:shadow-md transform hover:-translate-y-1 transition"
-                                        style={{ minHeight: 120 }}
-                                    >
-                                        <div className="shrink-0">
-                                            <div className="w-12 h-12 rounded-lg bg-amber-50 flex items-center justify-center">
-                                                {b.icon}
-                                            </div>
-                                        </div>
-
-                                        <div className="flex-1">
-                                            <h4 className="font-semibold">{b.title}</h4>
-                                            <p className="text-sm text-gray-700 mt-1">{b.desc}</p>
-                                        </div>
-                                    </div>
-                                ))}
+                                <img
+                                    src="/corporate/delhiabout2.jpg"
+                                    alt="Corporate Travel Service"
+                                    className="w-full h-64 object-cover rounded-xl shadow-sm"
+                                />
+                                <img
+                                    src="/corporate/delhiabout3.jpg"
+                                    alt="Airport Transfer Service"
+                                    className="w-full h-64 object-cover rounded-xl shadow-sm"
+                                />
                             </div>
                         </div>
                     </div>
                 </section>
 
                 {/* TAILORED SERVICES */}
-                {/* TAILORED SERVICES */}
                 <section className="mb-16">
-                    <h3 className="text-2xl font-semibold text-center mb-10">
-                        Tailored Corporate Services
-                    </h3>
+                    {/* SECTION HEADING */}
+                    <h2 className="text-2xl font-semibold text-center mb-12">
+                        Corporate Car Rental Services in Delhi by TaxiTribe
+                    </h2>
 
-                    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-                        {services.map((s, i) => (
-                            <article
-                                key={i}
-                                className="group bg-white rounded-2xl border border-gray-200 shadow-sm hover:shadow-lg transition-all duration-300 flex flex-col overflow-hidden"
-                            >
-                                {/* IMAGE */}
-                                <div className="relative h-44 overflow-hidden">
-                                    <img
-                                        src={s.image}
-                                        alt={s.title}
-                                        className="w-full h-full object-cover transform group-hover:scale-105 transition duration-500"
-                                        loading="lazy"
-                                    />
-                                </div>
+                    {/* SERVICES LIST */}
+                    <div className="max-w-[1400px] mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
 
-                                {/* CONTENT */}
-                                <div className="flex-1 p-5 flex flex-col">
-                                    <div className="flex items-start gap-3 mb-3">
-                                        <div className="w-10 h-10 rounded-lg bg-amber-50 flex items-center justify-center shrink-0">
-                                            {s.icon}
-                                        </div>
-                                        <h4 className="text-lg font-semibold leading-snug">
-                                            {s.title}
-                                        </h4>
-                                    </div>
+                        {/* 1 */}
+                        <div className="bg-white border border-gray-200 rounded-2xl p-6 shadow-sm hover:shadow-md transition">
+                            <h3 className="text-lg font-semibold mb-3">
+                                Daily Corporate Employee Transportation
+                            </h3>
+                            <p className="text-gray-700 text-sm leading-relaxed">
+                                Reliable office commute solutions covering major business hubs like Nehru Place, Connaught Place, Aerocity, and more.
+                            </p>
+                        </div>
 
-                                    <p className="text-sm text-gray-700 mb-4">
-                                        {s.description}
-                                    </p>
+                        {/* 2 */}
+                        <div className="bg-white border border-gray-200 rounded-2xl p-6 shadow-sm hover:shadow-md transition">
+                            <h3 className="text-lg font-semibold mb-3">
+                                Shift-Based Travel Support
+                            </h3>
+                            <p className="text-gray-700 text-sm leading-relaxed">
+                                Managed transportation for early morning, late night, and rotational shifts with safety and tracking in place.
+                            </p>
+                        </div>
 
-                                    <ul className="text-sm text-gray-700 space-y-1 mb-6">
-                                        {s.features.map((f, idx) => (
-                                            <li key={idx} className="flex items-start">
-                                                <span className="text-amber-500 mr-2 mt-1">•</span>
-                                                <span>{f}</span>
-                                            </li>
-                                        ))}
-                                    </ul>
+                        {/* 3 */}
+                        <div className="bg-white border border-gray-200 rounded-2xl p-6 shadow-sm hover:shadow-md transition">
+                            <h3 className="text-lg font-semibold mb-3">
+                                Executive and Leadership Travel
+                            </h3>
+                            <p className="text-gray-700 text-sm leading-relaxed">
+                                Chauffeur-driven cars for senior management, client meetings, and official travel requirements.
+                            </p>
+                        </div>
 
-                                    {/* CTA */}
-                                    <button
-                                        onClick={() => setDialogOpen(true)}
-                                        className="mt-auto inline-flex items-center gap-2 text-amber-600 font-medium hover:text-amber-700 transition"
-                                    >
-                                        Get Quote <ArrowRight className="h-4 w-4" />
-                                    </button>
-                                </div>
-                            </article>
-                        ))}
+                        {/* 4 */}
+                        <div className="bg-white border border-gray-200 rounded-2xl p-6 shadow-sm hover:shadow-md transition">
+                            <h3 className="text-lg font-semibold mb-3">
+                                Airport Transfers
+                            </h3>
+                            <p className="text-gray-700 text-sm leading-relaxed">
+                                Flight-aware pickups and drops for employees and executives, including support for delays and schedule changes.
+                            </p>
+                        </div>
+
+                        {/* 5 */}
+                        <div className="bg-white border border-gray-200 rounded-2xl p-6 shadow-sm hover:shadow-md transition">
+                            <h3 className="text-lg font-semibold mb-3">
+                                Long-Term Corporate Car Rentals
+                            </h3>
+                            <p className="text-gray-700 text-sm leading-relaxed">
+                                Dedicated vehicles for extended usage, suitable for projects, ongoing roles, and fixed business requirements.
+                            </p>
+                        </div>
+
+                        {/* 6 */}
+                        <div className="bg-white border border-gray-200 rounded-2xl p-6 shadow-sm hover:shadow-md transition">
+                            <h3 className="text-lg font-semibold mb-3">
+                                Event and Conference Transportation
+                            </h3>
+                            <p className="text-gray-700 text-sm leading-relaxed">
+                                Coordinated movement for corporate events, meetings, and off-sites with staggered pickups and multi-location drops.
+                            </p>
+                        </div>
+
                     </div>
                 </section>
+
 
 
                 {/* WHY CHOOSE — redesigned (two-column story + 6 polished cards) */}
-                {/* WHY CHOOSE — aligned with ABOUT section design */}
                 <section className="mb-12">
-                    <div className="max-w-[1500px] mx-auto grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+                    <div className="max-w-[1500px] mx-auto flex flex-col gap-10">
 
-                        {/* LEFT COLUMN — story + CTA */}
-                        <div className="lg:col-span-5">
-                            <h3 className="text-2xl font-semibold mb-4">
-                                Why Corporations Trust TaxiTribe
-                            </h3>
+                        {/* TOP AREA — TEXT LEFT | IMAGES RIGHT */}
+                        <div className="flex flex-col lg:flex-row gap-10 items-start">
 
-                            <p className="text-gray-700 leading-relaxed mb-4">
-                                Operating in Delhi NCR is different — congested corridors, weather
-                                disruptions and time-sensitive corporate schedules demand predictable
-                                mobility. TaxiTribe combines local expertise with SLA-driven operations
-                                to keep your workforce moving on time.
-                            </p>
+                            {/* LEFT — TEXT + CTA */}
+                            <div className="max-w-[700px] mx-auto">
+                                <h3 className="text-2xl font-semibold mb-4">
+                                    Why Choose TaxiTribe for Corporate Car Rental in Delhi?
+                                </h3>
 
-                            <p className="text-gray-700 leading-relaxed mb-6">
-                                Our corporate program reduces downtime, centralizes billing, and gives
-                                your team reliable chauffeurs, real-time tracking and clean MIS-ready
-                                reporting.
-                            </p>
+                                <p className="text-gray-700 leading-relaxed mb-4">
+                                    Operating in Delhi NCR is different — congested corridors, weather
+                                    disruptions and time-sensitive corporate schedules demand predictable
+                                    mobility. TaxiTribe combines local expertise with SLA-driven operations
+                                    to keep your workforce moving on time.
+                                </p>
 
-                            <button
-                                onClick={() => setDialogOpen(true)}
-                                className="bg-amber-500 text-black px-5 py-2 rounded-md font-medium shadow-sm hover:bg-amber-600 transition cursor-pointer focus:outline-none focus:ring-2 focus:ring-amber-300"
-                            >
-                                Request a Corporate Quote
-                            </button>
+                                <p className="text-gray-700 leading-relaxed mb-6">
+                                    Our corporate program reduces downtime, centralizes billing, and gives
+                                    your team reliable chauffeurs, real-time tracking and clean MIS-ready
+                                    reporting.
+                                </p>
+
+                                <button
+                                    onClick={() => setDialogOpen(true)}
+                                    className="bg-amber-500 text-black px-5 py-2 rounded-md font-medium shadow-sm hover:bg-amber-600 transition focus:outline-none focus:ring-2 focus:ring-amber-300"
+                                >
+                                    Request a Corporate Quote
+                                </button>
+                            </div>
+
+                            {/* RIGHT — IMAGES */}
+                            <div className="w-full lg:max-w-[600px]">
+                                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                                    <img
+                                        src="/corporate/delhiwhy.png"
+                                        alt="Corporate Travel Service"
+                                        className="w-full h-64 object-cover rounded-xl shadow-sm"
+                                    />
+                                    <img
+                                        src="/corporate/delhiwhy2.png"
+                                        alt="Airport Transfer Service"
+                                        className="w-full h-64 object-cover rounded-xl shadow-sm"
+                                    />
+                                </div>
+                            </div>
+
                         </div>
 
-                        {/* RIGHT COLUMN — 6 BENEFIT CARDS */}
-                        <div className="lg:col-span-7">
-                            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                                {benefits.map((b, idx) => (
-                                    <div
-                                        key={idx}
-                                        className="flex gap-4 items-start bg-white rounded-lg p-4 shadow-sm hover:shadow-md transform hover:-translate-y-1 transition"
-                                        style={{ minHeight: 120 }}
-                                    >
-                                        <div className="shrink-0 w-12 h-12 rounded-lg bg-amber-50 flex items-center justify-center">
-                                            <div className="text-amber-500">{b.icon}</div>
-                                        </div>
-
-                                        <div className="flex-1">
-                                            <h4 className="font-semibold">{b.title}</h4>
-                                            <p className="text-sm text-gray-700 mt-1">{b.desc}</p>
-                                        </div>
+                        {/* BENEFITS — 4 CARDS PER ROW */}
+                        <div className="flex flex-wrap gap-4">
+                            {benefits.map((b, idx) => (
+                                <div
+                                    key={idx}
+                                    className="
+            flex gap-4 items-start bg-white rounded-lg p-4 shadow-sm
+            hover:shadow-md transition
+            w-full
+            sm:w-[calc(50%-0.5rem)]
+            lg:w-[calc(25%-0.75rem)]
+          "
+                                >
+                                    <div className="shrink-0 w-12 h-12 rounded-lg bg-amber-50 flex items-center justify-center">
+                                        <div className="text-amber-500">{b.icon}</div>
                                     </div>
-                                ))}
-                            </div>
+
+                                    <div className="flex-1">
+                                        <h4 className="font-semibold mb-1">{b.title}</h4>
+                                        <p className="text-sm text-gray-700">{b.desc}</p>
+                                    </div>
+                                </div>
+                            ))}
                         </div>
 
                     </div>
                 </section>
+
+
 
 
                 {/* SOPs & Best Practices */}
@@ -373,55 +421,131 @@ export default function CorporateDelhiPage() {
                 <BestPracticesSection />
 
                 {/* FAQs */}
-<section id="faqs" className="mt-14 mb-14">
-  <h3 className="text-2xl font-semibold text-center mb-8">
-    Frequently Asked Questions
-  </h3>
+                <section className="py-16 bg-[#FFFAFA]">
+                    <div className="max-w-4xl mx-auto px-6 ">
 
-  <div className="max-w-[1500px] mx-auto px-4">
+                        {/* Header */}
+                        <div className="text-center mb-10">
+                            <h2 className="text-4xl font-bold text-gray-900">
+                                Frequently Asked <span className="text-amber-600">Questions</span>
+                            </h2>
+                            <p className="mt-3 text-gray-600">
+                                Everything you need to know about TaxiTribe services
+                            </p>
+                        </div>
+
+                        {/* Accordion */}
+                        <div className="space-y-4">
+                            {faqs.map((faq, index) => {
+                                const isOpen = openIndex === index;
+
+                                return (
+                                    <div
+                                        key={index}
+                                        className="rounded-xl border border-gray-200 bg-white overflow-hidden transition"
+                                    >
+                                        {/* Question */}
+                                        <button
+                                            onClick={() => setOpenIndex(isOpen ? null : index)}
+                                            className="w-full flex justify-between items-center px-6 py-4 text-left"
+                                        >
+                                            <span className="text-gray-900 font-semibold">
+                                                {faq.question}
+                                            </span>
+
+                                            <span
+                                                className={`text-2xl font-light text-amber-600 transition-transform duration-300 ${isOpen ? "rotate-45" : ""
+                                                    }`}
+                                            >
+                                                +
+                                            </span>
+                                        </button>
+
+                                        {/* Answer (hidden by default) */}
+                                        <div
+                                            className={`grid transition-all duration-300 ease-in-out ${isOpen
+                                                    ? "grid-rows-[1fr] opacity-100"
+                                                    : "grid-rows-[0fr] opacity-0"
+                                                }`}
+                                        >
+                                            <div className="overflow-hidden px-6 pb-5 text-gray-700 text-sm leading-relaxed">
+                                                {faq.answer}
+                                            </div>
+                                        </div>
+                                    </div>
+                                );
+                            })}
+                        </div>
+
+                    </div>
+                </section>
+
+                {/* Reviews */}
+
+<section className="mb-16">
+  <div className="max-w-[1400px] mx-auto">
+
+    {/* SECTION HEADING */}
+    <h3 className="text-2xl font-semibold text-center mb-10">
+      Reviews
+    </h3>
+
+    {/* REVIEWS GRID */}
     <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-      {faqs.map((f, i) => (
-        <details
-          key={i}
-          className="
-            group
-            bg-white
-            border
-            rounded-xl
-            p-5
-            shadow-sm
-            hover:shadow-md
-            transition
-          "
-        >
-          <summary
-            className="
-              font-medium
-              cursor-pointer
-              list-none
-              flex
-              items-start
-              justify-between
-              gap-3
-            "
-          >
-            <span className="text-gray-900">{f.q}</span>
 
-            {/* Arrow */}
-            <span className="text-amber-500 transform transition-transform duration-300 group-open:rotate-180">
-              ▼
-            </span>
-          </summary>
+      {/* Review 1 */}
+      <div className="bg-white border border-gray-200 rounded-xl p-6 shadow-sm hover:shadow-md transition">
+        <p className="text-gray-700 text-sm leading-relaxed mb-4">
+          We use TaxiTribe for daily employee transport in Delhi and the experience has been reliable so far. Pickups are mostly on time despite traffic, drivers are professional, and when schedules change the operations team steps in quickly, which makes daily coordination easier
+        </p>
+        <p className="font-semibold text-sm text-gray-900">
+          Rahul Mehta
+        </p>
+      </div>
 
-          <p className="mt-3 text-sm text-gray-700 leading-relaxed">
-            {f.a}
-          </p>
-        </details>
-      ))}
+      {/* Review 2 */}
+      <div className="bg-white border border-gray-200 rounded-xl p-6 shadow-sm hover:shadow-md transition">
+        <p className="text-gray-700 text-sm leading-relaxed mb-4">
+          Our office runs late shifts, so safety was a major concern from day one. Live tracking and the SOS support helped, especially for women employees travelling at night, and over time it felt more organised and reassuring than vendors we had used earlier.
+        </p>
+        <p className="font-semibold text-sm text-gray-900">
+          Ananya Singh
+        </p>
+      </div>
+
+      {/* Review 3 */}
+      <div className="bg-white border border-gray-200 rounded-xl p-6 shadow-sm hover:shadow-md transition">
+        <p className="text-gray-700 text-sm leading-relaxed mb-4">
+          We booked TaxiTribe for executive travel between Connaught Place and Aerocity. The cars were clean, drivers were familiar with the routes, and even when meetings ran late, coordination stayed smooth without repeated follow-ups.
+        </p>
+        <p className="font-semibold text-sm text-gray-900">
+          Vikram Khanna
+        </p>
+      </div>
+
+      {/* Review 4 */}
+      <div className="bg-white border border-gray-200 rounded-xl p-6 shadow-sm hover:shadow-md transition">
+        <p className="text-gray-700 text-sm leading-relaxed mb-4">
+          We needed airport transfers for multiple employees on different flights, which usually turns messy. TaxiTribe handled delays and timing changes without us chasing updates, so the whole process felt more controlled and predictable.
+        </p>
+        <p className="font-semibold text-sm text-gray-900">
+          Priya Malhotra
+        </p>
+      </div>
+
+      {/* Review 5 */}
+      <div className="bg-white border border-gray-200 rounded-xl p-6 shadow-sm hover:shadow-md transition sm:col-span-2 lg:col-span-1">
+        <p className="text-gray-700 text-sm leading-relaxed mb-4">
+          We used TaxiTribe for a corporate event in Delhi with multiple pickup points across the city. Managing guest movement is usually stressful, but their on-ground team handled coordination well and everything stayed on schedule.
+        </p>
+        <p className="font-semibold text-sm text-gray-900">
+          Saurabh Jain
+        </p>
+      </div>
+
     </div>
   </div>
 </section>
-
 
                 {/* FINAL CTA */}
                 {/* CTA Section */}
@@ -454,4 +578,3 @@ export default function CorporateDelhiPage() {
         </div>
     );
 }
-    

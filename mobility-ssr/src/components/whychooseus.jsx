@@ -95,9 +95,9 @@ export default function BenefitsAndWhy() {
             Why Choose <span className="text-amber-600">TaxiTribe</span>
           </h2>
 
-          <p className="mt-3 text-gray-600 max-w-2xl mx-auto">
-            Car Rental and Mobility Services built for reliability, safety, and scale.
-          </p>
+          <h3 className="mt-3 text-gray-600 max-w-2xl mx-auto">
+            Why Choose TaxiTribe for Car Rental and Mobility Services
+          </h3>
         </div>
 
         {/* Benefits Grid */}

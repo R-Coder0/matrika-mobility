@@ -7,7 +7,9 @@ const CITIES = [
   { label: "Delhi", slug: "delhi" },
   { label: "Noida", slug: "noida" },
   { label: "Gurugram", slug: "gurugram" },
-  // { label: "Mumbai", slug: "mumbai" },
+  { label: "Bangalore", slug: "bangalore" },
+  { label: "Hyderabad", slug: "hyderabad" },
+  { label: "Mumbai", slug: "mumbai" },
 ];
 
 export default function Navbar() {
@@ -27,7 +29,10 @@ export default function Navbar() {
 
     if (path.includes("-")) {
       navigate(
-        path.replace(/(delhi|noida|gurugram|mumbai)/, newCity)
+              path.replace(
+        /(delhi|noida|gurugram|mumbai|hyderabad|bangalore)/,
+        newCity
+      )
       );
     } else {
       navigate(`/${newCity}`);

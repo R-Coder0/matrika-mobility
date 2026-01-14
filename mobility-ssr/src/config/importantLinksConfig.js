@@ -1,4 +1,4 @@
-export const CITIES = ["delhi", "noida", "gurugram"];
+export const CITIES = ["delhi", "noida", "gurugram", "mumbai", "hyderabad", "bangalore"];
 
 export const SERVICES = [
   {

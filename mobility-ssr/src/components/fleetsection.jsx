@@ -91,11 +91,8 @@ export default function ServicesSection() {
         {/* Heading */}
         <div className="mb-10 text-center">
           <h2 className="text-4xl font-bold text-gray-900">
-            Our <span className="text-amber-600">Services</span>
+            Car Rental and Mobility Services <span className="text-amber-600">by TaxiTribe</span>
           </h2>
-          <p className="mt-2 text-gray-600 max-w-2xl mx-auto">
-            Car Rental and Mobility Services by TaxiTribe
-          </p>
         </div>
 
         {/* Services Grid */}

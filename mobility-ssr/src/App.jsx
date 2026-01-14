@@ -5,23 +5,21 @@ import "./index.css";
 import Navbar from "./components/navBar";
 import Footer from "./components/footer";
 import ScrollToTop from "./components/ScrolltoTop";
-import FloatingContact from "./components/FloatingContact";
+// import FloatingContact from "./components/FloatingContact";
 
 import Home from "./pages/homePage";
 import AboutPage from "./pages/About";
 import ContactPage from "./pages/Contact";
 import FleetPage from "./pages/OurFleet";
-import CorporatePage from "./pages/Corporate";
-import ServicesPage from "./pages/Service";
+// import CorporatePage from "./pages/Corporate";
+// import ServicesPage from "./pages/Service";
 import BlogPage from "./pages/BlogPage";
 import BlogPostPage from "./pages/BlogDetails";
 import WeddingCar from "./pages/WeddingCar";
-import PrivacyTermsPage from "./pages/PrivacyPolicies";
-import TermsConditionsPage from "./pages/Terms&Condition";
+// import PrivacyTermsPage from "./pages/PrivacyPolicies";
+// import TermsConditionsPage from "./pages/Terms&Condition";
 
 import { PopupProvider } from "./components/PopupContext";
-
-/* 🔥 NEW */
 import DynamicServicePage from "./routes/DynamicServicePage";
 import { CityProvider } from "./context/CityContext";
 import ServiceBar from "./components/ServiceBar";
@@ -41,6 +39,9 @@ export default function App() {
   <Route path="/delhi" element={<Home />} />
   <Route path="/noida" element={<Home />} />
   <Route path="/gurugram" element={<Home />} />
+  <Route path="/bangalore" element={<Home />} />
+  <Route path="/hyderabad" element={<Home />} />
+  <Route path="/mumbai" element={<Home />} />
   {/* STATIC */}
   <Route path="/about-us" element={<AboutPage />} />
   <Route path="/our-fleet" element={<FleetPage />} />

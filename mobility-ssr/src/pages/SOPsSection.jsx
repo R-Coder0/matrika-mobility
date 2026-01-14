@@ -71,7 +71,7 @@ const DEFAULT_ITEMS = [
 
 
 export default function SOPsSection({
-  title = "SOPs — Safety, Security, Health & Environment",
+  title = "Operational SOPs and Safety Standards at TaxiTribe",
   subtitle = "Protecting People, Places and the Planet - Every Mile",
   items = DEFAULT_ITEMS,
   variant = "full",
@@ -84,7 +84,7 @@ export default function SOPsSection({
       className={`py-12 ${className}`}
       style={{ backgroundColor: "#FFFAFA" }}
     >
-      <div className="container mx-auto px-6">
+      <div className="container mx-auto">
         {/* Header row with small logo */}
         <motion.div
           initial={{ opacity: 0, y: 12 }}
