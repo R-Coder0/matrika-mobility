@@ -196,7 +196,7 @@ function OutstationForm() {
     setMessage("");
 
     try {
-      const res = await fetch("http://localhost:5000/api/outstation-enquiry", {
+      const res = await fetch("https://taxitribe.in/api/outstation-enquiry", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

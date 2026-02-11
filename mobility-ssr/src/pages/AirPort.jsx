@@ -193,7 +193,7 @@ function AirportForm() {
     setMessage("");
 
     try {
-      const res = await fetch("http://localhost:5000/api/airport-enquiry", {
+      const res = await fetch("https://taxitribe.in/api/airport-enquiry", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
