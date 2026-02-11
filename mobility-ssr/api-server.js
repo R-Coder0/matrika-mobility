@@ -16,18 +16,14 @@ console.log("MAIL_TO =", process.env.MAIL_TO);
 const app = express();
 const PORT = 5000;
 
+// ✅ CORS ENABLE (THIS IS THE KEY)
 app.use(
   cors({
-    origin: [
-      "https://taxitribe.in",
-      "http://localhost:3000",
-      "http://localhost:5173"
-    ],
+    origin: "https://taxitribe.in",
     methods: ["GET", "POST"],
     allowedHeaders: ["Content-Type"],
   })
 );
-
 
 app.use(bodyParser.json());
 
