@@ -1,5 +1,6 @@
 // App.jsx
 import { Routes, Route } from "react-router-dom";
+import { useEffect } from "react";
 import "./index.css";
 
 import Navbar from "./components/navBar";
@@ -27,6 +28,27 @@ import ImportantLinks from "./components/ImportantLinks";
 import AirportPage from "./pages/AirPort";
 
 export default function App() {
+  useEffect(() => {
+    // Load Google Ads gtag
+    const script = document.createElement("script");
+    script.async = true;
+    script.src =
+      "https://www.googletagmanager.com/gtag/js?id=AW-17769558353";
+    document.head.appendChild(script);
+
+    window.dataLayer = window.dataLayer || [];
+    function gtag() {
+      window.dataLayer.push(arguments);
+    }
+    window.gtag = gtag;
+
+    gtag("js", new Date());
+
+    // 🔥 WEBSITE CALL TRACKING (NUMBER REPLACEMENT)
+    gtag("config", "AW-17769558353", {
+      phone_conversion_number: "+917011438890",
+    });
+  }, []);
   return (
 <PopupProvider>
   <CityProvider>

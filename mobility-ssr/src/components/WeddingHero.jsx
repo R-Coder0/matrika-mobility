@@ -97,15 +97,7 @@ export default function WeddingHero() {
             {/* CTA Buttons */}
             <div className="mt-6 flex flex-col sm:flex-row gap-3">
               <a
-              onClick={() => {
-                        if (window.gtag) {
-                            window.gtag("event", "conversion", {
-                                send_to: "AW-17769558353/AbCdEfGhIjK", // 👈 YOUR CALL CONVERSION ID
-                            });
-                            console.log("📞 Call conversion fired");
-                        }
-                    }}
-                href="tel:+91 7011438890"
+                href="tel:+917011438890"
                 className="inline-flex items-center justify-center gap-2 px-5 py-3 rounded-lg bg-[#FFD400] text-black font-semibold shadow-md hover:shadow-lg transition"
               >
                 <Phone className="w-4 h-4" />
