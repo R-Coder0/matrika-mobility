@@ -105,13 +105,13 @@ export default function OutStationLandingPage() {
             <div>
               <div className="overflow-hidden rounded-2xl shadow-sm">
                 <img
-                  src="/cars/hycross.avif"
+                  src="/cars/invicto.jpg"
                   alt="Toyota Hycross"
                   className="w-full h-56 object-cover hover:scale-105 transition duration-300"
                 />
               </div>
               <h3 className="mt-4 text-lg font-semibold">
-                Toyota Hycross
+                Invicto
               </h3>
             </div>
 
