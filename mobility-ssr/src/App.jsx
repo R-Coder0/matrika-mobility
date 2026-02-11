@@ -24,6 +24,7 @@ import DynamicServicePage from "./routes/DynamicServicePage";
 import { CityProvider } from "./context/CityContext";
 import ServiceBar from "./components/ServiceBar";
 import ImportantLinks from "./components/ImportantLinks";
+import AirportPage from "./pages/AirPort";
 
 export default function App() {
   return (
@@ -52,6 +53,7 @@ export default function App() {
   {/* 🔥 ALL SERVICE PAGES */}
   <Route path="/:slug" element={<DynamicServicePage />} />
   <Route path="/wedding-car" element={<WeddingCar />} />
+  <Route path="/airport" element={<AirportPage />} />
 </Routes>
 
 
