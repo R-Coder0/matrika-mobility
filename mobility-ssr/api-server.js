@@ -4,6 +4,7 @@ import cors from "cors";
 import dotenv from "dotenv";
 
 import { sendWeddingEnquiry } from "./src/utils/mailer.js";
+import { sendAirportEnquiry } from "./src/utils/sendAirportEnquiry.js";
 
 dotenv.config();
 
@@ -15,14 +16,18 @@ console.log("MAIL_TO =", process.env.MAIL_TO);
 const app = express();
 const PORT = 5000;
 
-// ✅ CORS ENABLE (THIS IS THE KEY)
 app.use(
   cors({
-    origin: "https://taxitribe.in",
+    origin: [
+      "https://taxitribe.in",
+      "http://localhost:3000",
+      "http://localhost:5173"
+    ],
     methods: ["GET", "POST"],
     allowedHeaders: ["Content-Type"],
   })
 );
+
 
 app.use(bodyParser.json());
 
@@ -36,6 +41,19 @@ app.post("/api/wedding-enquiry", async (req, res) => {
     res.json({ success: true });
   } catch (error) {
     console.error("❌ Mail error:", error);
+    res.status(500).json({ success: false });
+  }
+});
+// ✈️ AIRPORT ENQUIRY API
+app.post("/api/airport-enquiry", async (req, res) => {
+  console.log("✈️ Airport API HIT");
+  console.log("📥 Data:", req.body);
+
+  try {
+    await sendAirportEnquiry(req.body);
+    res.json({ success: true });
+  } catch (error) {
+    console.error("❌ Airport Mail error:", error);
     res.status(500).json({ success: false });
   }
 });

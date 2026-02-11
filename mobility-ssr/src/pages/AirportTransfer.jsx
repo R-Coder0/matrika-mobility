@@ -40,7 +40,7 @@ export default function AirportTransferPage() {
   return (
     <div className="min-h-screen bg-gray-900 text-white">
       {/* Hero Section */}
-      <div className="relative bg-gradient-to-r from-gray-900 to-black py-24 px-4 overflow-hidden">
+      <div className="relative bg-linear-to-r from-gray-900 to-black py-24 px-4 overflow-hidden">
         <div className="max-w-7xl mx-auto text-center relative z-10">
           <h1 className="text-4xl md:text-5xl font-bold mb-6">
             Airport <span className="text-amber-500">Transfer</span> Services

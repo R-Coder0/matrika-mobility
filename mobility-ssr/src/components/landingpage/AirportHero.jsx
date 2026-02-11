@@ -1,5 +1,5 @@
 import React from "react";
-import { Phone, ArrowRight, Star, ShieldCheck, Clock } from "lucide-react";
+import { Phone, ArrowRight, Star, ShieldCheck, Clock, PhoneCallIcon } from "lucide-react";
 
 export default function AirportHero() {
   return (
@@ -19,11 +19,12 @@ export default function AirportHero() {
               <ShieldCheck className="w-4 h-4" />
               Premium Airport Transfers • PAN India
             </span>
-                        {/* Badge */}
-            <span className="inline-flex items-center gap-2 mb-6 px-4 py-1.5 text-sm font-semibold rounded-full bg-blue-50 text-blue-600">
-              <ShieldCheck className="w-4 h-4" />
-              Premium Airport Transfers • PAN India
-            </span>
+            <br/>
+            {/* Badge */}
+            <a href="tel:+917011438890" className="inline-flex items-center gap-2 mb-6 px-4 py-1.5 text-sm font-semibold rounded-full bg-blue-50 text-blue-600">
+              <PhoneCallIcon className="w-4 h-4" />
+              +91 70114 38890
+            </a>
 
             {/* Headline */}
             <h1 className="text-3xl md:text-5xl font-extrabold leading-tight text-gray-900">

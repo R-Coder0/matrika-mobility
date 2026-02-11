@@ -17,8 +17,8 @@ import FleetPage from "./pages/OurFleet";
 import BlogPage from "./pages/BlogPage";
 import BlogPostPage from "./pages/BlogDetails";
 import WeddingCar from "./pages/WeddingCar";
-// import PrivacyTermsPage from "./pages/PrivacyPolicies";
-// import TermsConditionsPage from "./pages/Terms&Condition";
+import PrivacyTermsPage from "./pages/PrivacyPolicies";
+import TermsConditionsPage from "./pages/Terms&Condition";
 
 import { PopupProvider } from "./components/PopupContext";
 import DynamicServicePage from "./routes/DynamicServicePage";
@@ -71,6 +71,8 @@ export default function App() {
   <Route path="/contact-us" element={<ContactPage />} />
   <Route path="/blogs" element={<BlogPage />} />
   <Route path="/blog/:slug" element={<BlogPostPage />} />
+  <Route path="/terms-and-conditions" element={<TermsConditionsPage />} />
+  <Route path="/privacy-policy" element={<PrivacyTermsPage />} />
 
   {/* 🔥 ALL SERVICE PAGES */}
   <Route path="/:slug" element={<DynamicServicePage />} />

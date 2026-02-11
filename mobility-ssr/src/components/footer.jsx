@@ -172,10 +172,10 @@ export default function Footer() {
         <div className="max-w-[1400px] mx-auto px-6 py-6 flex flex-col md:flex-row justify-between items-center text-sm text-gray-500">
           <p>© {new Date().getFullYear()} Taxi Tribe. All rights reserved.</p>
           <div className="flex gap-6 mt-4 md:mt-0">
-            <Link to="/privacy-policies" className="hover:text-amber-400">
+            <Link to="/privacy-policy" className="hover:text-amber-400">
               Privacy Policy
             </Link>
-            <Link to="/term-condition" className="hover:text-amber-400">
+            <Link to="/terms-and-conditions" className="hover:text-amber-400">
               Terms & Conditions
             </Link>
           </div>
