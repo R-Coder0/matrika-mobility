@@ -5,6 +5,7 @@ import dotenv from "dotenv";
 
 import { sendWeddingEnquiry } from "./src/utils/mailer.js";
 import { sendAirportEnquiry } from "./src/utils/sendAirportEnquiry.js";
+import { sendOutstationEnquiry } from "./src/utils/sendOutstationEnquiry.js";
 
 dotenv.config();
 
@@ -53,6 +54,20 @@ app.post("/api/airport-enquiry", async (req, res) => {
     res.status(500).json({ success: false });
   }
 });
+// 🚗 OUTSTATION ENQUIRY API
+app.post("/api/outstation-enquiry", async (req, res) => {
+  console.log("🚗 Outstation API HIT");
+  console.log("📥 Data:", req.body);
+
+  try {
+    await sendOutstationEnquiry(req.body);
+    res.json({ success: true });
+  } catch (error) {
+    console.error("❌ Outstation Mail error:", error);
+    res.status(500).json({ success: false });
+  }
+});
+
 
 app.listen(PORT, () => {
   console.log(`🚀 API Server running on http://localhost:${PORT}`);

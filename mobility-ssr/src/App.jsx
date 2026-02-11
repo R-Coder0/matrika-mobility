@@ -26,6 +26,7 @@ import { CityProvider } from "./context/CityContext";
 import ServiceBar from "./components/ServiceBar";
 import ImportantLinks from "./components/ImportantLinks";
 import AirportPage from "./pages/AirPort";
+import OutStationLandingPage from "./pages/OutStationLandingPage";
 
 export default function App() {
   useEffect(() => {
@@ -78,6 +79,7 @@ export default function App() {
   <Route path="/:slug" element={<DynamicServicePage />} />
   <Route path="/wedding-car" element={<WeddingCar />} />
   <Route path="/airport" element={<AirportPage />} />
+  <Route path="/out-station" element={<OutStationLandingPage />} />
 </Routes>
 
 

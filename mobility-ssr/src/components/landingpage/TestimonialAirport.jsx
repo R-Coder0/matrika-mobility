@@ -3,32 +3,32 @@ import { Star, ChevronLeft, ChevronRight } from "lucide-react";
 
 const testimonials = [
   {
-    name: "Amit Sharma",
-    role: "Operations Head, Tech Firm",
+    name: "Rahul Gupta",
+    role: "Family Trip – Delhi to Jaipur",
     review:
-      "Taxi Tribe has completely streamlined our corporate airport transfers. Always on time, clean vehicles and professional chauffeurs. Their billing transparency makes our finance team happy.",
+      "Our outstation trip was smooth and completely stress-free. The driver was experienced, polite and drove safely throughout the journey. Highly recommended for family travel.",
   },
   {
-    name: "Priya Mehta",
-    role: "HR Manager, Consulting Company",
+    name: "Sneha Kapoor",
+    role: "Weekend Getaway – Chandigarh",
     review:
-      "We regularly book airport transfers for senior executives. The experience is seamless, punctual and premium. Highly reliable service across multiple cities.",
+      "Very comfortable vehicle and transparent pricing. No hidden charges at all. Booking process was simple and support team was responsive even during the trip.",
   },
   {
-    name: "Rohit Verma",
-    role: "Startup Founder",
+    name: "Manish Verma",
+    role: "Business Travel – Lucknow",
     review:
-      "No surge pricing, no last-minute surprises. The coordination team is proactive and responsive. Taxi Tribe feels like a long-term mobility partner, not just a taxi provider.",
+      "I frequently travel outstation for meetings and Taxi Tribe has been extremely reliable. Clean cars, professional drivers and always on-time departures.",
   },
   {
-    name: "Neha Kapoor",
-    role: "Travel Desk Executive",
+    name: "Pooja Sharma",
+    role: "Group Trip – Rishikesh",
     review:
-      "Managing corporate travel is stressful, but Taxi Tribe makes airport pickups effortless. Drivers are courteous and vehicles are always spotless.",
+      "We booked Force Urbania for our group trip and the experience was excellent. Spacious seating, ample luggage space and very smooth highway ride.",
   },
 ];
 
-export default function TestimonialSlider() {
+export default function TestimonialOutstation() {
   const [current, setCurrent] = useState(0);
 
   const prevSlide = () => {
@@ -57,11 +57,11 @@ export default function TestimonialSlider() {
 
         {/* Title */}
         <h2 className="text-3xl md:text-4xl font-bold mb-4">
-          What Our Corporate Clients Say
+          What Our Outstation Travelers Say
         </h2>
 
         <p className="text-gray-600 mb-12">
-          Trusted by business leaders and corporate teams across India.
+          Trusted by families, business travelers and long-distance commuters across India.
         </p>
 
         {/* Slider Card */}
