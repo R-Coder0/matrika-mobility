@@ -6,6 +6,7 @@ import dotenv from "dotenv";
 import { sendWeddingEnquiry } from "./src/utils/mailer.js";
 import { sendAirportEnquiry } from "./src/utils/sendAirportEnquiry.js";
 import { sendOutstationEnquiry } from "./src/utils/sendOutstationEnquiry.js";
+import { sendUrbaniaEnquiry } from "./src/utils/sendUrbaniaEnquiry.js";
 
 dotenv.config();
 
@@ -68,6 +69,19 @@ app.post("/api/outstation-enquiry", async (req, res) => {
   }
 });
 
+// 🚐 URBANIA ENQUIRY API
+app.post("/api/urbania-enquiry", async (req, res) => {
+  console.log("🚐 Urbania API HIT");
+  console.log("📥 Data:", req.body);
+
+  try {
+    await sendUrbaniaEnquiry(req.body);
+    res.json({ success: true });
+  } catch (error) {
+    console.error("❌ Urbania Mail error:", error);
+    res.status(500).json({ success: false });
+  }
+});
 
 app.listen(PORT, () => {
   console.log(`🚀 API Server running on http://localhost:${PORT}`);

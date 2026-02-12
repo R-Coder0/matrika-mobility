@@ -27,6 +27,7 @@ import ServiceBar from "./components/ServiceBar";
 import ImportantLinks from "./components/ImportantLinks";
 import AirportPage from "./pages/AirPort";
 import OutStationLandingPage from "./pages/OutStationLandingPage";
+import UrbaniaLandingPage from "./pages/Urbania";
 
 export default function App() {
   useEffect(() => {
@@ -80,6 +81,7 @@ export default function App() {
   <Route path="/wedding-car" element={<WeddingCar />} />
   <Route path="/airport" element={<AirportPage />} />
   <Route path="/out-station" element={<OutStationLandingPage />} />
+  <Route path="/urbania" element={<UrbaniaLandingPage />} />
 </Routes>
 
 
