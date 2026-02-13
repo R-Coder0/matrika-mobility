@@ -306,7 +306,7 @@ function LuxuryForm() {
         <button
           type="submit"
           disabled={loading}
-          className="bg-[#C6A75E] text-black font-semibold px-10 py-3 rounded-xl hover:shadow-md transition disabled:opacity-50"
+          className=" bg-[#fe9a00] text-black font-semibold px-10 py-3 rounded-xl hover:shadow-md transition disabled:opacity-50"
         >
           {loading ? "Submitting..." : "Get Luxury Car Quote"}
         </button>
