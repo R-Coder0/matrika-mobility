@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import AirportHero from "../components/landingpage/AirportHero";
 import { CheckCircle } from "lucide-react";
-import TestimonialSlider from "../components/landingpage/TestimonialAirport";
+import TestimonialSlider from "../components/landingpage/TestimonialOutStation";
 
 export default function AirportPage() {
   return (
@@ -142,27 +142,27 @@ export default function AirportPage() {
           </div>
         </div>
       </section>
-{/* ===== ENQUIRY FORM SECTION ===== */}
-<section className="py-20 bg-[#FFFAFA]">
-  <div className="max-w-4xl mx-auto px-6">
+      {/* ===== ENQUIRY FORM SECTION ===== */}
+      <section className="py-20 bg-[#FFFAFA]">
+        <div className="max-w-4xl mx-auto px-6">
 
-    {/* Title */}
-    <div className="flex items-center justify-center gap-4 mb-8">
-      <span className="h-px w-20 bg-gray-300"></span>
-      <h2 className="text-2xl md:text-3xl font-bold text-center">
-        Get Instant Airport Taxi Price
-      </h2>
-      <span className="h-px w-20 bg-gray-300"></span>
-    </div>
+          {/* Title */}
+          <div className="flex items-center justify-center gap-4 mb-8">
+            <span className="h-px w-20 bg-gray-300"></span>
+            <h2 className="text-2xl md:text-3xl font-bold text-center">
+              Get Instant Airport Taxi Price
+            </h2>
+            <span className="h-px w-20 bg-gray-300"></span>
+          </div>
 
-    {/* Form Card */}
-    <div className="bg-white border border-gray-200 rounded-2xl shadow-sm p-8">
+          {/* Form Card */}
+          <div className="bg-white border border-gray-200 rounded-2xl shadow-sm p-8">
 
-      <AirportForm />
+            <AirportForm />
 
-    </div>
-  </div>
-</section>
+          </div>
+        </div>
+      </section>
 
       <TestimonialSlider />
 

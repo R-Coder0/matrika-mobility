@@ -28,6 +28,7 @@ import ImportantLinks from "./components/ImportantLinks";
 import AirportPage from "./pages/AirPort";
 import OutStationLandingPage from "./pages/OutStationLandingPage";
 import UrbaniaLandingPage from "./pages/Urbania";
+import LuxryCarLandingPage from "./pages/LuxryCar";
 
 export default function App() {
   useEffect(() => {
@@ -82,6 +83,7 @@ export default function App() {
   <Route path="/airport" element={<AirportPage />} />
   <Route path="/out-station" element={<OutStationLandingPage />} />
   <Route path="/urbania" element={<UrbaniaLandingPage />} />
+  <Route path="/luxury-car" element={<LuxryCarLandingPage />} />
 </Routes>
 
 

@@ -1,8 +1,8 @@
 import React, { useState } from "react";
 import { CheckCircle } from "lucide-react";
-import TestimonialSlider from "../components/landingpage/TestimonialAirport";
+import TestimonialSlider from "../components/landingpage/TestimonialOutStation";
 import UrbaniaHero from "../components/landingpage/UrbaniaHero";
-import TestimonialUrbania from "../components/landingpage/TestimonialAirport copy";
+import TestimonialUrbania from "../components/landingpage/TestimonialUrbania";
 
 export default function UrbaniaLandingPage() {
   return (

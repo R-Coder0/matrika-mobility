@@ -7,6 +7,7 @@ import { sendWeddingEnquiry } from "./src/utils/mailer.js";
 import { sendAirportEnquiry } from "./src/utils/sendAirportEnquiry.js";
 import { sendOutstationEnquiry } from "./src/utils/sendOutstationEnquiry.js";
 import { sendUrbaniaEnquiry } from "./src/utils/sendUrbaniaEnquiry.js";
+import { sendLuxuryEnquiry } from "./src/utils/sendLuxryCarEnquiry.js";
 
 dotenv.config();
 
@@ -79,6 +80,15 @@ app.post("/api/urbania-enquiry", async (req, res) => {
     res.json({ success: true });
   } catch (error) {
     console.error("❌ Urbania Mail error:", error);
+    res.status(500).json({ success: false });
+  }
+});
+
+app.post("/api/luxury-enquiry", async (req, res) => {
+  try {
+    await sendLuxuryEnquiry(req.body);
+    res.json({ success: true });
+  } catch (error) {
     res.status(500).json({ success: false });
   }
 });
