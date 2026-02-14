@@ -1,5 +1,6 @@
 // App.jsx
 import { Routes, Route } from "react-router-dom";
+import { useLocation } from "react-router-dom";
 import { useEffect } from "react";
 import "./index.css";
 
@@ -30,32 +31,27 @@ import OutStationLandingPage from "./pages/OutStationLandingPage";
 import UrbaniaLandingPage from "./pages/Urbania";
 import LuxryCarLandingPage from "./pages/LuxryCar";
 
-export default function App() {
+function RouteTracker() {
+  const location = useLocation();
+
   useEffect(() => {
-    // Load Google Ads gtag
-    const script = document.createElement("script");
-    script.async = true;
-    script.src =
-      "https://www.googletagmanager.com/gtag/js?id=AW-17769558353";
-    document.head.appendChild(script);
-
-    window.dataLayer = window.dataLayer || [];
-    function gtag() {
-      window.dataLayer.push(arguments);
+    if (window.gtag) {
+      window.gtag("config", "AW-17769558353", {
+        page_path: location.pathname,
+      });
     }
-    window.gtag = gtag;
+  }, [location]);
 
-    gtag("js", new Date());
+  return null;
+}
 
-    // 🔥 WEBSITE CALL TRACKING (NUMBER REPLACEMENT)
-    gtag("config", "AW-17769558353", {
-      phone_conversion_number: "+917011438890",
-    });
-  }, []);
+export default function App() {
+
   return (
 <PopupProvider>
   <CityProvider>
-    <ScrollToTop />
+<ScrollToTop />
+<RouteTracker />
     <Navbar />
     <ServiceBar />
 
