@@ -118,7 +118,7 @@ export default function ContactPage() {
                       value={formData.phone}
                       onChange={handleInputChange}
                       className="w-full px-4 py-3 bg-white border border-gray-300 rounded-lg text-gray-900 placeholder-gray-400 focus:border-amber-500 focus:ring-2 focus:ring-amber-500/40 transition-all"
-                      placeholder="+91 7011438890"
+                      placeholder="7011438890"
                       required
                     />
                   </div>
@@ -224,7 +224,7 @@ export default function ContactPage() {
                       Phone Support
                     </h3>
                     <p className="text-base sm:text-lg text-amber-600 font-medium mb-1 sm:mb-2">
-                      +91 7011438890
+                      7011438890
                     </p>
                     <p className="text-sm sm:text-base text-gray-600">
                       24x7 emergency support available

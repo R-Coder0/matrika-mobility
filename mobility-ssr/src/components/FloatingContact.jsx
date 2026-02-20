@@ -110,7 +110,7 @@ const FloatingContact = () => {
 
         {/* Call */}
         <a
-          href="tel:+917011438890"
+          href="tel:7011438890"
           className="group relative w-14 h-14 flex items-center justify-center 
                      rounded-full bg-linear-to-br from-blue-500 to-blue-600 text-white 
                      shadow-xl hover:scale-110 transition-all duration-300"
@@ -148,7 +148,7 @@ const FloatingContact = () => {
             <p className="text-xs">Enquiry</p>
           </button>
 
-          <a href="tel:+917011438890" className="py-3 bg-blue-600 text-white">
+          <a href="tel:7011438890" className="py-3 bg-blue-600 text-white">
             <FaPhoneAlt className="text-xl mx-auto" />
             <p className="text-xs">Call</p>
           </a>

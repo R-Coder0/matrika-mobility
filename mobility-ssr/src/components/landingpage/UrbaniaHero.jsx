@@ -62,7 +62,7 @@ export default function UrbaniaHero() {
 
               {/* Call CTA */}
               <a
-                href="tel:+917011438890"
+                href="tel:7011438890"
                 onClick={() => {
                   window.gtag?.("event", "conversion", {
                     send_to: "AW-17769558353/Z52xCM7OzPgbENHil5lC",

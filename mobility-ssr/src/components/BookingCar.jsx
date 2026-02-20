@@ -61,59 +61,59 @@ export default function BookingDialog({ open, model, onOpenChange, onSubmit }) {
     });
   };
 
-  const handleSubmit = async (e) => {
-    e.preventDefault();
-    setIsSubmitting(true);
+const handleSubmit = async (e) => {
+  e.preventDefault();
+  setIsSubmitting(true);
 
-    try {
-      const result = await emailjs.send(
-        "service_goe734o", // Replace with your service ID
-        "template_1p60xx7", // Replace with your template ID
-        {
-          ...formData,
-          model: model || "General Inquiry"
-        },
-        "lc85WOgfXS2GGvIlW" // Replace with your user ID
-      );
+  try {
+    const result = await emailjs.send(
+      "service_goe734o",
+      "template_1p60xx7",
+      { ...formData, model: model || "General Inquiry" },
+      "lc85WOgfXS2GGvIlW"
+    );
 
-      console.log("Email sent successfully:", result.text);
+    console.log("Email sent successfully:", result.text);
 
-      setIsSubmitting(false);
+    // ✅ FIRE ADS CONVERSION ONLY ON SUCCESS
+    window.gtag?.("event", "conversion", {
+      send_to: "AW-17769558353/Z52xCM7OzPgbENHil5lC", // confirm label
+    });
+
+    setIsSubmitting(false);
+    setSubmitted(true);
+
+    if (onSubmit) onSubmit(formData);
+
+    setFormData({
+      name: "",
+      email: "",
+      phone: "",
+      corporateName: "",
+      selectCity: "",
+      selectCountry: "",
+      message: ""
+    });
+
+    setTimeout(() => {
+      setSubmitted(false);
+      onOpenChange(false);
+    }, 2000);
+  } catch (error) {
+    console.error("Error sending email:", error);
+    setIsSubmitting(false);
+
+    // ⚠️ Fallback me conversion fire MAT karna (false leads ho jayengi)
+    setTimeout(() => {
       setSubmitted(true);
-
       if (onSubmit) onSubmit(formData);
-
-      setFormData({
-        name: "",
-        email: "",
-        phone: "",
-        corporateName: "",
-        selectCity: "",
-        selectCountry: "",
-        message: ""
-      });
-
       setTimeout(() => {
         setSubmitted(false);
         onOpenChange(false);
       }, 2000);
-    } catch (error) {
-      console.error("Error sending email:", error);
-      setIsSubmitting(false);
-
-      // Fallback to original simulation if EmailJS fails
-      setTimeout(() => {
-        setIsSubmitting(false);
-        setSubmitted(true);
-        if (onSubmit) onSubmit(formData);
-        setTimeout(() => {
-          setSubmitted(false);
-          onOpenChange(false);
-        }, 2000);
-      }, 1500);
-    }
-  };
-
+    }, 1500);
+  }
+};
   if (!open) return null;
 
   return (

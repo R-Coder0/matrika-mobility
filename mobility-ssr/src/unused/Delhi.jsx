@@ -243,10 +243,10 @@ export default function DelhiTaxiPage() {
                 <p>
                   <span className="font-semibold">Phone:&nbsp;</span>
                   <a
-                    href="tel:+917011438890"
+                    href="tel:7011438890"
                     className="text-[#F39C12] hover:underline"
                   >
-                    +91 70114 38890
+                    +91 7011438890
                   </a>
                 </p>
                 <p>

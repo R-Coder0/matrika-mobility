@@ -56,7 +56,7 @@ export default function AirportHero() {
             <div className="mt-10 flex flex-col sm:flex-row gap-5">
               {/* SECONDARY CTA */}
               <a
-                 href="tel:+917011438890"
+                 href="tel:7011438890"
   onClick={() => {
     window.gtag?.("event", "conversion", {
       send_to: "AW-17769558353/Z52xCM7OzPgbENHil5lC",

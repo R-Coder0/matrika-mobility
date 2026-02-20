@@ -6,7 +6,21 @@ import OutstationHero from "../components/landingpage/OutStation";
 export default function OutStationLandingPage() {
   return (
     <div className="w-full font-sans bg-[#FFFAFA] text-black">
+      <Helmet>
+  <title>
+    Outstation Taxi Service in India | One-Way & Round Trip Cabs - TaxiTribe
+  </title>
 
+  <meta
+    name="description"
+    content="Book outstation taxi for one-way or round trip travel with verified drivers, sanitized cars and transparent per-km pricing. Safe, comfortable long-distance cab service across India."
+  />
+
+  <link
+    rel="canonical"
+    href="https://taxitribe.in/out-station"
+  />
+</Helmet>
       {/* ===== HERO ===== */}
       <OutstationHero />
       {/* ===== WHY CHOOSE TAXI TRIBE (OUTSTATION) ===== */}

@@ -75,7 +75,7 @@ export default function MICEHyderabad() {
                         </button>
 
                         <a
-                            href="tel:+917011438890"
+                            href="tel:7011438890"
                             className="px-8 py-4 border border-white/30 text-white rounded-lg hover:bg-white/10 transition"
                         >
                             Call Event Desk

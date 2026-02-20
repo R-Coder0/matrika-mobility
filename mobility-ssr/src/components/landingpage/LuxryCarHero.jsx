@@ -24,11 +24,11 @@ export default function LuxuryCarHero() {
 
             {/* Phone Badge */}
             <a 
-              href="tel:+917011438890" 
+              href="tel:7011438890" 
               className="inline-flex items-center gap-2 mb-6 px-4 py-1.5 text-lg font-bold rounded-full bg-green-50 text-green-700"
             >
               <PhoneCallIcon className="w-4 h-4" />
-              +91 70114 38890
+              70114 38890
             </a>
 
             {/* Headline */}
@@ -60,7 +60,7 @@ export default function LuxuryCarHero() {
 
               {/* Call CTA */}
               <a
-                href="tel:+917011438890"
+                href="tel:7011438890"
   onClick={() => {
     window.gtag?.("event", "conversion", {
       send_to: "AW-17769558353/Z52xCM7OzPgbENHil5lC",

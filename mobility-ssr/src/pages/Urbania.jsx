@@ -3,11 +3,26 @@ import { CheckCircle } from "lucide-react";
 import TestimonialSlider from "../components/landingpage/TestimonialOutStation";
 import UrbaniaHero from "../components/landingpage/UrbaniaHero";
 import TestimonialUrbania from "../components/landingpage/TestimonialUrbania";
+import { Helmet } from "react-helmet";
 
 export default function UrbaniaLandingPage() {
   return (
     <div className="w-full font-sans bg-[#FFFAFA] text-black">
+<Helmet>
+  <title>
+    Force Urbania Rental in India | Luxury 12–17 Seater Van - TaxiTribe
+  </title>
 
+  <meta
+    name="description"
+    content="Book Force Urbania rental for group travel, corporate trips, weddings and outstation journeys. Spacious 12–17 seater luxury van with professional chauffeur, 24×7 support and transparent pricing."
+  />
+
+  <link
+    rel="canonical"
+    href="https://taxitribe.in/urbania"
+  />
+</Helmet>
       {/* ===== HERO ===== */}
       <UrbaniaHero />
       {/* ===== WHY CHOOSE TAXI TRIBE (URBANIA) ===== */}

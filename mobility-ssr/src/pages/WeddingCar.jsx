@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { Phone, Mail, MessageCircle, ChevronDown, CheckCircle } from "lucide-react";
 import WeddingCarHero from "../components/landingpage/WeddingCarHero";
 import TestimonialWeddingCar from "../components/landingpage/TestimonialWeddingCar";
-
+import { Helmet } from 'react-helmet';
 
 export default function WeddingCar() {
     // ================= FORM STATE =================
@@ -69,8 +69,23 @@ const handleSubmit = async (e) => {
 
 
     return (
+        
         <div className="w-full font-sans bg-[#FFFAFA] text-black">
+<Helmet>
+  <title>
+    Luxury Wedding Car Rental in India | Decorated Cars with Chauffeur - TaxiTribe
+  </title>
 
+  <meta
+    name="description"
+    content="Book luxury wedding car rental with professional chauffeurs, decorated bride & groom entry cars, baraat vehicles and premium SUVs. Available PAN India with on-time arrival guarantee."
+  />
+
+  <link
+    rel="canonical"
+    href="https://taxitribe.in/wedding-car"
+  />
+</Helmet>
             {/* ===== HERO BANNER ===== */}
             <WeddingCarHero />
 

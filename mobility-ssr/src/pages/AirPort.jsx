@@ -2,11 +2,26 @@ import React, { useState } from "react";
 import AirportHero from "../components/landingpage/AirportHero";
 import { CheckCircle } from "lucide-react";
 import TestimonialSlider from "../components/landingpage/TestimonialOutStation";
+import { Helmet } from "react-helmet";
 
 export default function AirportPage() {
   return (
     <div className="w-full font-sans bg-[#FFFAFA] text-black">
+      <Helmet>
+        <title>
+          Airport Taxi Service in India | On-Time Pickup & Drop - TaxiTribe
+        </title>
 
+        <meta
+          name="description"
+          content="Book reliable airport taxi for pickup & drop with verified chauffeurs, clean vehicles and transparent pricing. 24×7 airport transfers for individuals, families and corporates across India."
+        />
+
+        <link
+          rel="canonical"
+          href="https://taxitribe.in/airport"
+        />
+      </Helmet>
       {/* ===== HERO ===== */}
       <AirportHero />
       {/* ===== WHY CHOOSE TAXI TRIBE (ABOUT) ===== */}
@@ -204,9 +219,9 @@ function AirportForm() {
       const data = await res.json();
 
       if (data.success) {
-          window.gtag?.("event", "conversion", {
-    send_to: "AW-17769558353/Z52xCM7OzPgbENHil5lC",
-  });
+        window.gtag?.("event", "conversion", {
+          send_to: "AW-17769558353/Z52xCM7OzPgbENHil5lC",
+        });
         setMessage("✅ Enquiry submitted successfully!");
         setFormData({
           name: "",

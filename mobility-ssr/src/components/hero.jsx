@@ -85,41 +85,46 @@ export default function Hero() {
     }));
   };
 
-  const handleSubmit = async (e) => {
-    e.preventDefault();
-    setIsSubmitting(true);
+const handleSubmit = async (e) => {
+  e.preventDefault();
+  setIsSubmitting(true);
 
-    try {
-      const result = await emailjs.send(
-        "service_goe734o",
-        "template_1p60xx7",
-        formData,
-        "lc85WOgfXS2GGvIlW"
-      );
+  try {
+    const result = await emailjs.send(
+      "service_goe734o",
+      "template_1p60xx7",
+      formData,
+      "lc85WOgfXS2GGvIlW"
+    );
 
-      console.log("Success:", result.text);
-      setIsSubmitting(false);
-      setSubmitted(true);
+    console.log("Success:", result.text);
 
-      // reset form
-      setFormData({
-        name: "",
-        email: "",
-        phone: "",
-        corporateName: "",
-        selectCity: "",
-        selectCountry: "",
-        message: "",
-      });
+    // ✅ Google Ads conversion only on success
+    window.gtag?.("event", "conversion", {
+      send_to: "AW-17769558353/Z52xCM7OzPgbENHil5lC", // 👈 confirm label
+    });
 
-      setTimeout(() => {
-        setSubmitted(false);
-      }, 2500);
-    } catch (error) {
-      console.error("Error sending email:", error);
-      setIsSubmitting(false);
-    }
-  };
+    setIsSubmitting(false);
+    setSubmitted(true);
+
+    setFormData({
+      name: "",
+      email: "",
+      phone: "",
+      corporateName: "",
+      selectCity: "",
+      selectCountry: "",
+      message: "",
+    });
+
+    setTimeout(() => setSubmitted(false), 2500);
+  } catch (error) {
+    console.error("Error sending email:", error);
+    setIsSubmitting(false);
+
+    // ❌ yahan conversion mat fire karna (false leads ho jayengi)
+  }
+};
 
   return (
     <>
