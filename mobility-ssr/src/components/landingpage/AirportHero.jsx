@@ -21,9 +21,9 @@ export default function AirportHero() {
             </span>
             <br/>
             {/* Badge */}
-            <a href="tel:+917011438890" className="inline-flex items-center gap-2 mb-6 px-4 py-1.5 text-lg font-bold rounded-full bg-blue-50 text-blue-600">
+            <a href="tel:7011438890" className="inline-flex items-center gap-2 mb-6 px-4 py-1.5 text-lg font-bold rounded-full bg-blue-50 text-blue-600">
               <PhoneCallIcon className="w-4 h-4" />
-              +91 70114 38890
+              7011438890
             </a>
 
             {/* Headline */}
@@ -56,7 +56,12 @@ export default function AirportHero() {
             <div className="mt-10 flex flex-col sm:flex-row gap-5">
               {/* SECONDARY CTA */}
               <a
-                href="tel:+917011438890"
+                 href="tel:+917011438890"
+  onClick={() => {
+    window.gtag?.("event", "conversion", {
+      send_to: "AW-17769558353/Z52xCM7OzPgbENHil5lC",
+    });
+  }}
                 className="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-xl
                 bg-[#fe9a00] text-black font-bold text-lg
                 shadow-lg hover:shadow-xl transition animate-wobble"

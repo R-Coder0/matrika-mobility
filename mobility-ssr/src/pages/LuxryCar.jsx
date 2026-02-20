@@ -242,6 +242,9 @@ function LuxuryForm() {
       const data = await res.json();
 
       if (data.success) {
+          window.gtag?.("event", "conversion", {
+    send_to: "AW-17769558353/Z52xCM7OzPgbENHil5lC",
+  });
         setMessage("✅ Luxury car enquiry submitted successfully!");
         setFormData({
           name: "",

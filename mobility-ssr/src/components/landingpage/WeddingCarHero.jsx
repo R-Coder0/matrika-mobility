@@ -25,20 +25,20 @@ export default function WeddingCarHero() {
 
             {/* Phone Badge */}
             <a
-              href="tel:+917011438890"
+              href="tel:7011438890"
               className="inline-flex items-center gap-2 mb-6 px-4 py-1.5 text-lg font-bold rounded-full bg-green-50 text-green-700"
             >
               <PhoneCallIcon className="w-4 h-4" />
-              +91 70114 38890
+              7011438890
             </a>
 
             {/* Headline */}
-<h1 className="text-3xl md:text-5xl font-extrabold leading-tight text-gray-900">
-  Arrive In Style,
-  <span className="block text-[#fe9a00]">
-    Luxury Wedding Cars
-  </span>
-</h1>
+            <h1 className="text-3xl md:text-5xl font-extrabold leading-tight text-gray-900">
+              Arrive In Style,
+              <span className="block text-[#fe9a00]">
+                Luxury Wedding Cars
+              </span>
+            </h1>
 
 
             <p className="mt-6 text-lg text-gray-600 max-w-xl">
@@ -65,6 +65,11 @@ export default function WeddingCarHero() {
               {/* Call CTA */}
               <a
                 href="tel:+917011438890"
+                onClick={() => {
+                  window.gtag?.("event", "conversion", {
+                    send_to: "AW-17769558353/Z52xCM7OzPgbENHil5lC",
+                  });
+                }}
                 className="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-xl
       bg-[#fe9a00] text-black font-bold text-lg
       shadow-lg hover:shadow-xl transition"

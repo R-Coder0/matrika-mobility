@@ -3,8 +3,8 @@ import { Phone, ArrowRight, Star, ShieldCheck, MapPin, PhoneCallIcon } from "luc
 
 export default function OutstationHero() {
   return (
-    <section className="relative w-full overflow-hidden bg-gradient-to-b from-[#F7FAFF] to-white">
-      
+    <section className="relative w-full overflow-hidden bg-linear-to-b from-[#F7FAFF] to-white">
+
       {/* Soft Background Glow */}
       <div className="absolute top-[-200px] right-[-200px] w-[500px] h-[500px] bg-[#fe9a00]/10 rounded-full blur-3xl" />
 
@@ -23,12 +23,12 @@ export default function OutstationHero() {
             <br />
 
             {/* Phone Badge */}
-            <a 
-              href="tel:+917011438890" 
+            <a
+              href="tel:7011438890"
               className="inline-flex items-center gap-2 mb-6 px-4 py-1.5 text-lg font-bold rounded-full bg-green-50 text-green-700"
             >
               <PhoneCallIcon className="w-4 h-4" />
-              +91 70114 38890
+              7011438890
             </a>
 
             {/* Headline */}
@@ -63,6 +63,11 @@ export default function OutstationHero() {
               {/* Call CTA */}
               <a
                 href="tel:+917011438890"
+                onClick={() => {
+                  window.gtag?.("event", "conversion", {
+                    send_to: "AW-17769558353/Z52xCM7OzPgbENHil5lC",
+                  });
+                }}
                 className="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-xl
                 bg-[#fe9a00] text-black font-bold text-lg
                 shadow-lg hover:shadow-xl transition"

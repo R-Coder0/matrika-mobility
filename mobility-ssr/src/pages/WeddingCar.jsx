@@ -21,52 +21,51 @@ export default function WeddingCar() {
         setFormData((prev) => ({ ...prev, [name]: value }));
     };
 
-    const handleSubmit = async (e) => {
-        e.preventDefault();
-        setLoading(true);
-        setStatus({ type: "", message: "" });
-        try {
-            const res = await fetch("https://taxitribe.in/api/wedding-enquiry", {
-                method: "POST",
-                headers: { "Content-Type": "application/json" },
-                body: JSON.stringify(formData),
-            });
+const handleSubmit = async (e) => {
+  e.preventDefault();
+  setLoading(true);
+  setStatus({ type: "", message: "" });
 
-            if (!res.ok) throw new Error("Failed");
+  try {
+    const res = await fetch("https://taxitribe.in/api/wedding-enquiry", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(formData),
+    });
 
-            // ✅ GOOGLE ADS CONVERSION EVENT
-            if (window.gtag) {
-                window.gtag("event", "conversion", {
-                    send_to: "AW-17769558353/gU4fCLaclNUbENHil5lC",
-                });
-                console.log("🟢 Google Ads conversion fired");
-            } else {
-                console.warn("⚠️ gtag not available");
-            }
+    const data = await res.json().catch(() => ({}));
 
-            setStatus({
-                type: "success",
-                message: "✅ Enquiry submitted successfully! Our team will contact you shortly.",
-            });
+    if (!res.ok || !data?.success) {
+      throw new Error(data?.message || "Failed");
+    }
 
-            setFormData({
-                name: "",
-                phone: "",
-                email: "",
-                city: "",
-                date: "",
-            });
-        } catch (error) {
-            console.error("🔴 Form submit error:", error);
+    // ✅ GOOGLE ADS CONVERSION EVENT (fire only on success)
+    window.gtag?.("event", "conversion", {
+      send_to: "AW-17769558353/gU4fCLaclNUbENHil5lC", // confirm this label
+    });
 
-            setStatus({
-                type: "error",
-                message: "❌ Something went wrong. Please try again.",
-            });
-        } finally {
-            setLoading(false);
-        }
-    };
+    setStatus({
+      type: "success",
+      message: "✅ Enquiry submitted successfully! Our team will contact you shortly.",
+    });
+
+    setFormData({
+      name: "",
+      phone: "",
+      email: "",
+      city: "",
+      date: "",
+    });
+  } catch (error) {
+    console.error("🔴 Form submit error:", error);
+    setStatus({
+      type: "error",
+      message: "❌ Something went wrong. Please try again.",
+    });
+  } finally {
+    setLoading(false);
+  }
+};
 
 
     return (

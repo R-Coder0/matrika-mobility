@@ -3,7 +3,7 @@ import { Phone, ArrowRight, Star, ShieldCheck, MapPin, PhoneCallIcon, Crown } fr
 
 export default function LuxuryCarHero() {
   return (
-    <section className="relative w-full overflow-hidden bg-gradient-to-b from-[#F7FAFF] to-white">
+    <section className="relative w-full overflow-hidden bg-linear-to-b from-[#F7FAFF] to-white">
       
       {/* Soft Background Glow */}
       <div className="absolute top-[-200px] right-[-200px] w-[500px] h-[500px] bg-[#fe9a00]/10 rounded-full blur-3xl" />
@@ -61,6 +61,11 @@ export default function LuxuryCarHero() {
               {/* Call CTA */}
               <a
                 href="tel:+917011438890"
+  onClick={() => {
+    window.gtag?.("event", "conversion", {
+      send_to: "AW-17769558353/Z52xCM7OzPgbENHil5lC",
+    });
+  }}
                 className="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-xl
                 bg-[#fe9a00] text-black font-bold text-lg
                 shadow-lg hover:shadow-xl transition"
