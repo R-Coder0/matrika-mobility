@@ -8,21 +8,21 @@ import { Helmet } from "react-helmet";
 export default function UrbaniaLandingPage() {
   return (
     <div className="w-full font-sans bg-[#FFFAFA] text-black">
-<Helmet>
-  <title>
-    Force Urbania Rental in India | Luxury 12–17 Seater Van - TaxiTribe
-  </title>
+      <Helmet>
+        <title>
+          Force Urbania Rental in India | Luxury 12–17 Seater Van - TaxiTribe
+        </title>
 
-  <meta
-    name="description"
-    content="Book Force Urbania rental for group travel, corporate trips, weddings and outstation journeys. Spacious 12–17 seater luxury van with professional chauffeur, 24×7 support and transparent pricing."
-  />
+        <meta
+          name="description"
+          content="Book Force Urbania rental for group travel, corporate trips, weddings and outstation journeys. Spacious 12–17 seater luxury van with professional chauffeur, 24×7 support and transparent pricing."
+        />
 
-  <link
-    rel="canonical"
-    href="https://taxitribe.in/urbania"
-  />
-</Helmet>
+        <link
+          rel="canonical"
+          href="https://taxitribe.in/urbania"
+        />
+      </Helmet>
       {/* ===== HERO ===== */}
       <UrbaniaHero />
       {/* ===== WHY CHOOSE TAXI TRIBE (URBANIA) ===== */}
@@ -75,79 +75,79 @@ export default function UrbaniaLandingPage() {
       </section>
 
 
-{/* ===== URBANIA GALLERY SECTION ===== */}
-<section className="py-20 bg-white">
-  <div className="max-w-7xl mx-auto px-6">
+      {/* ===== URBANIA GALLERY SECTION ===== */}
+      <section className="py-20 bg-white">
+        <div className="max-w-7xl mx-auto px-6">
 
-    {/* Section Title with Lines */}
-    <div className="flex items-center justify-center gap-4 mb-6">
-      <span className="h-0.5 w-16 bg-gray-800"></span>
-      <span className="h-px w-24 bg-gray-300"></span>
+          {/* Section Title with Lines */}
+          <div className="flex items-center justify-center gap-4 mb-6">
+            <span className="h-0.5 w-16 bg-gray-800"></span>
+            <span className="h-px w-24 bg-gray-300"></span>
 
-      <h2 className="text-3xl md:text-4xl font-bold text-center">
-        Our Premium Urbania Fleet
-      </h2>
+            <h2 className="text-3xl md:text-4xl font-bold text-center">
+              Our Premium Urbania Fleet
+            </h2>
 
-      <span className="h-px w-24 bg-gray-300"></span>
-      <span className="h-0.5 w-16 bg-gray-800"></span>
-    </div>
+            <span className="h-px w-24 bg-gray-300"></span>
+            <span className="h-0.5 w-16 bg-gray-800"></span>
+          </div>
 
-    <p className="text-center text-gray-600 text-lg max-w-2xl mx-auto">
-      Experience luxury group travel with our well-maintained Force Urbania vehicles.
-      Spacious interiors, comfortable pushback seating and ample luggage space —
-      perfect for weddings, corporate trips and family tours.
-    </p>
+          <p className="text-center text-gray-600 text-lg max-w-2xl mx-auto">
+            Experience luxury group travel with our well-maintained Force Urbania vehicles.
+            Spacious interiors, comfortable pushback seating and ample luggage space —
+            perfect for weddings, corporate trips and family tours.
+          </p>
 
-    {/* Urbania Images */}
-    <div className="mt-12 grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
+          {/* Urbania Images */}
+          <div className="mt-12 grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
 
-      {/* Urbania 1 */}
-      <div>
-        <div className="overflow-hidden rounded-2xl shadow-sm">
-          <img
-            src="/u1.png"
-            alt="Force Urbania Exterior"
-            className="w-full h-56 object-cover hover:scale-105 transition duration-300"
-          />
+            {/* Urbania 1 */}
+            <div>
+              <div className="overflow-hidden rounded-2xl shadow-sm">
+                <img
+                  src="/u1.png"
+                  alt="Force Urbania Exterior"
+                  className="w-full h-56 object-cover hover:scale-105 transition duration-300"
+                />
+              </div>
+            </div>
+
+            {/* Urbania 2 */}
+            <div>
+              <div className="overflow-hidden rounded-2xl shadow-sm">
+                <img
+                  src="/u2.png"
+                  alt="Urbania Luxury Interior"
+                  className="w-full h-56 object-cover hover:scale-105 transition duration-300"
+                />
+              </div>
+            </div>
+
+            {/* Urbania 3 */}
+            <div>
+              <div className="overflow-hidden rounded-2xl shadow-sm">
+                <img
+                  src="/u3.png"
+                  alt="Urbania Seating Layout"
+                  className="w-full h-56 object-cover hover:scale-105 transition duration-300"
+                />
+              </div>
+            </div>
+
+            {/* Urbania 4 */}
+            <div>
+              <div className="overflow-hidden rounded-2xl shadow-sm">
+                <img
+                  src="/u4.png"
+                  alt="Urbania Group Travel"
+                  className="w-full h-56 object-cover hover:scale-105 transition duration-300"
+                />
+              </div>
+            </div>
+
+          </div>
         </div>
-      </div>
-
-      {/* Urbania 2 */}
-      <div>
-        <div className="overflow-hidden rounded-2xl shadow-sm">
-          <img
-            src="/u2.png"
-            alt="Urbania Luxury Interior"
-            className="w-full h-56 object-cover hover:scale-105 transition duration-300"
-          />
-        </div>
-      </div>
-
-      {/* Urbania 3 */}
-      <div>
-        <div className="overflow-hidden rounded-2xl shadow-sm">
-          <img
-            src="/u3.png"
-            alt="Urbania Seating Layout"
-            className="w-full h-56 object-cover hover:scale-105 transition duration-300"
-          />
-        </div>
-      </div>
-
-      {/* Urbania 4 */}
-      <div>
-        <div className="overflow-hidden rounded-2xl shadow-sm">
-          <img
-            src="/u4.png"
-            alt="Urbania Group Travel"
-            className="w-full h-56 object-cover hover:scale-105 transition duration-300"
-          />
-        </div>
-      </div>
-
-    </div>
-  </div>
-</section>
+      </section>
 
       {/* ===== ENQUIRY FORM SECTION (URBANIA) ===== */}
       <section className="py-20 bg-[#FFFAFA]">
@@ -216,9 +216,9 @@ function UrbaniaForm() {
       const data = await res.json();
 
       if (data.success) {
-          window.gtag?.("event", "conversion", {
-    send_to: "AW-17769558353/Z52xCM7OzPgbENHil5lC",
-  });
+        window.gtag?.("event", "conversion", {
+          send_to: "AW-17769558353/Z52xCM7OzPgbENHil5lC",
+        });
         setMessage("✅ Urbania enquiry submitted successfully!");
         setFormData({
           name: "",
