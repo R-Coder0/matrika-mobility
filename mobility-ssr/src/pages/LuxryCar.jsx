@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { CheckCircle } from "lucide-react";
 import TestimonialLuxryCar from "../components/landingpage/TestimonialLuxryCar";
 import LuxuryCarHero from "../components/landingpage/LuxryCarHero";
+import { Helmet } from "react-helmet";
 
 export default function LuxryCarLandingPage() {
   return (

@@ -15,9 +15,9 @@ import AboutSection from '../components/aboutSection';
 import SOPsSection from './SOPsSection';
 
 const Home = () => {
-  const [dialogOpen, setDialogOpen] = useState(false); 
+  const [dialogOpen, setDialogOpen] = useState(false);
   const detectedCity = useDetectCity();
-  const {setCity} = useCity();
+  const { setCity } = useCity();
   useEffect(() => {
     setCity(detectedCity);
   }, [detectedCity]);
@@ -26,18 +26,18 @@ const Home = () => {
     <div className='bg-[#FFFAFA] text-black'>
       <Helmet>
         <title>Car Rental and Mobility Service across 30+ Cities - TaxiTribe
-</title>
+        </title>
         <meta name="description" content="TaxiTribe provides car rental and mobility services across 30+ cities backed by defined SLAs, police-verified drivers, 24×7 support & transparent billing." />
-         <link rel="canonical" href="https://taxitribe.in/" />
+        <link rel="canonical" href="https://taxitribe.in/" />
       </Helmet>
       <Hero />
-      <AboutSection/>
+      <AboutSection />
       <FleetSection />
-      <BenefitsAndWhy /> 
-      <SOPsSection/>
+      <BenefitsAndWhy />
+      <SOPsSection />
       <SafetySection />
       <TaxiTestimonials />
-      <FaqSection/>
+      <FaqSection />
       {/* <FaqSection/> */}
       {/* <MapAndFormSection /> */}
       {/* CTA Section */}
